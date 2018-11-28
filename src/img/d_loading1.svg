@@ -1,0 +1,55 @@
+<svg width="220" height="220" viewBox="0 0 240 400" xmlns="http://www.w3.org/2000/svg" fill="#b5bbc5">
+
+    <rect y="280" width="30" height="120" rx="15">
+        <animate attributeName="height"
+             repeatCount="indefinite"
+             values="120"
+              />
+        <animate attributeName="y"
+             begin="0s" dur="2s"
+             repeatCount="indefinite"
+             values="270;150;270"/>
+    </rect>
+
+    <rect x="48" y="130" width="30" height="270" rx="15">
+      <animate attributeName="height"
+          values="270"
+            />
+      <animate attributeName="y"
+          values="120;0;120"
+           begin="0.08s" dur="2s"
+           repeatCount="indefinite"/>
+    </rect>
+
+    <rect x="96" y="130" width="30" height="270" rx="15">
+      <animate attributeName="height"
+          values="270"
+            />
+      <animate attributeName="y"
+          values="120;0;120"
+           begin="0.16s" dur="2s"
+           repeatCount="indefinite"/>
+
+    </rect>
+    <rect x="144" y="130" width="30" height="270" rx="15">
+      <animate attributeName="height"
+          values="270"
+            />
+      <animate attributeName="y"
+          values="120;0;120"
+           begin="0.24s" dur="2s"
+           repeatCount="indefinite"/>
+
+    </rect>
+    <rect y="130" x="192" width="30" height="120" rx="15">
+       <animate attributeName="height"
+             repeatCount="indefinite"
+             values="120"
+              />
+        <animate attributeName="y"
+             begin="0.32s" dur="2s"
+             repeatCount="indefinite"
+             values="120;0;120"/>
+
+    </rect>
+</svg>

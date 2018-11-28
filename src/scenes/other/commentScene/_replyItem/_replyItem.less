@@ -1,0 +1,223 @@
+.replyItem {
+    padding: 0 0.15rem 0.14rem 0.15rem;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    .zanBox {
+        .zanIcon {
+            color: #FF6D1A !important;
+            font-size: 0.16rem;
+        }
+        .zanNo {
+            color: #8893a4;
+            font-size: 0.16rem;
+        }
+    }
+    .itemLeft {
+        position: relative;
+        img {
+            width: 0.36rem;
+            height: 0.36rem;
+            border-radius: 50%;
+            margin-right: 0.11rem;
+        }
+        .level1 {
+            letter-spacing: 0.001rem;
+            font-family: 'Arial-BoldMT';
+            font-size: 0.08rem;
+            color: #666;
+            text-align: center;
+            line-height: 0.14rem;
+            font-weight: 800;
+            position: absolute;
+            bottom: -0.04rem;
+            left: -0.07rem;
+            width: 0.50rem;
+            height: 0.16rem;
+            background: url('./../../../../img/junior.png') no-repeat;
+            background-size: 0.5rem 0.16rem;
+        }
+        .level2 {
+            letter-spacing: 0.001rem;
+            font-family: 'Arial-BoldMT';
+            font-size: 0.08rem;
+            color: #fff;
+            text-align: center;
+            line-height: 0.14rem;
+            font-weight: 800;
+            position: absolute;
+            bottom: -0.04rem;
+            left: -0.07rem;
+            width: 0.50rem;
+            height: 0.16rem;
+            background: url('./../../../../img/middle.png') no-repeat;
+            background-size: 0.5rem 0.16rem;
+        }
+        .level3 {
+            letter-spacing: 0.001rem;
+            font-family: 'Arial-BoldMT';
+            font-size: 0.08rem;
+            color: #fff;
+            text-align: center;
+            line-height: 0.14rem;
+            font-weight: 800;
+            position: absolute;
+            bottom: -0.04rem;
+            left: -0.07rem;
+            width: 0.50rem;
+            height: 0.16rem;
+            background: url('./../../../../img/senior.png') no-repeat;
+            background-size: 0.5rem 0.16rem;
+        }
+    }
+    .itemRight {
+        width: 2.99rem;
+        .itemRTop {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            .left {
+                // .p2 {
+                //     font-size: 0.11rem;
+                //     color: #888888;
+                // }
+                .nameBox {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: center;
+                    margin-bottom: 0.02rem;
+                    font-size: 0.13rem;
+                    .p1 {
+                        font-size: 0.13rem;
+                        color: #444444;
+                        margin-right: 0.09rem;
+                    }
+                    .winningRate{
+                        position: relative;
+                        margin-right: 0.12rem;
+                        width: 0.55rem;
+                        // height: 100%;
+                        img{
+                            width: 0.18rem;
+                            height: 0.2rem;
+                            z-index: 1;
+                        }
+                        span{
+                            position: absolute;
+                            width: 0.44rem;
+                            height: 0.2rem;
+                            left: 0.1rem;
+                            text-align: center;
+                            background:rgba(239,239,239,1);
+                            border-radius:0px 0.1rem 0.1rem 0px;
+                            font-size:0.12rem;
+                            font-family:PingFangSC-Medium;
+                            font-weight:500;
+                            color:rgba(51,51,51,1);
+                            line-height:0.2rem;
+                        }
+                    }
+               
+                    .imgBox {
+                        position: relative;
+                        img {
+                            width: 0.41rem;
+                            height: 0.18rem;
+                        }
+                        .text19 {
+                            position: absolute;
+                            top: 0.03rem;
+                            left: 0.07rem;
+                            font-size: 11px;
+                            color: #438AFF;
+                            text-align: center;
+                            white-space: nowrap;
+                        }
+                    }
+                    // .p2 {
+                    //     font-size: 0.11rem;
+                    //     color: #888888;
+                    // }
+                }
+            }
+            .right {
+                img {
+                    width: 0.1rem;
+                    height: 0.125rem;
+                    margin-right: 0.06rem;
+                }
+                .font-unlike {
+                    font-size: 0.14rem;
+                    color: #5a5a5a;
+                }
+                .font-like {
+                    font-size: 0.14rem;
+                    color: #ffaf52;
+                }
+                .p3 {
+                    margin-left: 0.06rem;
+                    font-size: 0.13rem;
+                    color: #666666;
+                }
+            }
+        }
+        .mid {
+            margin-top: 0.1rem;
+            margin-bottom: 0.10rem;
+            color: #141517;
+            font-size: 15px;
+            color: #141517;
+            .reply {
+                // font-family: 'PingFangSC-Regular';
+                color: #888888;
+                .toName {
+                    // font-family: 'PingFangSC-Regular';
+                    color: #4389D8;
+                }
+            }
+            .content {
+                // font-family: PingFangSC-Regular;
+                color: #111111;
+            }
+            span {
+                font-size: 0.14rem
+            }
+        }
+        .bom {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .line {
+            height: 0.01rem;
+            width: 100%;
+            background-color: #F1F1F1;
+        }
+    }
+    .itemRightBottom {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+        align-items: center;
+        .report {
+            margin-left: 0.1rem;
+            border-radius:13px;
+            border:0.01rem solid rgba(204, 204, 204, 1);
+            margin-right: 0.1rem;
+            color:rgba(51,51,51,1);
+            padding: 0 0.07rem;
+            font-size: 0.14rem;
+            span {
+                margin-left: 0.02rem;
+                font-size: 0.11rem;
+                color:rgba(51,51,51,1);
+                line-height:16px;
+            }
+        }
+    }
+}

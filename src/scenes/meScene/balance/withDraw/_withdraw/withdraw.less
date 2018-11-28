@@ -1,0 +1,211 @@
+@import "../../../../../style/delphyConstStyle";
+.withdrawPage{
+  .bom{
+    margin-top: 0.08rem;
+    color: #8C95A4;
+    font-size: 0.11rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .span2{
+      margin-right: 0.03rem;
+    }
+    .span1{
+    text-decoration: underline;
+    }
+  }
+  position: absolute;
+  width:100%;
+  height:100%;
+  background: #fdfdfd;
+  padding:24px @padding20;
+  box-sizing: border-box;
+  .withdraw{
+    background: #f4f4f4;
+    line-height:@line_height42;
+    height:@line_height42;
+    margin-bottom:12px;
+    overflow: hidden;
+    border-radius: 5px;
+    p{
+      float: left;
+      width:30%;
+      padding-left:0.15rem;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      font-size:@font_size16;
+    }
+    input{
+      float: left;
+      width:65%;
+      margin:0;
+      box-sizing:border-box;
+      border:none;
+      line-height:@line_height42;
+      background: #f4f4f4;
+      font-size:@font_size16;
+
+    }
+  }
+  .moneyOnline{
+
+      font-size: 0.12rem;
+      color: @bluey_grey;
+
+    font-size: 0.12rem;
+    color: @bluey_grey;
+    margin-bottom: 0.13rem;
+    margin-top:-0.06rem;
+  }
+  .withdrawPrompt{
+    font-size:@font_size12;
+    color: @bluey_grey;
+    line-height:0.18rem;
+  }
+  .withdrawBtn{
+    width:100%;
+    background-color: #FF6D1A;
+    border:none;
+    line-height:@line_height42;
+    font-size:@font_size15;
+    color: #fff;
+    border-radius: 0.24rem;
+    margin-top:0.3rem;
+  }
+}
+.rechargeOuter{
+  position: absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+   .loginPOne{
+      width: 65%;
+      background: #f4f4f4;
+      border-radius:3px;
+      float: left;
+      font-size:0.15rem;
+      span{
+        display: inline-block;
+        width:0.55rem;
+        padding-left: 0.05rem;
+        margin-left: 0.1rem;
+      }
+      input{
+        border:none;
+        background: none;
+        padding-left: 10px;
+        font-size:0.15rem;
+        width: 1rem;
+      }
+    }
+  .rechargeCover{
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.4);
+  }
+  .rechargeMode{
+    position: absolute;
+    width:100%;
+    background: #fff;
+    bottom:0;
+    left:0;
+    .rechargeModeHead{
+      border-bottom: 0.02rem solid #eee;
+      line-height:0.5rem;
+      box-shadow: 0 0 -0.12rem 0 rgba(0, 0, 0, 0.8);
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 0.186rem;
+      padding-right: 0.186rem;
+      color: #212529;
+      span{
+        font-size:@font_size15;
+      }
+      p{
+      font-size: 0.14rem;
+color: #212529;
+      }
+    }
+    .rechargeModeinner{
+      background: @bg_default;
+      .inputItem{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 0.16rem;
+        span{
+          margin-right: 0.08rem;
+        }
+        .rightItems2{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 16px;
+color: #FF701C;
+letter-spacing: 0;
+          padding-right: 0.22rem;
+          .checkCode{
+          white-space:nowrap;
+          }
+        }
+        .rightItems,.rightItems2{
+          border-bottom: 0.01rem solid  #E6E6E6;
+          width:100%;
+           input{
+                     border:none;
+      
+   
+        background:#fff;
+        line-height:0.42rem;
+        width:100%;
+        font-size:0.17rem;
+        border-radius:0.03rem;
+        padding-left :0.08rem;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+        }
+             
+      }
+
+    }
+  }
+}
+.withdrawWindowCover{
+  position: absolute;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.3);
+  top:0;
+  left:0;
+}
+.withdrawWindow{
+  position: absolute;
+  width:2.5rem;
+  border-radius: 0.08rem;
+  background: #fff;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+  padding:0.16rem;
+  box-sizing: border-box;
+  p{
+    font-size:0.15rem;
+    text-align: center;
+    line-height: 0.2rem;
+    padding-bottom:0.16rem;
+  }
+  pre{
+    padding-top:0.16rem;
+    text-align: center;
+    font-size:0.16rem;
+  }
+}

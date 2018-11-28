@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <!-- <meta name="viewport" content="initial-scale=1, width=device-width,  maximum-scale=1,  user-scalable=no, viewport-fit=cover"> -->
+  <meta content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no, width=device-width" name="viewport">
+  <meta name="theme-color" content="#000000">
+  <style>
+    body {
+        box-sizing: border-box;
+        padding-top: constant(safe-area-inset-top);
+        padding-top: env(safe-area-inset-top);
+        padding-left: constant(safe-area-inset-left);
+        padding-left: env(safe-area-inset-left);
+        padding-right: constant(safe-area-inset-right);
+        padding-right: env(safe-area-inset-right);
+        padding-bottom: constant(safe-area-inset-bottom);
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+    .am-picker-popup-body{
+      z-index: 99999;
+    }
+    .am-picker-popup-item{
+      color: #ff6d1a !important;
+    }
+    </style>
+  <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+  <script src="./polyfill.js" type="text/html"></script>
+  <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+  <title>Delphy • 天算</title>
+  <link rel="stylesheet" type="text/html" href="%PUBLIC_URL%/style.css">
+</head>
+
+<body className="no-scroll">
+  <% if (htmlWebpackPlugin.options.isCordovaApp){ %>
+  <script src="cordova.js"></script>
+  <script src="boot.js"></script>
+  <% } %>
+  <noscript>
+    You need to enable JavaScript to run this app.
+  </noscript>
+  <div id="root"></div>
+  <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+</body>
+
+</html>
+<script>
+  var htmls = document.getElementsByTagName('html')[0];
+  var widths = document.body.clientWidth;
+  if (widths > 600) {
+    widths = 600
+  }
+  htmls.style.fontSize = widths * 100 / 375 + 'px'
+
+</script>

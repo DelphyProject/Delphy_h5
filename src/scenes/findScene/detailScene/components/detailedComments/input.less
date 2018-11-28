@@ -1,0 +1,189 @@
+@import "../../../../../style/delphyConstStyle.less";
+
+  .mask{
+    position: fixed;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.5);
+  }
+.marketInputshrink{
+  box-shadow: 0 0 0.1rem rgba(0,0,0,0.3);
+  background-image: linear-gradient(135deg, #FF944C 0%, #FF6E4A 100%);
+  width:0.4rem;
+  height:0.4rem;
+  border-radius: 50%;
+  padding:0.08rem 0 0 0.08rem;
+  box-sizing: border-box;
+  position: fixed;
+  right:0.3rem;
+  bottom:0.5rem;
+  z-index: 99;
+  i{
+    color: #fff;
+    font-size:0.24rem;
+  }
+}
+  .InputShrink{
+    width:100%;
+    height:0.5rem;
+    box-shadow: 0 -4px 8px 0 rgba(67, 77, 255, 0.05);
+    background-color: rgba(255, 255, 255, 0.9);
+    position: fixed;
+    bottom:0;
+    left:0;
+    padding:0.08rem 0.12rem;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    p{
+      line-height:0.34rem;
+      height:0.34rem;
+      background: #f4f4f4;
+      border:1px solid #ddd;
+      border-radius:3px;
+      padding-left:0.12rem;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      color: #8893a4;
+    }
+  }
+  
+  .InputExpand{
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:1000;
+    overflow: hidden;
+    .InputExpandMask{
+      position: fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      overflow: hidden;
+      background: rgba(0,0,0,0.4);
+    }
+    .InputExpandPage{
+      position: absolute;
+      bottom:0;
+      left:0;
+      background: #fff;
+
+      width:100%;
+      .selectOutBox{
+        border-bottom: 0.01rem solid #eee;
+         .selectOut{
+   border-top: 0.01rem solid #eee;
+          height: 0.55rem;
+          padding: 0.04rem 0.15rem 0.10rem;
+          p{
+  font-size: 0.14rem;
+  color: #141517;
+  margin-bottom: 0.1rem;
+          }
+          .selectBox{
+            flex-direction: row;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            span{
+       width: 0.6rem;
+                height: 0.26rem;
+                font-size: 0.13rem;
+                line-height:0.26rem;
+                letter-spacing:0.0016rem;
+                margin-right: 0.11rem;
+                text-align: center;
+  border-radius: 0.01rem;
+            }
+              .noSelect{
+  background: rgba(20,21,23,0.1);
+  color: #141517;
+              }
+              .select{
+  color: #FF3C28;
+                background:#FFE2D1;
+              }
+          }
+  
+        }
+      }
+      .InputPageTop{
+        display: flex;
+        justify-content:space-between!important;
+        align-items: center;
+        flex-direction: row;
+        height: 0.5rem;
+        padding:0 @padding15;
+        z-index: 100;
+        background: #FFFFFF;
+  box-shadow: inset 0 0 0 0 #E9E9E9;
+  background: #FFFFFF;
+        position: relative;
+        .cancel{
+          font-size:0.15rem;
+  color: #666666;
+        }
+        .launch{
+         font-size: 0.15rem;
+  color: #FF6D1A;
+        }
+      
+     
+      }
+      .commentInputPageBot{
+        position: relative;
+        background: #fff;
+        z-index: 99;
+        textarea::-moz-placeholder{
+  font-size: 0.14rem;
+  color: #AAAAAA;
+        }
+        　::-webkit-input-placeholder{
+          font-size: 0.14rem;
+  color: #AAAAAA;
+  }
+        :-ms-input-placeholder{
+          font-size: 0.14rem;
+  color: #AAAAAA;
+  }
+        textarea{
+           border-bottom: 0.01rem solid #fff;
+          height: 1.5rem;
+          padding:0.12rem;
+          border:none;
+          box-sizing: border-box;
+          width:100%;
+          border-radius:3px;
+          background:#fff;
+          -webkit-appearance: none;
+          .defaultText{
+            font-size: 0.14rem;
+  color: #AAAAAA;
+          }
+        }
+       
+      }
+    }
+   
+  }
+
+ .toHome{
+width: 0.6rem;
+    height: 0.6rem;
+          box-sizing: border-box;
+    position: fixed;
+    right: 0.2rem;
+    bottom: 0.95rem;
+    z-index: 99
+    }
+body {
+  &.full-body{
+    position: fixed !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+}

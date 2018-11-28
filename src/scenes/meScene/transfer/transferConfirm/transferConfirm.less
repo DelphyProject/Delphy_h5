@@ -1,0 +1,128 @@
+@import "../../../../style/delphyConstStyle";
+.transferConfirm {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fdfdfd;
+    padding: 24px @padding20;
+    box-sizing: border-box;
+    .userAvatar {
+        text-align: center;
+        padding: 0.5rem 0 0.2rem;
+        position: relative;
+        img {
+            width: 0.85rem;
+            height: 0.85rem;
+            border-radius: 50%;
+        }
+    }
+    .rows {
+        font-size: 15px;
+        color: #666666;
+        padding: 0.5rem 0 0rem;
+        letter-spacing: 0.18px;
+        background-color: #fff;
+        .rowItem {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            height: 0.5rem;
+            line-height: 0.5rem;
+            padding-left: 0.15rem;
+            padding-right: 0.15rem;
+        }
+    }
+    .vcodeArea {
+        line-height: 42px;
+        margin-top: 15px;
+        overflow: hidden;
+        .registerVOne {
+            text-align: left;
+            width: 2.15rem;
+            background: #f4f4f4;
+            flex-direction: row;
+            justify-content: space-between;
+            float: left;
+            .inputLabel {
+                border: none;
+                color: #212529;
+                padding-left: 0.12rem;
+                font-size: 0.15rem;
+            }
+            span {
+                display: inline-block;
+                width: 0.65rem;
+                padding-left: 0.05rem;
+                margin-left: 0.1rem;
+                font-size: 0.15rem;
+            }
+            input {
+                border: none;
+                background: none;
+                padding-left: 0.12rem;
+                font-size: 0.15rem;
+                width: 1rem;
+            }
+        }
+        .registerVTwo {
+            float: right;
+            margin-left: @margin12;
+            box-sizing: border-box;
+            width: 1.04rem;
+            background: #fff;
+            line-height: 40px;
+            font-size: 0.13rem;
+            text-align: center;
+            color: #FF6D1A;
+            border: solid 1px #FF6D1A;
+            border-radius: 3px;
+        }
+    }
+    .pwdArea {
+        margin-bottom: 15px;
+        .registerP {
+            text-align: left;
+            line-height: 42px;
+            margin-top: 15px;
+            overflow: hidden;
+            background: #f4f4f4;
+            .inputLabel {
+                border: none;
+                color: #212529;
+                padding-left: 0.12rem;
+                font-size: 0.15rem;
+            }
+            span {
+                display: inline-block;
+                width: 0.65rem;
+                padding-left: 0.05rem;
+                margin-left: 0.1rem;
+                font-size: 0.15rem;
+            }
+            input {
+                border: none;
+                background: none;
+                padding-left: 0.12rem;
+                font-size: 0.15rem;
+                width: 2rem;
+            }
+        }
+    }
+    .transferBullet {
+        text-align: left;
+        font-size: @font_size12;
+        color: @bluey_grey;
+        line-height: 0.18rem;
+    }
+    .confirmBtn {
+        width: 100%;
+        background-color: #FF6D1A;
+        border: none;
+        line-height: @line_height42;
+        font-size: @font_size15;
+        color: #fff;
+        border-radius: 0.24rem;
+        margin-top: 0.1rem;
+    }
+}

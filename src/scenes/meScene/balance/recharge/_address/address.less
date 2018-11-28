@@ -1,0 +1,116 @@
+@import "../../../../../style/delphyConstStyle";
+.addressPage {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fdfdfd;
+    padding: 24px @padding20;
+    box-sizing: border-box;
+    .rechargeTip1 {
+        font-size: 0.24rem;
+        color: #737A93;
+    }
+    p {
+        font-size: @font_size12;
+        color: @bluey_grey;
+        line-height: 0.18rem;
+    }
+    .addressQRcode {
+        text-align: center;
+        margin: 0.3rem 0;
+        img {
+            padding: @padding4;
+            width: 1.8rem;
+            height: 1.8rem;
+            border: 1px solid #c4cad2;
+        }
+        p {
+            margin-top: @margin8;
+        }
+    }
+    .address {
+        height: 0.44rem;
+        overflow: hidden;
+        p {
+            padding: 5px @padding12;
+            background: #f4f4f4;
+            height: 100%;
+            width: 60%;
+            margin-right: 3%;
+            word-wrap: break-word;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            border-radius: 5px;
+            float: left;
+            color: @title_black;
+        }
+        .addressCopyBtn {
+            height: 100%;
+            width: 37%;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            float: left;
+            text-align: center;
+            font-size: @font_size15;
+            font-weight: 500;
+            border: 1px solid #FF6D1A;
+            background: #fff;
+            color: #FF6D1A;
+            line-height: 0.42rem;
+            border-radius: 5px;
+        }
+    }
+    .coinListText {
+        margin-top: 20px;
+    }
+    .coinList {
+        margin-top: 20px;
+    }
+    .coinBox {
+        background-color: #f4f4f4;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 10px;
+        .boxTop {
+            height: 40px;
+            .topLeft {
+                float: left;
+                width: 20%;
+                .coinIcon {
+                    margin-left: 8px;
+                    margin-top: 5px;
+                }
+            }
+            .topRight {
+                float: left;
+                width: 80%;
+                p {
+                    line-height: 40px;
+                    font-size: 0.15rem;
+                }
+            }
+        }
+        .boxBottom {
+            margin-top: 5px;
+            .boxBottomTopLeft {
+                float: left;
+                width: 50%;
+                text-align: center;
+            }
+            .boxBottomTopRight {
+                float: left;
+                width: 50%;
+                text-align: center;
+            }
+            .boxBottomBottom {
+                text-align: center;
+            }
+        }
+    }
+    .tipsBox {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}

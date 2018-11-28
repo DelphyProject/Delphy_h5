@@ -1,0 +1,161 @@
+@import '../../../../style/delphyConstStyle.less';
+.treeOutBox{
+    background: @bg_default;
+    padding:0.28rem 0.16rem ;
+    color:@title_black;
+    .inCenter{
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        flex-direction: row;
+    }
+    .inLeftRight{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+    }
+    .treeTop{
+        margin-bottom: 0.38rem;
+
+        .treeTitle{
+            color:@title_black;
+            margin-bottom: 0.1rem;
+            .add{
+                font-weight: @font_weight;
+
+                font-size: @font_size24;
+            }
+            .num{
+                font-weight: @font_weight;
+                font-size: @font_size24;
+            }
+            .unit{
+                font-size: @font_size9;
+            }
+        }
+    }
+    .adressNumText{
+           
+        color:@title_black;
+        font-size: @font_size13;        
+        word-break: break-all;
+        line-height: 0.24rem;
+    }
+    .packageBox{
+        margin-bottom: 0.16rem;
+        .packageText{
+            font-size: @font_size14;
+            color:@title_black;
+            font-weight: @font_weight;
+        }
+        .packageHelp{
+            border: 1px solid @bluey_grey;
+            color: @bluey_grey;
+            border-radius: 0.09rem;
+            width: 0.16rem;
+            display: inline-block;
+            height: 0.16rem;
+            text-align: center;
+            line-height: 0.16rem;
+        }
+    }
+    .txStatus{
+        font-size: @font_size13;
+        margin-bottom: 0.32rem;
+    }
+    .treeBom{
+        margin-top: 0.34rem;
+        .txInfo{
+            font-size: @font_size14;
+            font-weight: @font_weight;
+            margin-bottom: 0.16rem;
+            .infoTitle{
+              
+            } 
+            .infoText{
+
+            } 
+        }
+        .txMoney{
+            font-size: @font_size13;
+            margin-bottom: 0.12rem;
+            .txMoneyTitle{
+              
+            } 
+            .txMoneyText{
+                color:@bluey_grey;
+            } 
+            .txNumTitle{
+                display: inline-block;
+            }
+            .txPackageNum{
+                color:@buy_color;
+                word-break: break-all;
+                line-height: 0.24rem;
+            }
+        }
+        
+    }
+}  
+.helpAlertOut{
+    
+    position: fixed;
+    height: 100%;
+    z-index: 100;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.35);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .helpAlertBox{
+        box-shadow:0 0 0.2rem rgba(0, 0, 0, 0.11);
+        width: 2.89rem;
+        background-color: #fff;
+        position: relative;
+        border-radius: 0.09rem;
+        .helpAlertTop{
+          
+            position: absolute;
+            top: -0.45rem;
+            width: 2.55rem;
+            border-top-left-radius:0.09rem;
+            border-top-right-radius:0.09rem;
+            height: 0.53rem;
+            padding-left: 0.17rem;
+            padding-right: 0.17rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            // border-bottom: 
+            box-shadow:0 0 0.2rem rgba(0, 0, 0, 0.11);
+            .helpAlertTitle{
+                font-size: @font_size14;
+                font-weight: @font_weight;
+            }
+        } 
+        .helpAlertText{
+            border-bottom: 0.2rem solid #fff;
+            border-bottom-left-radius:0.09rem;
+            border-bottom-right-radius:0.09rem;
+            min-height: 0.58rem;
+            max-height: 3.17rem;
+            overflow:scroll;
+          
+            background: @bg_default;
+            padding:0.16rem 0.2rem 0.0rem;
+            .textContent{
+                line-height: 0.19rem;
+                font-size: @font_size13;
+                margin-bottom: 0.2rem;
+            }
+        }
+        
+        }
+}
+.aa{
+    background-color: red;
+}

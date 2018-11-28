@@ -1,0 +1,121 @@
+@import "../../../../style/delphyConstStyle";
+.profileEditPage{
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  .profileEdit{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ffffff;
+    .myIcon{
+      text-align: center;
+      padding:0.34rem 0 0.2rem;
+      position: relative;
+      width: 0.7rem;
+        height: 0.7rem;
+    overflow: hidden;
+
+      .uploadImg{
+        position: absolute;
+        top: 0.34rem;
+        left: 0;
+        width: 0.7rem;
+        height: 0.7rem;
+        background: red;
+         filter:alpha(opacity=0);
+-moz-opacity:0;
+-khtml-opacity: 0;
+opacity: 0;
+      }
+      img{
+        display: inline-block;
+        width:0.7rem;
+        height:0.7rem;
+        border-radius:50%;
+      }
+     
+    }
+    .settingHeadImg{
+      text-align: center;
+      padding:0.12rem 0 0.24rem;
+      position: relative;
+      img{
+        display: inline-block;
+        width:0.7rem;
+        height:0.7rem;
+        border-radius:50%;
+      }
+      p{
+        position: absolute;
+        width:0.58rem;
+        height:0.58rem;
+        border-radius:50%;
+        top:0.12rem;
+        left:50%;
+        transform: translate(-50%,0);
+        background: rgba(0,0,0,0.04);
+      }
+      span{
+        position: absolute;
+        right:1.25rem;
+        bottom: 0.25rem;
+        height:0.19rem;
+        width:0.19rem;
+        background: #535cfc;
+        color: #fff;
+        border-radius: 50%;
+        line-height:0.19rem;
+        text-align: center;
+        font-size:0.11rem;
+      }
+    }
+    
+   
+    .input{
+        width:3.066rem;
+        height: 0.33rem;
+        border:none;
+        border-radius: 0.03rem;
+        background: #F7F8FA;
+        padding:0rem 0.1rem;
+        font-size:0.17rem;
+        color: #0d1726;
+        padding-top: 0.15rem;
+      }
+   
+    textarea{
+
+      margin-top: 0.1rem;
+      width:3.066rem;
+      border-radius: 0.03rem;
+      height: 0.88rem;
+      padding:0.1rem 0.1rem;
+        border:none;
+        background: #F7F8FA;
+        line-height:0.22rem;
+        font-size:0.17rem;
+        color: #0d1726;
+    }
+    
+    pre{
+      // background-color: rgba(67, 77, 255, 0.9);
+      position: absolute;
+      transform: translateX(-1.675rem) ;
+      left:50%;
+      bottom: 0.17rem;
+      width: 3.35rem;
+      height: 0.42rem;
+      color: #fff;
+      font-size:0.15rem;
+      font-weight:@font_weight;
+      border-radius: 0.02rem;
+      line-height:0.42rem;
+      text-align: center;
+      background-image: linear-gradient(135deg, #FF944C 0%, #FF6E4A 100%);
+
+    }
+  }
+}

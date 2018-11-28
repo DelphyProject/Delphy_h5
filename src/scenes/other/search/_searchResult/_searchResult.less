@@ -1,0 +1,36 @@
+@import "../../../../style/delphyConstStyle.less";
+.searchResult{
+  margin:@margin20 @margin20 0;
+  padding-bottom:@padding20;
+  border-bottom: 1px solid #e7e9ed;
+  h4{
+    font-size: @font_size15;
+    font-weight:@font_weight;
+    margin-bottom: @margin12;
+    em{
+      font-weight: @font_weight;
+    }
+  }
+  p{
+    line-height:@line_height20;
+    margin-bottom:@margin8;
+    font-size:0.14rem;
+  }
+  div{
+    overflow: hidden;
+    p{
+      margin:0;
+      color: #8893a4;
+      font-size:@font_size12;
+    }
+    p:nth-child(1){
+      float: left;
+      span{
+        margin-right:5px;
+      }
+    }
+    p:nth-child(2){
+      float: right;
+    }
+  }
+}

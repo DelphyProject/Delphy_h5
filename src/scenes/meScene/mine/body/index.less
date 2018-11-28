@@ -1,0 +1,160 @@
+.middle-body {
+    margin: 0 0.1rem 0.2rem;
+    background: #FFFFFF;
+    box-shadow: 0 0.01rem 0.04rem 0 rgba(0, 0, 0, 0.08);
+    border-radius: 0.1rem;
+    padding: 0.15rem;
+    .clickWindow{
+        position: fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height: 100%;
+        z-index: 999;
+        .clickWindowCover{
+          width:100%;
+          height:100%;
+          background:rgba(0,0,0,0.5);
+        }
+        .clickWindowIn{
+          position: absolute;
+          top:50%;
+          transform: translate(0,-60%);
+          left:15%;
+          padding:0.2rem;
+          width:70%;
+          background: #fff;
+          border-radius: 0.05rem;
+          box-sizing: border-box;
+          p{
+            font-size:0.20rem;
+          }
+          p:nth-child(1){
+            padding-bottom: 0.1rem;
+          }
+          p:nth-child(3){
+            padding-top: 0.1rem;
+            text-align: center;
+          }
+    
+        }
+      }
+    .my-title {
+        img {
+            width: 0.14rem;
+            vertical-align: middle;
+            margin-right: 0.13rem;
+        }
+        span {
+            vertical-align: middle;
+            font-family: 'PingFangSC-Regular';
+            font-size: 0.15rem;
+            color: #333333;
+            letter-spacing: 0;
+        }
+    }
+    .share-items {
+        padding-top: 0.15rem;
+        // padding-bottom: 0.15rem;
+        .share-item1:nth-child(1) {
+            margin-bottom: 0.1rem;
+        }
+        .share-item {
+            height: 0.7rem;
+            border-radius: 0.1rem;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            .img-bg {
+                float: left;
+                margin-left: 0.08rem;
+                margin-right: 0.08rem;
+                background-color: #fff;
+                border-radius: 50%;
+                height: 0.4rem;
+                width: 0.4rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                img {
+                    width: 0.16rem;
+                }
+            }
+            .main-content {
+                flex: 1;
+                p:nth-child(1) {
+                    font-family: 'PingFangSC-Medium';
+                    font-size: 0.14rem;
+                    color: #FFFFFF;
+                    letter-spacing: 0;
+                    margin-top: 0.06rem;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap
+                }
+                p:nth-child(2) {
+                    font-family: 'PingFangSC-Regular';
+                    font-size: 0.1rem;
+                    color: #FFFFFF;
+                    letter-spacing: 0;
+                    line-height: 0.2rem;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap
+                }
+            }
+            .share-btn1 {
+                margin-left: 0.04rem;
+                margin-right: 0.08rem;
+                height: 0.25rem;
+                width: 0.6rem;
+                background: #FFFFFF;
+                box-shadow: 0 0.03rem 0.04rem 0 #E04F76;
+                border-radius: 0.15rem;
+                font-family: 'PingFangSC-Medium';
+                font-size: 0.11rem;
+                color: #FF679E;
+                text-align: center;
+                line-height: 0.25rem;
+            }
+            .share-btn2 {
+                margin-left: 0.04rem;
+                margin-right: 0.08rem;
+                height: 0.25rem;
+                width: 0.6rem;
+                background: #FFFFFF;
+                box-shadow: 0 0.03rem 0.04rem 0 #6B3FD3;
+                border-radius: 0.15rem;
+                font-family: 'PingFangSC-Medium';
+                font-size: 0.11rem;
+                color: #9268FF;
+                text-align: center;
+                line-height: 0.25rem;
+            }
+        }
+        .share-item1 {
+            background-image: linear-gradient(-90deg, #FF669E 0%, #FF8468 100%);
+        }
+        .share-item2 {
+            background-image: linear-gradient(90deg, #E066FF 0%, #8768FF 100%);
+            .img-bg {
+                img {
+                    width: 0.22rem;
+                }
+            }
+        }
+    }
+    .more-share {
+        text-align: center;
+        padding-top:0.15rem;
+        a {
+            font-family: 'PingFangSC-Regular';
+            font-size: 0.12rem;
+            color: #999999;
+        }
+        .icon-DlistArrow{
+            color: #a7a7a7;
+            font-size: 0.08rem;
+        }
+    }
+}

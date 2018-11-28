@@ -1,0 +1,118 @@
+@import "../../../style/delphyConstStyle";
+.messagePage{
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+}
+.messageTab{
+  position: fixed;
+  z-index:10000;
+  height:0.405rem;
+  background: rgba(255,255,255,0.98);
+  top:0;
+  left:0;
+  width:100%;
+  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.03);
+  ul{
+    overflow: hidden;
+    li{
+      float: left;
+      width:50%;
+      text-align: center;
+      font-size:0.15rem;
+      font-weight: @font_weight;
+      position: relative;
+      p{
+        color: rgb(136, 147, 164);
+        line-height:0.4rem;
+        position: relative;
+        .redD{
+          position: absolute;
+          top:0.08rem;
+          right: 30%;
+          width:0.07rem;
+          height:0.07rem;
+          border-radius: 50%;
+          background: red;
+        }
+      }
+    }
+    li.current{
+      p{
+        color: rgb(13, 23, 38);
+      }
+      span{
+        position: absolute;
+        bottom: 0;
+        left:50%;
+        transform: translate(-50%,0);
+        height:3px;
+        width:0.32rem;
+        background: #FF6D1A ;
+      }
+    }
+  }
+}
+.messagelistTop{
+  padding:0 0.16rem;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  line-height:0.44rem;
+  position: fixed;
+  top:0.40rem;
+  left:0;
+  width:100%;
+  z-index: 9999;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  p{
+  background: #EEEEEE;
+border-radius: 1rem;
+color: #3882E3;
+font-size: 0.14rem;
+width: 0.88rem;
+height: 0.3rem;
+line-height: 0.3rem;
+text-align: center;
+  }
+
+  h5{
+    font-size:0.14rem;
+    color: #666;
+  }
+  p{
+  color: #3882E3;
+    font-size:0.14rem;
+  }
+}
+.findMarketFiexd{
+  position: fixed;
+  z-index:10000;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.08);
+}
+.findPage{
+  position: absolute;
+  width:100%;
+  height:100%;
+  overflow: auto;
+  padding-bottom:50px;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+}
+  .messageOk{
+    padding-top:0.845rem;
+    box-sizing: border-box;
+  }
+  .messageNot{
+    display: none;
+  }

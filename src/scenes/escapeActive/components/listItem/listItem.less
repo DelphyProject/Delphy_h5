@@ -1,0 +1,110 @@
+.item-warp {
+    padding: 0 0.12rem 0.16rem;
+    font-family: 'PingFangSC-Semibold';
+    .item-content {
+        background-color: #fff;
+        padding: 0.12rem 0.1rem;
+        border: 0.005rem solid #E8E8E8;
+        border-radius: 0.04rem;
+        box-shadow: 0 0.03rem 0.06rem #E9E9E9;
+        position: relative;
+        .img-info {
+            position: absolute;
+            top: 0.02rem;
+            right: 0.02rem;
+            width: 0.8rem;
+            height: 0.6rem;
+        }
+        .item-title {
+            font-size: 0.18rem;
+            line-height: 1.4;
+            position: relative;
+            padding-top: 0.06rem;
+            .space-right {
+                float: right;
+                display: inline-block;
+                width: 0.7rem;
+                height: 0.2rem;
+            }
+            .space-left {
+                display: inline-block;
+                text-align: center;
+                background-color: #212121;
+                border-radius: 0.02rem;
+                width: 0.43rem;
+                line-height: 0.22rem;
+                color: #fff;
+                font-size: 0.12rem;
+                margin-right: 0.04rem;
+                vertical-align: text-bottom;
+            }
+        }
+        .other-info{
+            font-family: 'PingFangSC-Regular';
+            line-height: 0.18rem;
+            color: #AEAEAE!important;
+            padding:0.13rem 0;
+            .iconfont{
+                color: #AEAEAE!important;
+                vertical-align: middle;
+                font-size: 0.15rem;
+            }  
+            span{
+                font-size: 0.13rem;
+            }
+            .time-font{
+                padding-left:0.05rem;
+            }
+            .leave-font{
+                float: right;
+            }
+            .leave-font::before{
+                display: inline-block;
+                content: url('../../../../img/chicken/ic_livability.png');
+                width: 0.14rem;
+                height: 0.16rem;
+                vertical-align: middle;
+                padding-right: 0.05rem;
+            }
+        }
+        .select-box{
+            font-family: 'PingFangSC-Regular';
+            background-color: #F7F8FA;
+            border-radius: 0.02rem;
+            padding: 0.08rem 0.1rem 0.08rem;
+            .select{
+                height: 0.21rem;
+                line-height: 0.21rem;
+                display: flex;
+                align-items:center;
+                font-size: 0.15rem;
+                padding-top:0.07rem;
+                padding-bottom:0.07rem;
+                i{
+                    color: #F86C21;
+                    font-size: 0.18rem;
+                }
+                .select-font{
+                    padding-left:0.05rem;
+                    flex: 1;
+                    color: #111;
+                    font-size: 0.15rem;
+                    text-decoration:line-through;
+                    color:#666;                    
+                }
+                .select-info{
+                    font-size: 0.12rem;
+                    color:#666;
+                }
+            }
+            .select-true{
+                i{
+                    color: #11C71F;
+                }
+                .select-font{
+                    text-decoration:none;
+                }
+            }
+        }
+    }
+}

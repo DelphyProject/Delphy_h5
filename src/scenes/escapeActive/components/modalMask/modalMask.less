@@ -1,0 +1,55 @@
+.mask-warp {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    .mask-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #191919;
+        opacity: 0.5;
+    }
+    .mask-content {
+        opacity: 1;
+        background-color: #FFFDFB;
+        box-sizing: border-box;
+        width: 3.2rem;
+        // height: 4.2rem;
+        border-radius: 0.08rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 0.3rem 0.25rem 0.2rem;
+        .mask-title {
+            font-family: 'PingFangSC-Semibold';
+            font-size: 0.18rem;
+            color: #9C4F1D;
+        }
+        .mask-body {
+            padding-top: 0.15rem;
+            padding-bottom: 0.32rem;
+            font-family: 'PingFangSC-Regular';
+            font-size: 0.14rem;
+            color: #9C4F1D;
+            line-height: 0.2rem;
+        }
+        .mask-btn {
+            background-image: linear-gradient(90deg, #F20013 0%, #FD4E16 100%);
+            border-radius: 0.02rem;
+            height: 0.46rem;
+            width: 2.2rem;
+            font-size: 0.16rem;
+            font-family: 'PingFangSC-Semibold';
+            color: #FFFFFF;
+            text-align: center;
+            line-height: 0.46rem;
+            margin: 0 auto;
+        }
+    }
+}

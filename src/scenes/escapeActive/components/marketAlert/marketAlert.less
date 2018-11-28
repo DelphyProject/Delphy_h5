@@ -1,0 +1,49 @@
+.market-alert {
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: Center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    .mask-mask {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1001;
+        opacity: 0.5;
+        background: #191919;
+    }
+    .alert-content {
+        background: #F3F3F3;
+        border-radius: 0.08rem;
+        box-sizing: border-box;
+        width: 2.7rem;
+        height: 1.7rem;
+        z-index: 1002;
+        padding: 0.3rem 0.25rem 0.2rem;
+        .font-box {
+            padding: 0 0.3rem 0.2rem;
+            font-family: 'PingFangSC-Regular';
+            font-size: 0.16rem;
+            color: #000000;
+            text-align: center;
+            line-height: 1.5;
+        }
+        .btn-box {
+            height: 0.46rem;
+            line-height: 0.46rem;
+            background-image: linear-gradient(-90deg, #F20013 0%, #FD4E16 100%);
+            border-radius: 0.02rem;
+            font-family: 'PingFangSC-Semibold';
+            font-size: 0.16rem;
+            color: #FFFFFF;
+            letter-spacing: 0;
+            text-align: center;
+        }
+    }
+}

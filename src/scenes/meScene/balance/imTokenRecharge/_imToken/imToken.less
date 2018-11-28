@@ -1,0 +1,106 @@
+@import "../../../../../style/delphyConstStyle";
+.imTokenRechargePage{
+  position: absolute;
+  width:100%;
+  height:100%;
+  padding:0.24rem 0.2rem;
+  box-sizing: border-box;
+  background: @bg_default;
+  p.prompt{
+    color: @bluey_grey;
+    font-size:@font_size12;
+    margin-bottom: 0.32rem;
+  }
+  .imTokenRechargeBtn{
+    background: @input_color;
+    display: block;
+    border:none;
+    width:100%;
+    color: @white;
+    line-height:0.42rem;
+    text-align: center;
+    font-size:0.15rem;
+    border-radius:0.21rem;
+  }
+  .imtokenBalanceInput{
+    position: relative;
+    input{
+      width:1.6rem;
+    }
+    span{
+      position: absolute;
+      right:0.1rem;
+      bottom: 0;
+    }
+  }
+  .imtokenBalanceInput{
+    color: @title_black;
+    background: #f4f4f4;
+    font-size: 0.17rem;
+    overflow: hidden;
+    p{
+      color: @title_black;
+      font-size:0.17rem;
+      width:30%;
+      float: left;
+      padding-left:5%;
+      box-sizing: border-box;
+    }
+  }
+  div:nth-child(1){
+    height:0.42rem;
+    margin-bottom:0.34rem;
+    line-height:0.42rem;
+    input{
+      border:none;
+      background: #f4f4f4;
+    }
+  }
+  div:nth-child(2){
+    margin-bottom: 0.24rem;
+    p{line-height:0.42rem;font-size:0.17rem;color: @title_black;}
+    textarea{
+      line-height:0.30rem;
+      padding:0.06rem 0;
+      width:70%;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      border:none;
+      background: #f4f4f4;
+    }
+  }
+.rechargeWindowPage{
+  display: none;
+  .rechargeWindowCover{
+    position: absolute;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.3);
+    top:0;
+    left:0;
+  }
+  .rechargeWindow {
+    position: absolute;
+    width: 2.5rem;
+    border-radius: 0.08rem;
+    background: #fff;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0.16rem;
+    box-sizing: border-box;
+    p {
+      font-size: 0.15rem;
+      text-align: center;
+      line-height: 0.2rem;
+      padding-bottom: 0.16rem;
+    }
+    pre {
+      text-align: center;
+      font-size: 0.16rem;
+    }
+  }
+}
+}
+textarea::-webkit-input-placeholder{color:#c3c9d1;}

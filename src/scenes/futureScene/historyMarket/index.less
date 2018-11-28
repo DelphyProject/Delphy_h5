@@ -1,0 +1,202 @@
+#historyPage {
+  .single-foo-menu {
+    position: absolute;
+    z-index: 90 !important;
+    width: 100%;
+  }
+
+  .am-navbar-title {
+    color: #fff !important;
+  }
+  .menu-mask {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.4;
+    z-index: 89;
+  }
+  .am-button {
+    border-radius: 0;
+    text-align: left;
+    i {
+      width: 0.08rem;
+      height: 0.08rem;
+      font-size: 0.08rem;
+    }
+  }
+  #historyMenu {
+    position: relative;
+    background-color: inherit;
+    color: #fff;
+    z-index: 99999;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    .menu1,
+    .menu2,
+    .menu3 {
+      padding: 0 0 0 0.1rem;
+      // width: 0.94rem !important;
+      // flex-grow: 1;
+      width: 25%;
+      font-size: 0.14rem !important;
+    }
+    .menu1 {
+      width: 50%;
+      padding: 0 0 0 0.2rem;
+    }
+    .am-picker-popup-item {
+      color: #ff6d1a;
+    }
+  }
+  .historyDataTop {
+    display: flex;
+    align-content: space-between;
+    justify-content: center;
+    height: 59px;
+    line-height: 60px;
+    background: #f8f8f8;
+    .topLeft,
+    .topRight {
+      flex-grow: 1;
+    }
+    .topLeft {
+      padding-left: 0.2rem;
+      font-size: 0.14rem;
+      span {
+        color: #333333;
+        font-size: 0.18rem;
+      }
+      .yellowColor {
+        color: #ff6d1a;
+      }
+    }
+    .topRight {
+      text-align: center;
+    }
+  }
+
+  .historyList {
+    margin-left: 0.2rem;
+    border-bottom: 1px solid #ddd;
+    height: 59px;
+    // line-height: 60px;
+    background: rgba(255, 255, 255, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .listLeft,
+    .listRight {
+      font-size: 0.12rem;
+    }
+    .listLeft {
+      flex-grow: 4;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-content: space-between;
+      .listleft1,
+      .listleft2 {
+        flex-grow: 4;
+        display: flex;
+        flex-direction: column;
+      }
+      .listleft2 {
+        flex-grow: 1;
+        width: 0.5rem;
+        text-align: right;
+        align-items: flex-end;
+        justify-content: center;
+      }
+      .time {
+        font-size: 0.1rem;
+        font-family: 'PingFangSC-Regular';
+        font-weight: 400;
+        color: rgba(178, 178, 178, 1);
+      }
+      .leftTitle {
+        font-size: 0.15rem;
+        font-family: 'PingFangSC-Regular';
+        font-weight: 400;
+        color: rgba(51, 51, 51, 1);
+        height: 0.25rem;
+        line-height: 0.25rem;
+      }
+    }
+    .listRight {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 80px;
+      .rightRe {
+        // width: 34px;
+        text-align: center;
+        border-radius: 4px;
+        color: #fff;
+        padding: 5px 9px;
+      }
+    }
+    .leftimgup,
+    .leftimgdown {
+      width: 0.16rem;
+      height: 0.1rem !important;
+      margin: 0.05rem 0 0.095rem;
+    }
+    .leftimgup {
+      background: url(./../../../img/future/future_up.png) round;
+    }
+    .leftimgdown {
+      background: url(./../../../img/future/future_down.png) round;
+    }
+    .trueColor {
+      background: rgba(0, 189, 154, 1);
+    }
+
+    .falseColor {
+      background: rgba(255, 68, 101, 1);
+    }
+  }
+  //曲线图部分
+  .chartBody {
+    background-color: #fff;
+    .constractResult {
+      height: 0.3rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      border-bottom: 1px solid #e5e5e5;
+      p {
+        font-size: 12px;
+        font-family: PingFangSC-Medium;
+        font-weight: 500;
+        line-height: 17px;
+        margin-left: 0.2rem;
+      }
+      .blue {
+        color: rgba(52, 169, 255, 1);
+      }
+      .pink {
+        color: rgba(232, 73, 185, 1);
+      }
+    }
+  }
+  .am-list-item.am-sub-menu-item-selected {
+    .am-list-content {
+      color: #ff6d1a !important;
+    }
+  }
+  .am-radio.am-radio-checked .am-radio-inner:after {
+    display: block;
+    border-color: #ff6d1a;
+  }
+  @media (-webkit-min-device-pixel-ratio: 2), not all, (min-resolution: 2dppx) {
+    .am-button::before {
+      border: none;
+    }
+  }
+}
+.historyPage {
+  padding-top: 0.45rem;
+}

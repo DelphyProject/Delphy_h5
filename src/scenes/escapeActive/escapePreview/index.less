@@ -1,0 +1,138 @@
+#marketDetailPage1{
+  overflow: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  height: 100%;
+}
+.chickenDinnerPreview {
+  width: 100%;
+  height: inherit;
+  background: url(./../../../img/chicken/banner_dataosha.png) round;
+  display: flex;
+  align-items: center;
+  // justify-content: center;
+  flex-direction: column;
+  color: #fff;
+  .chickenstartDate {
+    flex-direction: column;
+    text-align: center;
+    width: 248px;
+    padding: 9px 0;
+    margin-top: 1.2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    border: 1px solid rgba(57, 57, 57, 1);
+    .Title {
+      height: 25px;
+      font-size: 18px;
+      font-family: 'PingFangSC-Semibold';
+      font-weight: 600;
+      color: rgba(249, 234, 34, 1);
+      line-height: 25px;
+    }
+    .subTitle {
+      height: 16px;
+      font-size: 11px;
+      font-family: 'PingFangSC-Regular';
+      font-weight: 400;
+      color: rgba(255, 255, 255, 1);
+      line-height: 16px;
+    }
+  }
+  .prevList {
+    width: 100%;
+    background: #000;
+    margin: 0 auto;
+    .prevChickenDinnerList {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 30px 20px 20px;
+      padding: 20px;
+      background: linear-gradient(180deg, rgba(96, 57, 126, 1) 0%, rgba(35, 51, 101, 1) 100%);
+      .titleTop {
+        position: absolute;
+        top: -145px;
+        width: 100%;
+        transform: perspective(400px);
+        .subtitleTop {
+          height: 145px;
+          width: 100%;
+          transform-style: preserve-3d;
+          transform-origin: bottom;
+          transform: perspective(400px) rotateX(70deg);
+          background: linear-gradient(180deg, rgba(13, 13, 15, 0) 0%, rgba(96, 57, 126, 1) 100%);
+          box-shadow: 0px 2px 4px 0px rgba(255, 255, 255, 0.03);
+        }
+      }
+      .listTitle {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        width: 100%;
+        .listTitleLeft {
+          flex-grow: 1;
+          width: 260px;
+          height: 42px;
+          font-size: 15px;
+          font-family: 'PingFangSC-Medium';
+          font-weight: 500;
+          color: rgba(211, 179, 241, 1);
+          line-height: 21px;
+        }
+        .listTitleRight {
+          flex-grow: 1;
+          display: flex;
+          justify-content: flex-end;
+          .icHistory{
+            color: #fff;
+          }
+        }
+      }
+      .thisList {
+        display: flex;
+        width: 100%;
+        margin: 20px 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .dataList {
+          width: 100%;
+          padding: 7px 0px 7px 10px;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          align-items: center;
+          justify-content: center;
+          img {
+            width: 28px;
+            height: 28px;
+            border: 1px solid rgba(255, 255, 255, 1);
+            border-radius: 50%;
+          }
+          .personName {
+            flex-grow: 5;
+            display: flex;
+            margin-left: 20px;
+            align-items: center;
+            justify-content: flex-start;
+            font-size: 15px;
+            font-family: 'PingFangSC-Regular';
+            font-weight: 400;
+            color: rgba(255, 255, 255, 1);
+          }
+        }
+        .dataListColor {
+          background: rgba(255, 255, 255, 0.08);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+@import '../../../../style/delphyConstStyle.less';
+
+.TextAreaMarket{
+    background-color: @bg_default;
+    .reason{
+        font-size: 0.18rem;
+        color:@title_black;
+        margin-top: 0.25rem;
+        margin-left: @margin20;
+    }
+    .line{
+        height: 0.01rem;
+        background-color: @pale_grey;
+        margin:0 @margin20 0 @margin20;
+    }
+    .content_out{
+        display: flex;
+        flex: 1;
+        .content{
+            width: 100%;
+            margin:@margin12 @margin20 @margin24 @margin20 ;
+            min-height: 0.86rem;
+            border:none;
+            background: #fdfdfd;
+            font-size:0.15rem;
+            padding: 0.1rem;
+            -webkit-appearance: none;
+            border-top:1px solid #eee;
+            border-bottom:1px solid #eee;
+        }
+    }
+    .submit_out{
+        padding:0 0.18rem;
+        margin-top: 0.7rem;
+        .inputBtn{
+            width:100%;
+            height: 0.46rem;
+            background-image: linear-gradient(90deg, #FF9266 0%, #FB724F 100%);
+            color:@white;
+            border:none;
+            border-radius: 0.02rem;
+            font-size: @font_size15;
+            font-weight: 500;
+            margin:0 auto;
+        }
+    }
+}

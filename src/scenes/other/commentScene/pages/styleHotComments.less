@@ -1,0 +1,95 @@
+@import "../../../../style/delphyConstStyle.less";
+.HotComments {
+  padding:@padding12 0 @padding12;
+  // background:;
+  position: relative;
+  .commentState{
+    position: absolute;
+    padding:0 0.24rem;
+    background: @bg_default;
+    top:-0.12rem;
+    left:50%;
+    transform: translate(-50%,-50%);
+  }
+  .Comments{
+    padding-top:@padding15;
+    dl{
+      display: flex;
+      justify-content: flex-start;
+      dd{
+        width:15%;
+        img{
+          width: 0.34rem;
+          height:0.34rem;
+          border-radius:50%;
+        }
+      }
+      dt{
+        width:85%;
+        hr{
+          background: @pale_grey;
+          height: 1px;
+          border:none;
+        }
+        h4{
+          font-weight: 500;
+          span {
+            color: @bluey_grey;
+          }
+          }
+        i{
+          color: @bluey_grey;
+          font-size:@font_size12;
+          line-height: @line_height20;
+        }
+        p{
+          margin-top:@margin8;
+          font-size:@font_size14 ;
+          line-height:@line_height20;
+          font-weight: 500;
+          pre{
+            float: left;
+            span{
+              color: #2f6b9b;
+            }
+          }
+        }
+        ul{
+          display: flex;
+          justify-content:flex-start;
+          li{
+            margin-right: @margin20;
+            line-height: @line_height40;
+            color: #8893a4;
+            span{
+              display: inline-block;
+              margin-right:@margin4;
+              font-size:@font_size16;
+            }
+            span.font-unlike{
+              color:#8893a4;
+            }
+            span.font-like{
+              color: #ffaf52;
+            }
+            
+            pre{
+              display: inline-block;
+              font-size:@font_size12;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+.dividingLine{
+  height: 0.15rem;
+  background: #f1f1f1;
+}
+.hotR{
+  border-radius:0 0 0 0;
+  padding-top:24px;
+  margin-bottom:0;
+}

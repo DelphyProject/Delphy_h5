@@ -1,0 +1,309 @@
+.topicBox {
+  display: flex;
+  flex-direction: column;
+
+  .topicItem {
+    margin-bottom: 0.15rem;
+    background-color: #fff;
+    border-radius: 0.06rem;
+    margin: 0.1rem;
+    .itemTop {
+      border-top-left-radius:0.06rem;
+      border-top-right-radius:0.06rem;
+      position: relative;
+      .itemTopBox {
+        width: 100%;
+        height: 2.2rem;
+        position: relative;
+        .wraperBox {
+          top: 0;
+          left: 0;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          border-top-left-radius:0.06rem;
+          border-top-right-radius:0.06rem;
+          background-image: linear-gradient(
+            0deg,
+            #151412 0%,
+            rgba(14, 13, 12, 0.8) 22%,
+            rgba(0, 0, 0, 0.04) 70%
+          );
+        }
+        .favotate {
+          position: absolute;
+          top: 0.1rem;
+          right: 0.1rem;
+          background: rgba(255, 255, 255, 0.5);
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          div {
+            background: rgba(255, 255, 255, 1);
+            width: 22px;
+            height: 22px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            text-align: center;
+            i {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              font-size: 18px;
+            }
+          }
+        }
+        .topicBgImg {
+          width: 100%;
+          height: 2.2rem;
+          border-top-left-radius:0.06rem;
+          border-top-right-radius:0.06rem;
+        }
+        .topicImgMidTitle {
+          //font-family: PingFangSC-Semibold;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          font-size: 0.18rem;
+          color: #ffffff;
+          letter-spacing: 0;
+          word-break:break-all;
+          padding-left: 0.11rem;
+          padding-right: 0.11rem;
+          position: absolute;
+          bottom: 0.34rem;
+          line-height: 0.225rem;
+          .winAndNotLose {
+            font-size: 0.12rem;
+            margin-right: 0.05rem;
+            padding: 0 0.051rem;
+            border-radius: 0px 6px 0px 6px;
+            line-height: 0.2rem;
+            height: 0.19rem;
+            display: inline-block;
+            background: linear-gradient(
+              180deg,
+              rgba(255, 133, 71, 1) 0%,
+              rgba(255, 101, 60, 1) 100%
+            );
+          }
+          .winnerTakeAll {
+            font-size: 0.12rem;
+            margin-right: 0.05rem;
+            padding: 0 0.051rem;
+            border-radius: 0px 6px 0px 6px;
+            line-height: 0.2rem;
+            height: 0.19rem;
+            display: inline-block;
+            background: linear-gradient(
+              180deg,
+              rgba(163, 87, 251, 1) 0%,
+              rgba(98, 24, 211, 1) 100%
+            );
+          }
+        }
+        .topicImgBom {
+          width: 3.27rem;
+          height: 0.15rem;
+          position: absolute;
+          bottom: 0.1rem;
+          left: 0;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          padding-left: 0.12rem;
+          padding-right: 0.12rem;
+          .left,
+          .right {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            height: 0.15rem;
+            .img1 {
+              width: 0.15rem;
+              height: 0.15rem;
+              margin-right: 0.04rem;
+              color: rgba(255, 255, 255, 0.6);
+            }
+            .img2 {
+              width: 0.14rem;
+              color: rgba(255, 255, 255, 0.6);
+              margin-right: 0.04rem;
+            }
+            span {
+              font-family: PingFangSC-Regular;
+              font-size: 0.13rem;
+              font-weight:400;
+              color:rgba(255,255,255,0.6);
+              line-height:18px;
+              letter-spacing: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  .black18 {
+    //font-family: PingFangSC-Semibold;
+    font-size: 0.18rem;
+    color: #141517;
+    letter-spacing: 0;
+  }
+  .black15 {
+    font-size: 0.15rem;
+    color: #111111;
+    letter-spacing: 0;
+  }
+  .gray13 {
+    font-size: 0.13rem;
+    color: #666666;
+  }
+  .winnertakeallImg {
+    height: 0.2rem !important;
+    width: 0.2rem !important;
+  }
+  .itemTopMid {
+    margin-top: 0.18rem;
+    padding-left: 0.1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 0.18rem;
+    img {
+      height: 0.53rem;
+      width: 0.18rem;
+      margin-right: 0.08rem;
+    }
+    .rightWord {
+      height: 0.61rem;
+      flex-direction: column;
+      display: flex;
+      justify-content: space-between;
+      .title1 {
+        font-size: 0.16rem;
+        font-weight: 600;
+        .allowTop {
+          width: 0.1rem;
+          margin: 0 0.035rem;
+          display: inline-block;
+          height: 0.12rem;
+          background: url('./../../img/find/allowtop.png') round;
+        }
+      }
+    }
+    .rightWord1 {
+      height: 0.5rem !important;
+    }
+  }
+  .bgSingle{
+    background:rgba(255,250,248,1);
+  }
+  .bgDouble{
+    background:rgba(255,255,255,1);
+  }
+  .lastItemBorder{
+    border-bottom-left-radius:0.06rem;
+    border-bottom-right-radius:0.06rem;
+  }
+  .itemBomBox {
+    border-radius: 0.06rem;
+    .listContentItemBox{
+      display: flex;
+      flex-direction: column;
+      .am-progress-outer{
+        background-color: #00000000;
+      }
+      .am-progress-bar{
+        border-left: none;
+        border-right: none;
+        float: right;
+      }
+      .listContentItem{
+        padding-right: 10px;
+        padding-left: 10px;
+        height: 40px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        .listContentItemLeft{
+          height: 40px;
+          display: flex;
+          align-items: center;
+          flex-direction: row;
+          .num{
+            margin-right: 15px;
+            font-size:13px;
+            text-align: center;
+            font-family:PingFangSC-Medium;
+            font-weight:500;
+            color:rgba(255,255,255,1);
+            line-height:18px;
+            border-radius: 9px;
+            width:18px;
+            height:18px;
+            background:linear-gradient(135deg,rgba(255,148,76,1) 0%,rgba(255,110,74,1) 100%);
+          }
+          .title{
+            font-size:15px;
+            font-family:PingFangSC-Regular;
+            font-weight:400;
+            color:rgba(20,21,23,1);
+            line-height:21px;
+          }
+        }
+      }
+    }
+    .bomItemBg1 {
+      background: #fffaf8;
+    }
+    .bomItemBg2 {
+      background: #ffffff;
+    }
+    .bomItem {
+      height: 0.4rem;
+      flex-direction: row;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 0.18rem;
+      padding-right: 0.18rem;
+      .left {
+        flex-direction: row;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        .img4Font {
+          width: 0.18rem;
+          height: 0.18rem;
+          margin-right: 0.13rem;
+          background-image: linear-gradient(-135deg, #ff944c 0%, #ff6e4a 100%);
+          // font-family: 'PingFangSC-Medium';
+          font-size: 0.13rem;
+          color: #ffffff;
+          letter-spacing: 0;
+          text-align: center;
+          line-height: 0.18rem;
+          color: #fff;
+          border-radius: 50%;
+        }
+      }
+      .right {
+        flex-direction: row;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        .img5 {
+          margin-right: 0.05rem;
+          color: #aeaeae;
+        }
+      }
+    }
+  }
+}

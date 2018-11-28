@@ -1,0 +1,199 @@
+.find-invite {
+  position: fixed;
+  top: 1.2rem;
+  right: 0.05rem;
+  z-index: 9;
+  // right: 0.1rem;
+  img {
+    height: 0.74rem;
+  }
+  .close-icon {
+    position: absolute;
+    top: -0.1rem;
+    right: 0;
+    width: 0.2rem;
+    height: 0.3rem;
+  }
+}
+.findPageNew {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 50px;
+
+  background: hsl(0, 0%, 98%);
+  .downloadLink {
+    padding: 0.05rem 0;
+    background-color: #fff;
+    display: inline-block;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    .imgDown {
+      margin: 0 auto;
+      width: 3.65rem;
+      height: 0.5rem;
+    }
+  }
+  .downloadApp {
+    //background: #FFF2E9;
+    background: url('../../../img/arrow-right.png') no-repeat 3.49rem center #fff2e9;
+    background-size: 0.05rem 0.08rem;
+    font-size: 0.14rem;
+    color: #ff4a47;
+    line-height: 0.5rem;
+    padding-left: 0.15rem;
+  }
+  .topics {
+    .showTopicTitle {
+      width: 100%;
+      height: 0.1rem;
+    }
+    .topicItemTitle {
+      background: #fff;
+      width: 100%;
+      box-shadow: inset 0 0 0 0 #f1f1f1;
+      font-size: 0.16rem;
+      color: #141517;
+      letter-spacing: 0;
+      ul {
+        display: flex;
+        justify-content: space-around;
+        li {
+          padding: 0.12rem 0;
+          color: #7a7a7a;
+          position: relative;
+          font-size: 0.14rem;
+          line-height: 0.2rem;
+          span {
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            background-image: linear-gradient(-90deg, #fb724f 0%, #ff9266 100%);
+            width: 0.3rem;
+            height: 0.03rem;
+            transform: translate(-50%, 0);
+            border-radius: 3px;
+          }
+        }
+        li.current {
+          color: #ff6d1a;
+        }
+      }
+    }
+    .topicItemTitleFiexd {
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 100;
+    }
+    .topicOutBox {
+      margin-bottom: 0.5rem !important;
+    }
+    .noMarket {
+      display: flex;
+      flex: 1;
+      background-color: #fff;
+      padding-bottom: 0.3rem;
+      .notForecast {
+        background-color: #fff;
+      }
+    }
+  }
+}
+.numberVerPage {
+  .newPlayVer {
+    margin: 0 0.125rem;
+  }
+  .numberVer {
+    .imgDiv {
+      height: 0.65rem;
+      .thisImg {
+        display: flex;
+        -ms-flex-align: center;
+        position: relative;
+        bottom: 0.8rem;
+        width: 50%;
+        margin: 0 auto;
+      }
+    }
+    h4 {
+      font-size: 0.16rem;
+      text-align: center;
+      font-weight: 500;
+      width: 100%;
+      line-height: 0.3rem;
+      padding-bottom: 0.1rem;
+    }
+    .newPlayInstr {
+      padding: 0 0.125rem;
+      text-align: left;
+      height: 0.45rem;
+      font-size: 0.14rem;
+    }
+    .newPlayBottom {
+      margin: 0.15rem 0;
+      display: flex;
+      flex-direction: row;
+      flex: 1;
+      justify-content: center;
+      align-items: center;
+      #thisCheckbox {
+        width: 0.17rem;
+        height: 0.17rem;
+      }
+      .newPlayLabel {
+        color: rgba(151, 151, 151, 1);
+        margin-right: 0.28rem;
+        font-size: 0.12rem;
+      }
+      .notShowButton {
+        width: 0.7rem;
+        font-size: 0.14rem;
+        font-weight: 500;
+        height: 28px;
+        color: rgba(20, 21, 23, 1);
+        line-height: 28px;
+        border-radius: 17px;
+        opacity: 1;
+        border: 1px solid rgba(51, 51, 51, 0.3);
+        background: #fff;
+        text-align: center;
+      }
+      .am-list-item {
+        padding-left: 0 !important;
+      }
+      .am-list-thumb {
+        margin-right: 0 !important;
+      }
+      .am-list-item.am-list-item-active{
+        background-color: #fff !important;
+      }
+      .am-list-item {
+        .am-list-line {
+          padding-right: 5px !important;
+        }
+      }
+      .am-checkbox-inner {
+        border-radius: 2px !important;
+      }
+      .am-checkbox.am-checkbox-checked {
+        .am-checkbox-inner {
+          border-color: #ff944c !important;
+          background: linear-gradient(135deg, #ff944c, #ff6e4a) !important;
+          ;
+        }
+      }
+    }
+    .thislineNotMar {
+      height: 0px !important;
+      border-top: 1px dashed rgba(151, 151, 151, 1) !important;
+      margin: 0 0.1rem !important;
+    }
+  }
+}

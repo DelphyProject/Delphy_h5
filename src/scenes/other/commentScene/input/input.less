@@ -1,0 +1,163 @@
+@import "../../../../style/delphyConstStyle.less";
+
+#replyInputOut{
+
+.marketInputshrink{
+  width: 100%;
+  padding:@padding8 0.16rem 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  p{
+    float: left;
+    line-height: 24px;
+    font-weight:@font_weight;
+    font-size:0.14rem;
+  }
+  div{
+    border-radius:15px;
+    span{
+      color: #434dff;
+      font-size:0.12rem;
+      margin-right:3px;
+    }
+    float: right;
+    border:1px solid #d9dbdd;
+    font-size:0.11rem;
+    padding:@padding4 @padding15;
+  }
+}
+.InputShrink{
+  width:100%;
+  height:0.5rem;
+  box-shadow: 0 -4px 8px 0 rgba(67, 77, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.9);
+  position: fixed;
+  bottom:0;
+  left:0;
+  padding:0.08rem 0.12rem;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  p{
+    line-height:0.34rem;
+    height:0.34rem;
+    background: #f4f4f4;
+    border:1px solid #ddd;
+    border-radius:3px;
+    padding-left:0.12rem;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #8893a4;
+  }
+}
+
+.InputExpand{
+  position: absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:1000;
+.InputExpandMask{
+  position: absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.4);
+}
+  .InputExpandPage{
+    position: absolute;
+    bottom:0;
+    background: #fff;
+    width:100%;
+    .InputPageTop{
+      display: flex;
+      justify-content:space-between;
+      align-items: center;
+      line-height: @line_height50;
+      padding:0 @padding12;
+      z-index: 100;
+      position: relative;
+  
+    
+      .reCancel{
+       font-size: 0.15rem;
+   color: #666666;
+      }
+      .reLaunch{
+        color: #FF6D1A ;
+          font-size: 0.15rem;
+      }
+    }
+     .commentInputPageBot{
+      position: relative;
+      background: #fff;
+      z-index: 99;
+      textarea::-moz-placeholder{
+font-size: 0.14rem;
+color: #AAAAAA;
+      }
+      　::-webkit-input-placeholder{
+        font-size: 0.14rem;
+color: #AAAAAA;
+}
+      :-ms-input-placeholder{
+        font-size: 0.14rem;
+color: #AAAAAA;
+}
+      textarea{
+ 
+        height: 1.5rem;
+        padding:0.12rem;
+        border:none;
+        box-sizing: border-box;
+        width:100%;
+        border-radius:3px;
+        background:#fff;
+        -webkit-appearance: none;
+        .defaultText{
+          font-size: 0.14rem;
+color: #AAAAAA;
+        }
+      }
+      .selectOut{
+ border-top: 0.01rem solid #eee;
+        height: 0.55rem;
+        padding: 0.04rem 0.15rem 0.10rem;
+        p{
+font-size: 0.14rem;
+color: #141517;
+margin-bottom: 0.1rem;
+        }
+        .selectBox{
+          flex-direction: row;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          span{
+     width: 0.6rem;
+              height: 0.26rem;
+              font-size: 0.13rem;
+              line-height:0.26rem;
+              letter-spacing:0.0016rem;
+              margin-right: 0.11rem;
+              text-align: center;
+border-radius: 0.01rem;
+          }
+           
+        }
+
+      }
+    }
+  }
+}
+body {
+  &.full-body{
+    position: fixed !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+}

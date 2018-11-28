@@ -1,0 +1,467 @@
+.topicBoxDetail {
+  display: flex;
+  flex-direction: column;
+
+  .detailTop {
+    .clickWindow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 999;
+      .clickWindowCover {
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+      }
+      .clickWindowIn {
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -60%);
+        left: 15%;
+        padding: 0.2rem;
+        width: 70%;
+        background: #fff;
+        border-radius: 0.05rem;
+        box-sizing: border-box;
+        p {
+          font-size: 0.2rem;
+        }
+        p:nth-child(1) {
+          padding-bottom: 0.1rem;
+        }
+        p:nth-child(3) {
+          padding-top: 0.1rem;
+          text-align: center;
+        }
+      }
+    }
+    .collectImgTopic {
+      position: absolute !important;
+      top: 0.1rem;
+      right: 0.1rem;
+      width: 0.3rem;
+      height: 0.3rem;
+    }
+    .futureBackground {
+      background-color: #f5f5f5;
+    }
+    .normalBackground {
+      background-color: #ffffff;
+    }
+    .selectRateView {
+      box-sizing: border-box;
+      width: 100%;
+      height: 0.45rem;
+      background: #fff;
+      margin-top: 0.1rem;
+      padding: 0 0.16rem;
+      p{
+        font-size:0.14rem;
+        font-family:PingFangSC-Regular;
+        font-weight:400;
+        color:rgba(102,102,102,1);
+        line-height:0.2rem;
+      }
+      .rate{
+        position: relative;
+        width:150px;
+        height: 0.36rem;
+        margin: 0 0.1rem;
+        background:rgba(245,245,245,1);
+        border-radius:4px;
+        box-sizing: border-box;
+        border:1px solid RGBA(231, 233, 237, 1);
+        select {
+          z-index: 1;
+          width: 1.8rem;
+          height: 0.36rem;
+          padding: 0 0.1rem;
+          box-sizing: border-box;
+        //  /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
+          border: none;
+        //   /*很关键：将默认的select选择框样式清除*/
+          appearance:none;
+          background: none;
+        //   -moz-appearance:none;
+        //   -webkit-appearance:none;
+        //   /*在选择框的最右侧中间显示小箭头图片*/
+          // background: url(../../../../img/future/eth.png) no-repeat 220px center transparent;
+        //   /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+        //   padding-right: 14px;
+        }
+         /*清除IE的默认选择框样式清除，隐藏下拉箭头*/
+        select::-ms-expand {display: none;}
+        p{
+          font-size:0.14rem;
+          padding: 0 0.1rem;
+          font-family:PingFangSC-Regular;
+          font-weight:400;
+          color:rgba(51,51,51,1);
+        }
+        .triangle{
+          z-index: 0;
+          right: 0;
+          top: 0.1rem;
+          position: absolute;
+          font-size: 0.1rem;
+        }
+      }
+      .trend {
+        margin-left: 0.2rem;
+        img{
+          width: 0.16rem;
+          height: 0.08rem;
+        }
+        p{
+          margin-left: 0.05rem;
+          height:16px;
+          font-size:0.11rem;
+          font-family:PingFangSC-Medium;
+          font-weight:500;
+          // color:rgba(0,189,154,1);
+          line-height:0.16rem;
+        }
+      }
+    }
+    .joinNumView{
+      height: 0.4rem;
+      margin: 0 0.16rem;
+      p{
+        font-size:0.14rem;
+        font-family:PingFangSC-Regular;
+        font-weight:400;
+        color:rgba(153,153,153,1);
+        line-height:0.3rem;
+      }
+    }
+    .topicItem {
+      // margin-bottom: 0.15rem;
+      .itemTop {
+        // margin-bottom: 0.15rem;
+        position: relative;
+        .itemTopBox {
+          width: 100%;
+          height: 2.2rem;
+          position: relative;
+          .topicBgImg {
+            width: 100%;
+            height: 2.2rem;
+          }
+          .wraperBox {
+            top: 0;
+            left: 0;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(
+              0deg,
+              #151412 0%,
+              rgba(14, 13, 12, 0.8) 22%,
+              rgba(0, 0, 0, 0.04) 70%
+            );
+            .topicImgMidTitle {
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              //font-family: PingFangSC-Semibold;
+              font-size: 0.18rem;
+              color: #ffffff;
+              letter-spacing: 0;
+              margin: 0 0.11rem;
+              position: absolute;
+              bottom: 0.34rem;
+              line-height: 0.225rem;
+              word-break:break-all;
+              .winAndNotLose {
+                font-size: 0.12rem;
+                margin-right: 0.05rem;
+                padding: 0 0.051rem;
+                border-radius: 0px 6px 0px 6px;
+                line-height: 0.2rem;
+                height: 0.19rem;
+                display: inline-block;
+                background: linear-gradient(
+                  180deg,
+                  rgba(255, 133, 71, 1) 0%,
+                  rgba(255, 101, 60, 1) 100%
+                );
+              }
+              .winnerTakeAll {
+                font-size: 0.12rem;
+                margin-right: 0.05rem;
+                padding: 0 0.051rem;
+                border-radius: 0px 6px 0px 6px;
+                line-height: 0.2rem;
+                height: 0.19rem;
+                display: inline-block;
+                background: linear-gradient(
+                  180deg,
+                  rgba(163, 87, 251, 1) 0%,
+                  rgba(98, 24, 211, 1) 100%
+                );
+              }
+            }
+            .topicImgBom {
+              width: 100%;
+              height: 0.15rem;
+              position: absolute;
+              bottom: 0.1rem;
+              left: 0;
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: center;
+              padding-left: 0.12rem;
+              padding-right: 0.12rem;
+              box-sizing: border-box;
+              .left,
+              .right {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                height: 0.15rem;
+                .img1 {
+                  margin-right: 0.04rem;
+                  color: rgba(255, 255, 255, 0.6);
+                }
+                .img2 {
+                  margin-right: 0.04rem;
+                  color: rgba(255, 255, 255, 0.6);
+                }
+                span {
+                  opacity: 0.6;
+                  // font-family: PingFangSC-Regular;
+                  font-size: 0.13rem;
+                  color: #ffffff;
+                  letter-spacing: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .favotate {
+    position: absolute;
+    top: 0.1rem;
+    right: 0.1rem;
+    background: rgba(255, 255, 255, 0.5);
+    width: 0.3rem;
+    height: 0.3rem;
+    border-radius: 50%;
+    div {
+      background: rgba(255, 255, 255, 1);
+      width: 0.22rem;
+      height: 0.22rem;
+      border-radius: 50%;
+      margin-top: 0.04rem;
+      margin-left: 0.04rem;
+      text-align: center;
+      line-height: 0.22rem;
+      i {
+        font-size: 0.18rem;
+      }
+    }
+  }
+  .black18 {
+    // font-family: PingFangSC-Semibold;
+    font-size: 0.18rem;
+    color: #141517;
+    letter-spacing: 0;
+    font-weight: 600;
+  }
+  .black15 {
+    // font-family: PingFangSC-Medium;
+    font-size: 15px;
+    color: #111111;
+    letter-spacing: 0;
+  }
+  .gray13 {
+    //  font-family: PingFangSC-Regular;
+    font-size: 0.13rem;
+    color: #666666;
+  }
+
+  .winnertakeallImg {
+    height: 0.2rem !important;
+    width: 0.2rem !important;
+    bottom: 0.2rem;
+    position: relative;
+  }
+  .itemTopMid {
+    padding-top: 0.15rem;
+    align-items: center;
+    position: relative;
+    button {
+      margin-left: 0.08rem;
+      border: none;
+      width: 0.56rem;
+      height: 0.3rem;
+      background-color: #fff;
+      border: 0.02rem solid rgba(255, 112, 74, 0.5);
+      color: #ff714a;
+      position: absolute;
+      right: 0.15rem;
+      bottom: -0.06rem;
+    }
+    padding-left: 0.18rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 0.13rem;
+    img {
+      height: 0.53rem;
+      width: 0.18rem;
+      margin-right: 0.08rem;
+    }
+    .rightWord {
+      height: 0.61rem;
+      flex-direction: column;
+      display: flex;
+      justify-content: space-between;
+      .title2 {
+        font-size: 0.16rem;
+        font-weight: 600;
+        .allowTop {
+          width: 0.1rem;
+          margin: 0 0.05rem;
+          display: inline-block;
+          height: 0.12rem;
+          background: url('./../../../../img/find/allowtop.png') round;
+        }
+      }
+    }
+    .rightWord1 {
+      height: 0.5rem !important;
+    }
+  }
+  .itemBomBox {
+    .bomItemBg1 {
+      background: #fffaf8;
+    }
+    .bomItemBg2 {
+      background: #ffffff;
+    }
+    .bomItem {
+      height: 0.4rem;
+      flex-direction: row;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 0.18rem;
+      padding-right: 0.18rem;
+      .left {
+        flex-direction: row;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        .img4Font {
+          width: 0.18rem;
+          height: 0.18rem;
+          margin-right: 0.13rem;
+          background-image: linear-gradient(-135deg, #ff944c 0%, #ff6e4a 100%);
+          // font-family: 'PingFangSC-Medium';
+          font-size: 0.13rem;
+          color: #ffffff;
+          letter-spacing: 0;
+          text-align: center;
+          line-height: 0.18rem;
+          color: #fff;
+          border-radius: 50%;
+        }
+      }
+      .right {
+        flex-direction: row;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        .img5 {
+          width: 0.1rem;
+          height: 0.14rem;
+          margin-right: 0.08rem;
+        }
+      }
+    }
+  }
+}
+.line {
+  height: 0.01rem;
+  background-color: #f1f1f1;
+  width: 100%;
+}
+.loadMore {
+  background-color: #fff;
+  height: 0.4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .moreText {
+    margin-right: 0.05rem;
+    // font-family: PingFangSC-Regular;
+    font-size: 0.14rem;
+    color: #39A3FE;
+    letter-spacing: 0;
+    text-align: right;
+  }
+  .downArrow {
+    font-size: 0.1rem;
+    color: #39A3FE;
+  }
+  .upArrow {
+    font-size: 0.1rem;
+    color: #39A3FE;
+    transform: rotate(180deg);
+  }
+}
+.hideArea {
+  .desText {
+    padding: 0.1rem 0.1rem 0 0.1rem;
+    font-family: 'PingFangSC-Regular';
+    font-size: 0.15rem;
+    font-weight:400;
+    color:rgba(20,21,23,1);
+    line-height:24px;
+  }
+  .itemBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 0.1rem;
+    margin-right: 0.1rem;
+    margin-top: 0.1rem;
+    padding-left: 0.075rem;
+    padding-right: 0.3rem;
+    padding-top: 0.26rem;
+    padding-bottom: 0.2rem;
+    background: #fafafa;
+    height: 0.42rem;
+    .item {
+      text-align: center;
+      .text2 {
+        // font-family: 'PingFangSC-Medium';
+        font-size: 14px;
+        color: #111111;
+        text-align: center;
+        margin-bottom: 0.05rem;
+      }
+      .text3 {
+        //   font-family: 'PingFangSC-Medium';
+        font-size: 12px;
+        color: #666666;
+        text-align: center;
+      }
+    }
+  }
+}

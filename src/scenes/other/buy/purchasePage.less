@@ -1,0 +1,304 @@
+@import "../../../style/delphyConstStyle";
+.sellOuter{
+  margin:0 0.16rem;
+  .rechargeBtn{
+    width:70%;
+    text-align: right;
+    span{
+      float: right;
+    }
+    p{
+      float: right;
+      width:0.42rem;
+      height:0.20rem;
+      border-radius:0.2rem;
+      border:0.5px solid #545dfe;
+      text-align: center;
+      margin-top:0.10rem;
+      line-height:0.22rem;
+      margin-left:0.05rem;
+      color: #545dfe;
+      font-size:@font_size12;
+    }
+  }
+  position: relative;
+  .sellNumPage1{
+    height:1px;
+    overflow: hidden;
+  }
+  .sellNumPage{
+    hr{
+      border:none;
+      height:1px;
+      background: #e7e9ed;
+    }
+  }
+  .lineNotMarSell{
+    position: absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+  }
+  .choiceFloatPage{
+    line-height: 0.22rem;
+    padding:0.12rem 0;
+    .choiceFloat{
+      float: right;
+      pre {
+        float: left;
+        border:none;
+        background: #e7e9ed;
+        width:0.22rem;
+        height:0.22rem;
+        border-radius:50%;
+        font-size:0.20rem;
+        text-align: center;
+        line-height: 0.24rem;
+      }
+      div{
+        float: left;
+        margin:0 0.1rem 0 0.07rem;
+        p{
+          float: left;
+
+          min-width:0.2rem;
+          text-align: center;
+        }
+      }
+
+    }
+  }
+  .sellNumBox{
+    .balance{
+      font-weight:@font_weight;
+      font-size:0.14rem;
+    }
+    .sellNumBoxInp{
+      margin:0.08rem 0;
+      line-height:0.28rem;
+      background: #f4f4f4;
+      border-radius: 3px;
+      padding:0 0.05rem;
+      width:1.1rem;
+      text-align: right;
+      input{
+        background: #f4f4f4;
+        width:0.7rem;
+      }
+    }
+    line-height:0.44rem;
+    display: flex;
+    flex:1;
+    justify-content: space-between;
+    align-items: center;
+    input, .num13{
+      width: 1.06rem;
+      border: none;
+      height: 0.28rem;
+      text-align: right;
+      padding-right: @padding8;
+      font-size: @font_size14;
+      color:@title_black;
+    }
+
+  }
+
+}
+.outBox{
+  padding-top: @padding34;
+  padding-left: @padding12;
+  padding-right: @padding12;
+  padding-bottom: 0.6rem;
+  line-height:0.15rem;
+  font-size:0.12rem;
+  color: #8893a4;
+}
+.bomOut{
+  height: 0.49rem;
+  padding-left: 0.16rem;
+  padding-right: 0.16rem;
+  box-sizing: border-box;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255,255,255,0.9);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index:99;
+  width:100%;
+  box-shadow: 0 -4px 8px 0 rgba(0, 0, 0, 0.05);
+  .totalMoney{
+    font-weight: @font_weight;
+  }
+  .sellName{
+    width: 0.96rem;
+    height: 0.33rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.02rem 0.03rem 0 rgba(84, 93, 254, 0.35);
+    color:@white;
+    font-size: @font_size15;
+    line-height: @line_height33;
+    text-align: center;
+  }
+  .sellNameSell{
+    width: 0.96rem;
+    height: 0.33rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 3px 0 rgba(249, 75, 75, 0.35);
+    color:@white;
+    font-size: @font_size15;
+    line-height: @line_height33;
+    text-align: center;
+  }
+}
+.numTitle{
+  padding-top: @padding12;
+  padding-bottom: @padding4;
+  font-size: 0.14rem;
+  font-style: normal;
+  color: #212529;
+  font-weight: @font_weight;
+}
+.slideBox{
+  margin-bottom:0.2rem;
+  padding:0 0.2rem;
+
+  .num1{
+    text-align: center;
+  }
+  .num3{
+    text-align: left;
+  }
+  .num4{
+    text-align: right;
+  }
+  .num5{
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+  }
+}
+
+#topBox{
+  padding:0.16rem;
+  &>h4{
+    font-weight: 700;
+    font-size: @font_size17;
+  }
+  h5.title2{
+    color:@title_black;
+    font-size: @font_size15;
+    margin-top: @margin12;
+    margin-bottom: @margin12;
+    font-weight: 700;
+  }
+  ul{
+
+    .listItems{
+      display:flex;
+      flex:1;
+      justify-content: space-between;
+      position: relative;
+      span{
+        font-size: @font_size12;
+        line-height: @line_height36;
+        color:@bluey_grey;
+      }
+      p{
+        position: absolute;
+        left:0;
+        bottom:0;
+        width:100%;
+      }
+    }
+  }
+}
+.lineCrude{
+  height:0.1rem;
+  width:100%;
+  background: #e7e9ed;
+}
+.icoRotate{
+  transform: rotate(180deg);
+}
+.sellDown{
+  position: relative;
+  .arrow_down_outer{
+    .arrow_down{
+      line-height:0.29rem;
+      text-align: center;
+      color: #8893a4;
+    }
+    position: absolute;
+    left:50%;
+    z-index: 10;
+    margin-left:-0.145rem;
+    bottom:-0.22rem;
+    width: 0.29rem;
+    height: 0.29rem;
+    border-radius: 50%;
+    background-color:  @white;
+    box-shadow: 0 0.01rem 0.04rem 0 rgba(0, 0, 0, 0.08);
+  }
+}
+.buyGuidePage{
+  z-index: 100000;
+  position: absolute;
+  width:100%;
+  height:100%;
+  .buyCover{
+    position: fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.4);
+  }
+  .buyGuide{
+    position: absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    box-sizing: border-box;
+    .buyGuideImg{
+      width:100%;
+      position: absolute;
+      bottom:14%;
+      left:0;
+    }
+    .buyGuideInner{
+      background: #4950d2;
+      box-sizing: border-box;
+      padding:0.16rem;
+      border-radius: 0.06rem;
+      text-align: center;
+      position: absolute;
+      width:84%;
+      left:8%;
+      bottom:46%;
+      p{
+        color: #fff;
+        margin-bottom:0.16rem;
+        font-size: 0.17rem;
+      }
+      input{
+        background: none;
+        border:1px solid #9196e4;
+        color: #fff;
+        padding:0.05rem 0.1rem;
+        border-radius:0.06rem;
+        font-size:0.12rem;
+      }
+      img{
+        position: absolute;
+        width:0.48rem;
+        bottom:-0.1rem;
+        left:50%;
+        transform:rotate(180deg) translate(50%,0);
+      }
+    }
+  }
+}

@@ -1,0 +1,129 @@
+html {
+    // background-image: url(./../../../img/chicken/ic_info.png);
+    // background-color: #F5F5F5;
+
+}
+
+
+
+.body-warp {
+  background-color: #F5F5F5;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+  .endDel{
+    display: flex;
+    width: 100%;
+    background: url(./../../../img/chicken/bg_end.png)  no-repeat;
+    background-size:  100% ;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    color: #fff;
+    .endTop,.endMiddle{
+      margin: 0 0.255rem;
+    }
+    .endTop{
+      display: flex;
+      overflow: hidden;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: center;
+      background: url(./../../../img/chicken/img_end_data_display.png) no-repeat center;
+      height: 1.775rem;
+      margin: .175rem 0;
+      .endtop_top{
+        flex-grow: 1;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        padding-top: .35rem;
+        .yellow_color{
+          color: #F9EA22;
+        }
+        .endtop_top_left,.endtop_top_center,.endtop_top_right{
+          width: 33.33333%; text-align: center;height: .35rem;font-size: .13rem;
+        }
+        .endtop_top_center{
+          line-height: .35rem;
+        }
+
+      }
+      .endtop_saveperson{
+        display: flex;
+        flex-grow: 9;
+        justify-content: center;
+        color: #F9EA22;
+        font-weight: bolder;
+        font-size: .7125rem;
+        line-height: .5rem;
+      }
+    }
+    .endMiddle{
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: center;
+      text-align: center;
+      padding: 0 0 .05rem 0;
+      .middel_top,.middel_middle{
+        justify-content: center;
+        align-items: center;
+        margin: .075rem 0;font-family: PingFangSC-Semibold;
+      }
+      .middel_top{font-size: .1675rem;}
+      .middel_middle{font-size: .25rem;}
+      .middel_bottom{
+        justify-content: center;font-family: PingFangSC-Semibold;
+        font-size: .18rem;
+        align-items: center;
+        margin: .135rem .55rem;
+        padding: .15rem 0;
+        background: -webkit-linear-gradient(left,#F20013,#FD4E16);
+        background: -moz-linear-gradient(left,#F20013,#FD4E16); /*FireFox*/
+        background: -o-linear-gradient(left,#F20013,#FD4E16);  /* Opear */
+        background: -ms-linear-gradient(left,#F20013,#FD4E16); /*IE10及IE10+*/
+      }
+    }
+    .endfoot{
+      height: .3rem;
+      background: url(./../../../img/chicken/img_end_winner_top.png) round;
+    }
+  }
+  .winPersonOrder{
+    background-color: #fff;
+    padding: .1rem  .35rem;
+    .winPersonOrder_title{
+      display: block;
+      color:#333;
+      font-size: .2rem;
+      font-weight:bold;
+      padding: 0.125rem 0;
+    }
+    .winPersonOrder_list{
+      .this_list{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        height: .45rem;
+        &>img{
+          flex-grow: 1;
+          border-radius: 50% 50%;
+          max-width: .3rem;
+          max-height: .3rem;
+          margin-top: .075rem;
+        }
+        &>p{
+          flex-grow: 3;
+          margin-left: .15rem;
+          padding-left: .1rem;
+          border-bottom: 1px solid #e1e1e1;
+          height: .45rem;
+          line-height: .45rem;
+        }
+      }
+    }
+  }
+}

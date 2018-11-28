@@ -1,0 +1,281 @@
+@import "../../../style/delphyConstStyle";
+.balancePage{
+    position: absolute;
+    top:0;
+    left:0;
+  
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    .balanceCard{
+        // width: 100%;
+        height: 1.53rem;
+        margin: 0.2rem 0.15rem 0.15rem;
+        display: flex;
+        padding: 0.2rem 0.18rem ;
+        border-radius: 0.08rem;
+        flex-direction: column;
+        background: url('../../../img/bg_balance.png') ;
+        .topItem{
+            display: flex;
+            flex-direction: row;
+
+            .balanceParent{
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                // justify-content: space-between;
+                .balanceTip{
+                    letter-spacing: 0;
+                    // text-align: center;
+                }
+                .balance{
+                    margin-top: 0.02rem;
+                    line-height: 0.42rem;
+                    // text-align: ;
+                }
+            }
+            .icon{
+               width:0.42rem;
+               border-radius: 0.21rem;
+               height: 0.42rem;
+            }
+        }
+        .bottomItem{
+            display: flex;
+            flex-direction: row;
+            margin-top: 0.44rem;
+            justify-content: space-between;
+            .useableDpyParent{
+                display: flex;
+                flex: 1;
+                flex-direction: column;
+                justify-content: space-between;
+                .balanceTip{
+                    margin-top: 0.04rem;
+                    line-height: 0.17rem;
+                    // text-align: center;
+                }
+                .balance{
+                    line-height: 0.24rem;
+                    // text-align: ;
+                }
+            }
+            .freezeDpyParent{
+                display: flex;
+                flex: 1;
+                flex-direction: column;
+                justify-content: space-between;
+                .balanceTip{
+                    margin-top: 0.04rem;
+                    
+                    line-height: 0.17rem;
+                    // text-align: center;
+                }
+                .balance{
+                    line-height: 0.24rem;
+                    // text-align: ;
+                }
+            }
+        }
+
+        
+    }
+    .bottomBalance{
+        position: absolute;
+        transform: translateX(-1.675rem) ;
+        left:50%;
+        bottom: 0.15rem;
+        width: 3.35rem;
+        height: 0.46rem;
+        color: #fff;
+        font-size:0.15rem;
+        border-radius: 0.02rem;
+        line-height:0.42rem;
+        display: flex;
+        flex-direction: row;
+        .recharge{
+            flex: 1;
+            border-radius: 0.02rem;
+            margin-left: 0.1rem;
+            text-align: center;
+            background-image: linear-gradient(-47deg, #434E67 0%, #747E98 100%);
+        }
+        .withdraw{
+         
+            flex: 1;
+            border-radius: 0.02rem;
+            text-align: center;
+            border:0.01rem solid #4E5972;
+          
+
+        }
+  
+      }
+
+
+      .rechargeOuter{
+        position: absolute;
+        width:100%;
+        height:100%;
+        top:0;
+        left:0;
+        .rechargeCover{
+          width:100%;
+          height:100%;
+          background: rgba(0,0,0,0.4);
+        }
+      .rechargeMode{
+        position: absolute;
+        width:100%;
+        background: #fff;
+        bottom:0;
+        left:0;
+        .rechargeModeHead{
+          line-height:0.5rem;
+          position: relative;
+          text-align: center;
+          box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.08);
+          span{
+            position: absolute;
+            font-size:0.15rem;
+            top:0.175rem;
+            left:0.175rem;
+          }
+        }
+        .rechargeModeinner{
+          background: @bg_default;
+          padding:@padding12 @padding12 0;
+          .rechargeModeinnerOne{
+            display: block;
+            h4{
+              line-height: 0.36rem;
+              margin:0;
+            }
+          }
+          div{
+            position: relative;
+            span{
+              position: absolute;
+              top:50%;
+              right:0.2rem;
+              transform: translate(0,-50%);
+              color: #c3c9d1;
+            }
+          }
+          dl{
+            background: #fff;
+            padding: 0.11rem 0.2rem;
+            margin-bottom:0.12rem;
+            border-radius:0.08rem;
+            overflow: hidden;
+            box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.08);
+            dt{
+              width:0.36rem;
+              height:0.36rem;
+              float: left;
+              margin-right:0.08rem;
+              img{
+                width:100%;
+              }
+            }
+            dd{
+              float: left;
+              h4{
+                font-weight:@font_weight;
+                margin-bottom:5px;
+                color: @title_black;
+                font-size:0.15rem;
+              }
+              p{
+                color: @bluey_grey;
+                font-size:@font_size13;
+              }
+    
+            }
+          }
+          dl:nth-child(2){
+            margin-bottom:0;
+          }
+        }
+      }
+      }
+}
+.text_white_40 {
+    font-size: 0.4rem;
+    color: #FFFFFF;
+    letter-spacing: 0;
+}
+
+.text_white_30 {
+    // font-family: 'STKaiti';
+    font-size: 0.3rem;
+    color: #FFFFFF;
+    letter-spacing: 0;
+}
+
+.text_white_24 {
+    font-size: 0.24rem;
+    color: #FFFFFF;
+    letter-spacing: 0;
+}
+
+.text_white_20 {
+    font-size: 0.20rem;
+    color: #FFFFFF;
+    letter-spacing: 0;
+}
+
+.text_white_17 {
+    font-size: 0.17rem;
+    color: #FFFFFF;
+    letter-spacing: 0;
+}
+
+.text_white_16 {
+    font-size: 0.16rem;
+    color: #FFFFFF;
+    letter-spacing: 0;
+}
+
+.text_black_btn_16 {
+    font-size: 0.16rem;
+    color: #4F5A73;
+    letter-spacing: 0;
+}
+
+.text_white_15 {
+    font-size: 0.15rem;
+    color: #FFFFFF;
+    letter-spacing: 0;
+}
+
+.text_black_15 {
+    font-size: 0.15rem;
+    color: #141517;
+    letter-spacing: 0;
+}
+
+.text_white_15 {
+    font-size: 0.15rem;
+    color: #FFFFFF;
+    letter-spacing: 0;
+}
+
+.text_white_14 {
+    font-size: 0.14rem;
+    color: #FFFFFF;
+    letter-spacing: 0;
+}
+
+.text_white_12 {
+    font-size: 0.12rem;
+    color: #FFFFFF;
+    letter-spacing: 0;
+}
+
+.dividingLine {
+    height: 0.01rem;
+    width: 100%;
+    background: #f1f1f1;
+}

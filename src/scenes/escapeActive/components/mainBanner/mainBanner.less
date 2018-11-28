@@ -1,0 +1,155 @@
+.main-banner {
+  position: relative;
+  z-index: 100;
+  .main-warp {
+    box-sizing: border-box;
+    padding: 0 0.12rem;
+    position: relative;
+    .itemTopBox {
+      width: 100%;
+      height: 2.2rem;
+      position: relative;
+      border-radius: 0.04rem;
+      overflow: hidden;
+      z-index: 96 !important;
+      box-shadow: 0rem 0.05rem 0.08rem #cecece;
+      .setp-num {
+        background: url(./../../../../img/chicken/img_tag.png);
+        background-size: 100% 100%;
+        position: absolute;
+        width: 0.33rem;
+        height: 0.42rem;
+        color: #fff;
+        text-align: center;
+        line-height: 0.4rem;
+        font-size: 0.12rem;
+        left: 0.16rem;
+        font-family: 'PingFangSC-Semibold';
+      }
+      .wraperBox {
+        // border-radius: 0.04rem;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(
+          0deg,
+          #151412 0%,
+          rgba(14, 13, 12, 0.8) 22%,
+          rgba(0, 0, 0, 0.04) 70%
+        );
+      }
+      .topicBgImg {
+        width: 100%;
+        height: 2.2rem;
+      }
+      .topicImgMidTitle {
+        font-family: 'PingFangSC-Semibold';
+        font-size: 0.18rem;
+        color: #ffffff;
+        word-break:break-all;
+        letter-spacing: 0;
+        padding-left: 0.11rem;
+        padding-right: 0.11rem;
+        position: absolute;
+        bottom: 0.34rem;
+
+        word-wrap: break-word;
+        width: 95%;
+      }
+      .topicImgBom {
+        width: 3.27rem;
+        height: 0.15rem;
+        position: absolute;
+        bottom: 0.1rem;
+        left: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 0.12rem;
+        padding-right: 0.12rem;
+        .left,
+        .right {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          height: 0.15rem;
+          .img1 {
+            width: 0.15rem;
+            height: 0.15rem;
+            margin-right: 0.04rem;
+            color: rgba(255, 255, 255, 0.6);
+          }
+          .img2 {
+            width: 0.14rem;
+            height: 0.14rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-right: 0.04rem;
+          }
+          span {
+            font-family: PingFangSC-Regular;
+            font-size: 0.13rem;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 0;
+          }
+        }
+      }
+    }
+    .second-box {
+      padding: 0 0.12rem;
+      .content-box {
+        z-index: 95;
+        position: relative;
+        height: 0.34rem;
+        background-color: #eeeeee;
+        border-radius: 0 0 0.04rem 0.04rem;
+        box-shadow: 0rem 0.03rem 0.06rem #c1c1c1;
+        text-align: center;
+        .setp-left {
+          position: absolute;
+          top: 0;
+          left: 0.1rem;
+          font-size: 0.12rem;
+          line-height: 0.34rem;
+          color: #aaaaaa;
+          font-family: 'PingFangSC-Semibold';
+        }
+        img {
+          margin-top: 0.07rem;
+          line-height: 0.34rem;
+          width: 0.17rem;
+          height: 0.22rem;
+        }
+      }
+    }
+    .third-box {
+      padding: 0 0.27rem;
+      .content-box {
+        height: 0.27rem;
+        background-color: #dfdfdf;
+        border-radius: 0 0 0.04rem 0.04rem;
+        text-align: center;
+        position: relative;
+        .setp-left {
+          position: absolute;
+          top: 0;
+          left: 0.1rem;
+          font-size: 0.11rem;
+          color: #aaaaaa;
+          line-height: 0.27rem;
+          font-family: 'PingFangSC-Semibold';
+        }
+        img {
+          margin-top: 0.04rem;
+          line-height: 0.34rem;
+          width: 0.146rem;
+          height: 0.19rem;
+        }
+      }
+    }
+  }
+}

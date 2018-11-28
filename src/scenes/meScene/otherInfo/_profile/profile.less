@@ -1,0 +1,62 @@
+//颜色变量
+@import "../../../../style/delphyConstStyle.less";
+
+.datumPackground{
+  box-sizing: border-box;
+  width:100%;
+  .datumInner{
+    width:100%;
+    overflow: hidden;
+    .datumTop{
+      padding:@padding20;
+      overflow: hidden;
+      dd{
+        width:0.52rem;
+        height:0.52rem;
+        -webkit-border-radius:50%;
+        -moz-border-radius:50%;
+        border-radius:50%;
+        overflow: hidden;
+        background: #fff;
+        img{
+          width:0.52rem;
+          height:0.52rem;
+          font-size:0.52rem;
+        }
+      }
+
+      dd,dt{
+        float: left;
+      }
+      dt{
+        padding-left:@padding10;
+        position: relative;
+        width:78%;
+        h4{
+          font-size:@font_size17;
+          line-height: @line_height24;
+          color: #fff;
+        }
+        p{
+          font-size:@font_size12;
+          color: #afadb8;
+          line-height: @line_height24;
+          overflow: hidden;
+          // text-overflow:ellipsis;
+          // white-space: nowrap;
+        }
+        span{
+          position: absolute;
+          top:0.20rem;
+          right:-0.12rem;
+          color: #fff;
+          transform:rotate(180deg);
+
+        }
+      }
+    }
+  }
+}
+.description{
+  word-break: break-all;
+}

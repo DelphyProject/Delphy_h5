@@ -1,0 +1,232 @@
+.buyPage {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  .am-slider-handle {
+    margin-left: -0.16rem;
+    touch-action: none;
+  }
+  .buyBomBoxOut {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    .buyBomBox {
+      flex: 1;
+      display: flex;
+    }
+  }
+
+  .mainPage {
+    background: #f9f9f9;
+    .text15 {
+      font-size: 0.15rem;
+      color: #666666;
+      letter-spacing: 0.0018rem;
+    }
+    .buyTop {
+      padding: 0.16rem 0.15rem 0.2rem 0.15rem;
+      background-color: #fff;
+      .title {
+        font-size: 20px;
+        color: #141517;
+        letter-spacing: 0;
+        margin-bottom: 0.15rem;
+        font-weight: 600;
+      }
+      .topBom {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        font-size: 0.13rem;
+        color: #666666;
+        letter-spacing: 0;
+      }
+      margin-bottom: 0.1rem;
+    }
+    .buyMid {
+      font-size: 15px;
+      color: #666666;
+      letter-spacing: 0.18px;
+      background-color: #fff;
+      .midItem {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 0.5rem;
+        line-height: 0.5rem;
+        padding-left: 0.15rem;
+        padding-right: 0.15rem;
+      }
+    }
+    .balance {
+      margin-top: 0.1rem;
+      padding: 0.05rem 0.15rem 0.05rem 0.16rem;
+      line-height: 0.3rem;
+      display: block;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      .amountRow {
+        display: flex;
+        .amountRowLeft {
+          width: calc(100% - 0.6rem);
+          .money {
+            display: inline-block;
+            width: 40%;
+          }
+        }
+        .amountRowRight {
+          width: 0.6rem;
+          float: right;
+          button {
+            border-radius: 17px;
+          }
+        }
+      }
+
+      &>.amountRowRight {
+        float: right;
+      }
+      .name {
+        color: #666666;
+      }
+      .money {
+        font-size: 0.15rem;
+        color: #111111;
+        letter-spacing: 0.0018rem;
+      }
+      button {
+        border: none;
+        outline: none;
+        width: 0.6rem;
+        height: 0.26rem;
+        background-image: linear-gradient(135deg, #ff944c 0%, #ff6e4a 100%);
+        border-radius: 0.01rem;
+        line-height: 0.26rem;
+        font-size: 0.13rem;
+        color: #fff;
+        letter-spacing: 0.0016rem;
+        text-align: center;
+        border-radius: 17px;
+      }
+    }
+    .buySlider {
+      background-color: #fff;
+      padding-left: 0.1rem;
+      padding-right: 0.1rem;
+
+      height: 1.34rem;
+      padding-left: 0.1rem;
+      padding-right: 0.1rem;
+      .buySliderBox {
+        background-color: #f9f9f9;
+        height: 1.34rem;
+      }
+      .sliderBox {
+        .sliderIn {
+          padding-left: 0.12rem;
+          padding-right: 0.28rem;
+        }
+        .am-slider-wrapper,
+        .am-slider-track,
+        .am-slider-step {
+          .am-slider-rail {
+            touch-action: none;
+          }
+        }
+        .bgBar {
+          margin-left: 0.1rem;
+          margin-right: 0.1rem;
+          background-color: #ededed;
+          height: 0.1rem;
+          z-index: 22;
+        }
+      }
+      .buyText {
+        padding-left: 0.69rem;
+        padding-right: 0.54rem;
+        padding-top: 0.17rem;
+        padding-bottom: 0.16rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.15rem;
+        color: #666666;
+        letter-spacing: 0.0018rem;
+        .textItem {
+          text-align: center;
+        }
+      }
+      .bomNum {
+        span {
+          color: #ff3c28;
+        }
+        font-size: 0.11rem;
+        color: #999999;
+        letter-spacing: 0;
+
+        text-align: center;
+      }
+      .numBom {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 0.2rem;
+        padding-right: 0.18rem;
+        font-size: 14px;
+        color: #666666;
+        margin-top: 0.24rem;
+      }
+    }
+    .buyBomOut {
+      .box1 {
+        display: flex;
+        flex: 1;
+      }
+    }
+    .buyBom {
+      padding-top: 0.2rem;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      p {
+        padding: 0 0.2rem;
+        margin-bottom: 0.16rem;
+        font-size: 0.15rem;
+        color: #666666;
+        letter-spacing: 0.0018rem;
+        span {
+          color: #ff3c28;
+        }
+      }
+      button {
+        border: none;
+        outline: none;
+        width: 3.39rem;
+        height: 0.46rem;
+        text-align: center;
+        line-height: 0.16rem;
+        background-image: linear-gradient(90deg, #ff9266 0%, #fb724f 100%);
+        border-radius: 0.02rem;
+        font-size: 0.15rem;
+        color: #ffffff;
+        letter-spacing: 0;
+        border-radius: 23px;
+      }
+    }
+  }
+}

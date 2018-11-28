@@ -1,0 +1,130 @@
+@import  '../../style/delphyConstStyle.less';
+#_scrollView{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    background: @bg_default;
+}
+.recordOutBox{
+    padding-top:0.4rem;
+    background: #fdfdfd;
+}
+.recordItemBoxtt{
+    background: #fff;
+    margin: 0;
+    padding: 0 0 0 0.16rem;
+    overflow: hidden;
+    .recordLeft{
+        float: left;
+        margin-top: 0.18rem;
+        width: 0.28rem;
+        height: 0.32rem;
+    }
+    .recordAward{
+        background: url('../../img/record_award.png') center;
+        background-size: 0.28rem 0.32rem;
+    }
+    .recordBuy{
+        background: url('../../img/record_buy.png') center;
+        background-size: 0.28rem 0.32rem;
+    }
+    .recordSell{
+        background: url('../../img/record_sell.png') center;
+        background-size: 0.28rem 0.32rem;
+    }
+    .recordDeposit{
+        background: url('../../img/record_deposit.png') center;
+        background-size: 0.28rem 0.32rem;
+    }
+    .recordWithdraw{
+        background: url('../../img/record_withdraw.png') center;
+        background-size: 0.28rem 0.32rem;
+    }
+    .recordBack{
+        background: url('../../img/record_back.png') center;
+        background-size: 0.28rem 0.32rem;
+    }
+    .recordLock{
+        background: url('../../img/record_lock.png') center;
+        background-size: 0.28rem 0.32rem;
+    }
+    .recordUnlock{
+        background: url('../../img/record_unlock.png') center;
+        background-size: 0.28rem 0.32rem;
+    }
+    .transferOut{
+        background: url('../../img/transfer_out.png') center;
+        background-size: 0.28rem 0.32rem;
+    }
+    .transferIn{
+        background: url('../../img/transfer_in.png') center;
+        background-size: 0.28rem 0.32rem;
+    }
+    .recordRight{
+        float: left;
+        box-sizing: border-box;//
+        width: 3.31rem;
+        padding: 0.12rem 0.15rem 0.1rem 0.16rem;
+        border-bottom: #F1F1F1 solid 0.01rem;
+        .con{
+            overflow: hidden;
+            width: 100%;
+            .title{
+                float: left;
+                line-height: 0.29rem;
+                font-size: 0.16rem;
+                color: #333333;
+
+                width: 1.45rem;
+                overflow: hidden;
+                text-overflow:ellipsis;
+                white-space: nowrap;
+            }
+            .amount{
+                float: right;
+                line-height: 0.29rem;            
+                font-size: 0.17rem;
+                color: #000;
+            }
+            .option{
+                float: left;
+                line-height: 0.24rem;
+                font-size: 0.12rem;
+                color: #333333;
+
+                width: 1.45rem;
+                overflow: hidden;
+                text-overflow:ellipsis;
+                white-space: nowrap;
+            }
+            .detail{
+                float: right;
+                line-height: 0.24rem;
+                font-size: 0.12rem;
+                color: #333333;
+            }
+            .time{
+                float: left;
+                line-height: 0.24rem;
+                font-size: 0.12rem;
+                color: #666666;
+
+                width: 1.45rem;
+                overflow: hidden;
+                text-overflow:ellipsis;
+                white-space: nowrap;
+            }
+            .status{
+                float: right;
+                line-height: 0.24rem;
+                font-size: 0.12rem;
+                color: #333333;
+            }
+        }
+    }
+
+}

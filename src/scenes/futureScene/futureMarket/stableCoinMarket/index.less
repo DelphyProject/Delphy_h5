@@ -1,0 +1,315 @@
+.stablePage {
+  background: #f8f8f8;
+  padding-bottom: 0.5rem;
+  box-sizing: border-box;
+  padding-top: 0.95rem;
+  // width: 100%;
+  // position: absolute;
+  /**
+  * 单个选项卡
+  */
+  .stableCoinCard {
+    position: relative;
+    margin: 10px 12px;
+    // padding-bottom: 10px;
+    background: rgb(255, 255, 255);
+    box-sizing: border-box;
+    box-shadow: 0px 4px 10px 0px rgba(202, 202, 202, 0.15);
+    border-radius: 6px;
+    @media (-webkit-min-device-pixel-ratio: 2), not all, (min-resolution: 2dppx) {
+      // height: 0px;
+      .am-accordion .am-accordion-item .am-accordion-header::after {
+        height: 0px;
+        // border-top: none;
+      }
+    }
+    .am-accordion .am-accordion-item .am-accordion-content .am-accordion-content-box {
+      border-bottom: none;
+    }
+    @media (-webkit-min-device-pixel-ratio: 2), not all, (min-resolution: 2dppx) {
+      .am-accordion .am-accordion-item .am-accordion-content .am-accordion-content-box::after {
+        height: 0px;
+      }
+    }
+    @media (-webkit-min-device-pixel-ratio: 2), not all, (min-resolution: 2dppx) {
+      .am-accordion::before {
+        height: 0px;
+      }
+    }
+    .am-accordion .am-accordion-item .am-accordion-content{
+      border-radius: 6px;
+    }
+    .am-accordion {
+      border-top: none;
+    }
+    .am-accordion::before {
+      border-top: none;
+    }
+    .boderShow {
+      border-bottom: 1px solid #ddd;
+    }
+
+    // .am-accordion-item{
+    //   border-radius: 6px;
+    //   background: #f1ff00;
+    // }
+    //手风瑟样式修改
+    .am-accordion-header {
+      border-radius: 6px;
+      height: 46px;
+      line-height: 45px;
+      padding-right: 15px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0);
+      .arrow {
+        display: none;
+      }
+    }
+    /**
+    * 选项卡的头部
+    */
+    .coinCardTitle {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 60px;
+      .coinCardTitleIcon {
+        margin: auto;
+        max-width: 32px;
+        height: auto !important;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 16px;
+        margin-left: 15px;
+        margin-right: 15px;
+      }
+      .coinCardTitleRight {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        margin-right: 15px;
+        align-items: flex-end;
+        justify-content: space-between;
+        .coinCardTitleItem {
+          display: flex;
+          flex-direction: column;
+          .content {
+            height: 21px;
+            font-size: 15px;
+            font-family: PingFangSC-Medium;
+            font-weight: 500;
+            color: rgba(51, 51, 51, 1);
+            line-height: 21px;
+          }
+        }
+        .coinCardTitleItemRight {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          .contentGreen {
+            width: 60px;
+            height: 25px;
+            padding-left: 5px;
+            padding-right: 5px;
+            text-align: center;
+            background: rgba(0, 189, 154, 1);
+            border-radius: 4px;
+            font-size: 14px;
+            font-family: PingFangSC-Medium;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 1);
+            line-height: 25px;
+          }
+          .contentRed {
+            width: 60px;
+            height: 25px;
+            padding-left: 5px;
+            padding-right: 5px;
+            text-align: center;
+            background: rgba(255, 68, 101, 1);
+            border-radius: 4px;
+            font-size: 14px;
+            font-family: PingFangSC-Medium;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 1);
+            line-height: 25px;
+          }
+          .contentGray {
+            width: 60px;
+            height: 25px;
+            padding-left: 5px;
+            padding-right: 5px;
+            text-align: center;
+            background: #cccccc;
+            border-radius: 4px;
+            font-size: 14px;
+            font-family: PingFangSC-Medium;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 1);
+            line-height: 25px;
+          }
+        }
+        .tip {
+          margin-top: 5px;
+          height: 14px;
+          font-size: 10px;
+          font-family: PingFangSC-Regular;
+          font-weight: 400;
+          color: rgba(178, 178, 178, 1);
+          line-height: 14px;
+        }
+      }
+    }
+    /**
+    * 单个市场下的options
+    */
+    .listContent {
+      margin: 0 10px 10px 10px;
+      box-sizing: border-box;
+      // width: 100%;;
+      background: linear-gradient(180deg, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
+      border-radius: 4px;
+      .listContentTitle {
+        padding: 0 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 50px;
+        // padding-left: 15px;
+        // padding-right: 15px;
+        .title {
+          font-size: 14px;
+          font-family: PingFangSC-Medium;
+          font-weight: 500;
+          color: rgba(51, 51, 51, 1);
+          line-height: 20px;
+        }
+        .lookup {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          p {
+            font-size: 14px;
+            font-family: PingFangSC-Medium;
+            font-weight: 500;
+            color: rgba(255, 109, 26, 1);
+            line-height: 20px;
+          }
+          img {
+            width: 6px;
+            height: 12px;
+            margin-left: 5px;
+          }
+        }
+      }
+      .bgSingle {
+        background: rgba(255, 250, 248, 1);
+      }
+      .bgDouble {
+        background: rgba(255, 255, 255, 1);
+      }
+      /**
+      * 单个option
+      */
+      .listContentItemBox {
+        display: flex;
+        flex-direction: column;
+        .am-progress-outer {
+          background-color: #00000000;
+        }
+        .am-progress-bar {
+          float: right;
+          border-left: none;
+          border-right: none;
+        }
+        .listContentItem {
+          padding-right: 15px;
+          padding-left: 15px;
+          height: 40px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          .listContentItemLeft {
+            height: 40px;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            .num {
+              margin-right: 15px;
+              font-size: 13px;
+              text-align: center;
+              font-family: PingFangSC-Medium;
+              font-weight: 500;
+              color: rgba(255, 255, 255, 1);
+              line-height: 18px;
+              border-radius: 9px;
+              width: 18px;
+              height: 18px;
+              background: linear-gradient(
+                135deg,
+                rgba(255, 148, 76, 1) 0%,
+                rgba(255, 110, 74, 1) 100%
+              );
+            }
+            .title {
+              font-size: 15px;
+              font-family: PingFangSC-Regular;
+              font-weight: 400;
+              color: rgba(20, 21, 23, 1);
+              line-height: 21px;
+            }
+          }
+        }
+      }
+    }
+    .panelHeaderBox {
+      display: flex;
+      flex-direction: column;
+
+      .panelHeader {
+        height: 0.4rem;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        // border-bottom: 1px solid #ddd;
+        .title {
+          width: 28px;
+          height: 20px;
+          font-size: 14px;
+          font-family: PingFangSC-Regular;
+          font-weight: 400;
+          color: rgba(51, 51, 51, 1);
+          line-height: 20px;
+        }
+        .itemRight {
+          display: flex;
+          height: 100%;
+          justify-content: center;
+          align-items: flex-end;
+          flex-direction: column;
+          .upordown {
+            width: 16px;
+            height: 10px;
+            margin-bottom: 3px;
+            box-sizing: border-box;
+          }
+          .joinNum {
+            height: 14px;
+            font-size: 10px;
+            font-family: PingFangSC-Regular;
+            font-weight: 400;
+            color: rgba(178, 178, 178, 1);
+            line-height: 14px;
+          }
+        }
+      }
+      .dividerLine {
+        height: 1px;
+        background: rgba(0, 0, 0, 0.1);
+        width: 100%;
+      }
+    }
+  }
+}

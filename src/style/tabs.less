@@ -1,0 +1,53 @@
+.icon-rank{
+  font-size:0.22rem !important;
+}
+.tabs{
+  position: fixed;
+  height:50px;
+  width:100%;
+  bottom:0;
+  max-width: 600px;
+  z-index: 1000;
+  box-shadow: 0 -4px 8px 0 rgba(67, 77, 255, 0.05);
+}
+.am-tab-bar-tab{
+  height: 0.5rem;
+  border-top:none;
+}
+.icon-nav_icon_me{
+  position: relative;
+  .tabsRed{
+    position: absolute;
+    top:0;
+    right:0;
+    width:0.07rem;
+    height:0.07rem;
+    background: red;
+    border-radius: 50%;
+  }
+}
+
+.top {
+   z-index: 50;
+   top: 0;
+   right: 0;
+   height: 0.45rem;
+   width: 100%;
+ }
+.am-tab-bar-bar{
+  border-top:none;
+  .am-tab-bar-tab-title{
+    font-size:0.12rem;
+  }
+}
+.am-tab-bar-bar::before{
+  display: none !important;
+}
+.unSelected{
+  background-image: #BBBBBB;
+}
+.bgChange{
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(135deg, #FF944C 0%, #FF6E4A 100%);
+}

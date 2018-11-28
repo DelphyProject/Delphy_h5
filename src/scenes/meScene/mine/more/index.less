@@ -1,0 +1,65 @@
+.more-warp {
+    margin: 0 0.1rem 0.7rem;
+    background: #FFFFFF;
+    box-shadow: 0 0.01rem 0.04rem 0 rgba(0, 0, 0, 0.08);
+    border-radius: 0.1rem;
+    .more-item {
+        height: 0.5rem;
+        margin-left: 0.45rem;
+        border-bottom: 0.01rem solid #E4E8EE;
+        box-sizing: border-box;
+        position: relative;
+        font-family: 'PingFangSC-Regular';
+        font-size: 0.15rem;
+        color: #333333;
+        letter-spacing: 0;
+        padding-right: 0.2rem;
+        display: flex;
+        align-items: center;
+        .item-icon {
+            position: absolute;
+            top: 0;
+            left: -0.45rem;
+            height: 100%;
+            width: 0.45rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        p{
+            flex: 1;
+        }
+    }
+    .more-item:after{
+        content: '';
+        display: inline-block;
+        width: 0.05rem;
+        height: 0.08rem;
+        background-image: url('./../../../../img/right-arrow.png');
+        background-repeat: no-repeat;
+        background-size: 0.05rem 0.08rem;
+    }
+    .more-item:nth-child(1) {
+        .item-icon {
+            img {
+                width: 0.14rem;
+            }
+        }
+    }
+    .more-item:nth-child(2) {
+        .item-icon {
+            .iconfont {
+                color: #056EF6;
+                font-size: 0.18rem;
+            }
+        }
+    }
+    .more-item:nth-child(3) {
+        border: none;
+        .item-icon {
+            img {
+                width: 0.16rem;
+            }
+        }
+    }
+}

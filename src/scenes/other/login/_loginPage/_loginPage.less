@@ -1,0 +1,144 @@
+@import "../../../../style/delphyConstStyle";
+ #loginPageNumberVer{
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  .numberVerCover{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.5);
+  }
+  .numberVer{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width:2.5rem;
+    background: #fff;
+    border-radius: 0.1rem;
+    z-index: 9;
+    p{
+      width:100%;
+      height:0.8rem!important;
+      text-align: center;
+      padding-top: 0.25rem;
+      box-sizing: border-box;
+      input{
+        width:2.2rem;
+        font-size:0.15rem;
+        display: inline-block;
+        line-height: 0.36rem;
+        border: none;
+        padding-left:0.2rem;
+        box-sizing: border-box;
+        background: @bg_defaultF4;
+      }
+    }
+    pre{
+      width:100%;
+      height:0.44rem;
+      color: #FF6D1A;
+      line-height:0.44rem;
+      text-align: center;
+      font-size:0.15rem;
+    }
+  }
+
+}
+#loginOut{
+  .loginTop{
+    display: flex;
+    flex-direction: row;
+    line-height: 80px;
+    padding: 0 .2rem;
+    height: 80px;
+    .loginDarkP{
+      font-size: .17rem;
+      font-weight: 700;
+      float: left;
+      margin-right: .24rem;
+    }
+  }
+
+.loginPage{
+  padding:0 @padding20;
+
+
+  .loginM{
+    background: #f4f4f4;
+    border-radius: 3px;
+    line-height:42px;
+    padding-left:0.1rem;
+    font-size:0.15rem;
+    select{
+      width: 0.5rem;
+      background: none;
+      border:none;
+    }
+    input{
+      border:none;
+      background: none;
+      padding-left: 10px;
+      font-size:0.15rem;
+      width:1.75rem;
+    }
+  }
+  .loginP{
+    line-height:42px;
+    margin-top: 15px;
+    overflow: hidden;
+    .loginPOne{
+      width: 65%;
+      background: #f4f4f4;
+      border-radius:3px;
+      float: left;
+      font-size:0.15rem;
+      span{
+        display: inline-block;
+        width:0.55rem;
+        padding-left: 0.05rem;
+        margin-left: 0.1rem;
+      }
+      input{
+        border:none;
+        background: none;
+        padding-left: 10px;
+        font-size:0.15rem;
+        width: 1rem;
+      }
+    }
+    .loginPTwo,.vertifyimg{
+      float: right;
+      width: 30%;
+      line-height: 40px;
+      text-align: center;
+      color: #FF6D1A;
+      border: solid 1px #FF6D1A;
+      border-radius:3px;
+      background: #fff;
+      font-size: 0.14rem;
+    }
+    .vertifyimg{
+      height: 35px;padding-top: 5px;
+      border: none;
+    }
+  }
+  .loginL{
+    background: #FF6D1A;
+    display: block;
+    margin-top:32px;
+    line-height:42px;
+    text-align: center;
+    color: #fff;
+    font-size:@font_size15;
+    border-radius:20px;
+    width:100%;
+    border:none;
+  }
+}
+}

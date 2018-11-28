@@ -1,0 +1,109 @@
+stages:
+  - build-dev
+  - deploy-dev
+  - build-staging
+  - deploy-staging
+  - build-prod
+  - deploy-prod
+
+variables:
+  APP: delphy_mobile
+  BUILD_TARGET: ${APP}.tgz
+  APP_DIR: /opt/${APP}
+  DEPLOY_TARGET: /opt/${APP}/current
+
+build-dev:
+  stage: build-dev
+  script:
+    - yarn
+    - yarn build-dev
+    - tar czf $BUILD_TARGET -C build .
+  only:
+    - develop
+    - test
+  cache:
+    key: "$CI_PROJECT_ID"
+    paths:
+      - node_modules/
+  artifacts:
+    paths:
+      - $BUILD_TARGET
+  tags:
+    - shell
+
+deploy-dev:
+  stage: deploy-dev
+  script:
+    - fab -e -H $DEVELOPMENT_HOST deploy
+  only:
+    - develop
+    - test
+  environment:
+    name: development
+    url: https://apollo.dev.delphy.org.cn
+  tags:
+    - shell
+
+build-staging:
+  stage: build-staging
+  script:
+    - yarn
+    - yarn build-staging
+    - tar czf $BUILD_TARGET -C build .
+  only:
+    - /^release.*$/
+    - /^hotfix.*$/
+    - preLaunch
+  cache:
+    key: "$CI_PROJECT_ID"
+    paths:
+      - node_modules/
+  artifacts:
+    paths:
+      - $BUILD_TARGET
+  tags:
+    - shell
+
+deploy-staging:
+  stage: deploy-staging
+  script:
+    - fab -e -H $STAGING_HOST deploy
+  only:
+    - /^release.*$/
+    - /^hotfix.*$/
+  environment:
+    name: staging
+    url: https://apollo.staging.delphy.org.cn
+  tags:
+    - shell
+
+build-prod:
+  stage: build-prod
+  script:
+    - yarn
+    - yarn build-prod
+    - tar czf $BUILD_TARGET -C build .
+  only:
+    - master
+  cache:
+    key: "$CI_PROJECT_ID"
+    paths:
+      - node_modules/
+  artifacts:
+    paths:
+      - $BUILD_TARGET
+  tags:
+    - shell
+
+deploy-prod:
+  stage: deploy-prod
+  script:
+    - fab -e -H $PRODUCTION_HOST deploy
+  when: manual
+  only:
+    - master
+  environment:
+    name: production
+    url: https://apollo.delphy.org.cn
+  tags:
+    - shell
