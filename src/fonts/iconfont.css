@@ -9,11 +9,11 @@
 
 .iconfont {
   font-family:"iconfont" !important;
-  font-size:19px;
+  font-size:0.2rem;
   font-style:normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #BBBBBB;
+  color: #696969;
 }
 .iconfontMarket{
   font-family:"iconfont" !important;

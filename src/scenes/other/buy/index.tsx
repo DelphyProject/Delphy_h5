@@ -105,7 +105,7 @@ class Buy extends React.Component<Props, BuyState> {
 
     this.props.dispatch(
       //@ts-ignore
-      fetchData.fetchMarketDetail(this.props.marketId, null, ret => {
+      fetchData.fetchMarketDetail(this.props.marketId, ret => {
         const arr: Array<any> = [];
         const newarr: Array<any> = [];
         let options;

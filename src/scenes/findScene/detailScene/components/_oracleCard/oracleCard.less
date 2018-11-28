@@ -1,132 +1,74 @@
-@import '../../../../../style/delphyConstStyle';
+@import "../../../../../style/delphyConstStyle";
 
-.notOracle {
-  width: 100%;
-  height: 0.46rem;
-  margin-top: 0.12rem;
+.center{
+  width:33.3333%;
+}
+.notOracle{
+  width:100%;
+  height:0.46rem;
+  margin-top:0.12rem;
   text-align: center;
-  font-size: 0.12rem;
-  .notOraclePage {
+  font-size:0.12rem;
+  .notOraclePage{
     display: inline-block;
-    height: 0.3rem;
-    line-height: 0.3rem;
+    height:0.3rem;
+    line-height:0.3rem;
   }
-  img {
-    width: 0.16rem;
+  img{
+    width:0.16rem;
     float: left;
-    margin-right: 0.1rem;
-    margin-top: 0.06rem;
+    margin-right:0.1rem;
+    margin-top:0.06rem;
   }
 }
-.greenContent {
-  background: rgba(0, 189, 154, 1);
-  border-radius: 0.04rem;
-  font-size: 0.14rem;
-  padding: 0 0.07rem;
-  font-family: PingFangSC-Medium;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 1);
-  line-height: 0.25rem;
-}
-.redContent {
-  background: rgba(255, 68, 101, 1);
-  border-radius: 0.04rem;
-  padding: 0 0.07rem;
-  font-size: 0.14rem;
-  font-family: PingFangSC-Medium;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 1);
-  line-height: 0.25rem;
-}
-.oracleVal {
+.oracleVal{
+  height:0.2rem;
   overflow: hidden;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  .content {
-    font-size: 0.15rem;
-    line-height: 0.21rem;
-    height: 0.21rem;
-  }
-
-  .historyRecord {
-    // width: 0.18rem;
-    // height: 0.16rem;
-    margin-left: 0.05rem;
-    font-size: 0.18rem;
-    color: #333333;
-  }
+  font-size:0.13rem;
+  line-height:0.2rem;
 }
-.oracleVal18 {
-  height: 0.24rem;
+.oracleVal18{
+  height:0.24rem;
   overflow: hidden;
-  font-size: 0.17rem;
-  line-height: 0.24rem;
+  font-size:0.17rem;
+  line-height:0.24rem;
 }
-.centerNum {
-  span {
-    font-size: @font_size12;
+.centerNum{
+  span{
+    font-size:@font_size12;
   }
 }
-.oracle {
-  line-height: 0.29rem;
+.oracle{
+  line-height:0.29rem;
   height: 0.3rem;
   overflow: hidden;
-  span {
+  span{
     float: right;
   }
-  .circleTwo {
-    font-size: 0.8rem;
-    font-weight: 100;
-    line-height: 0.26rem;
+  .circleTwo{
+    font-size:0.8rem;
+    font-weight:100;
+    line-height:0.26rem;
     display: inline-block;
-    margin: 0.02rem 0.03rem 0;
+    margin:0.02rem 0.03rem 0;
     color: @bluey_grey;
   }
 }
-.fulTopNot {
-  margin-top: 0 !important;
+
+.ongoingMarket{
+  border:1px solid #e7e9ed;
 }
-.describe {
-  line-height: 0.2rem;
+.fulTopNot{
+  margin-top:0 !important;
+}
+.describe{
+  line-height:0.2rem;
   color: @title_black;
 }
-.futureBg {
-  background-color: #ffffff;
-}
-.normalBg {
-  background-color: #f5f5f5;
-}
-// background:rgba(249,249,249,1);
-#normarlOracleInfo {
+
+#oracleInfo {
+  padding: 0.06rem 0.16rem 0.06rem;
   border-radius: 3px;
-  margin: 0.15rem 0.1rem 0 0.1rem;
-  border-radius: 10px;
-  .oracleCard {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 0.8rem;
-    width: 100%;
-    padding-right: 0.15rem;
-    box-sizing: border-box;
-    .iconImg {
-      margin-left: 0.12rem;
-      width: 0.32rem;
-      height: 0.32rem;
-      background: rgba(255, 255, 255, 1);
-      border: 1px solid rgba(221, 221, 221, 1);
-      border-radius: 0.16rem;
-    }
-    .oracleTit {
-      height: 0.14rem;
-      font-size: 0.1rem;
-      margin-top: 0.04rem;
-      font-family: PingFangSC-Regular;
-      font-weight: 400;
-      color: rgba(178, 178, 178, 1);
-      line-height: 0.14rem;
-    }
-  }
+  background: #fafafa;
+  margin:0.1rem;
 }

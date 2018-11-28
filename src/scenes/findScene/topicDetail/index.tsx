@@ -1,8 +1,6 @@
 import React from 'react';
 import { connect, DispatchProp } from 'react-redux';
-import { Flex } from 'antd-mobile';
 import { Helmet } from 'react-helmet';
-import { delphyUrl } from '@/config';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
 import * as fetchData from '../../../redux/actions/actions_fetchServerData';
 import * as fetchTypes from '../../../redux/actions/fetchTypes';
@@ -18,9 +16,6 @@ import LoginAlert from '../../../components/loginAlert/loginAlert';
 import { blockedAllAddsImtoken, blockedAdsImtoken } from '../../../config';
 import { shareMethod, redirect, reLoad } from '../../../utils/share';
 import { getNowTimestamp } from '@/utils/time';
-import webViewApi from '@/webViewerApi';
-import Copy from 'copy-to-clipboard';
-import { showToast } from '@/utils/common';
 
 let loginState;
 let effectiveTime;
@@ -41,11 +36,6 @@ interface TopicDetailState {
   isShow1: boolean;
   banBuy: boolean;
   loadingOracle: boolean;
-  showCommentDialog: boolean;
-  showCopyDialog: number;
-  isCollect: boolean;
-  loading: boolean;
-  winRate: number; // 详情筛选条件 0全部 60 70 80 是指胜率在%以上
 }
 type Props = TopicDetailProps & DispatchProp & RouteComponentProps;
 class TopicDetail extends React.Component<Props, TopicDetailState> {
@@ -62,11 +52,6 @@ class TopicDetail extends React.Component<Props, TopicDetailState> {
       isImtoken: !!window.imToken,
       isPhoneGap: !!parent.isPhoneGap,
       loadingOracle: false,
-      showCommentDialog: false,
-      showCopyDialog: 0,
-      isCollect: false,
-      loading: true,
-      winRate: 0,
     };
     redirect();
     window.addEventListener('sdkReady', () => {
@@ -99,11 +84,6 @@ class TopicDetail extends React.Component<Props, TopicDetailState> {
     this.fetcSpecialMarket();
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.setState({
-      isCollect: nextProps.serverData.marketDetailData.subscribed,
-    });
-  }
   loginAlert1 = () => {
     if (!loginState || !effectiveTime) {
       this.setState({ isShow: true });
@@ -137,41 +117,7 @@ class TopicDetail extends React.Component<Props, TopicDetailState> {
       }
     }
   };
-  onGetMarketDetailInfo = e => {
-    const params = {
-      winRate: e.target.value,
-    };
-    this.props.dispatch(
-      //@ts-ignore
-      fetchData.fetchMarketDetail(this.props.marketId, params, ret => {
-        if (ret.code == 200) {
-          if (ret.data) {
-            sessionStorage.setItem('invested', ret.data.invested);
-            sessionStorage.setItem('endTime', ret.data.endTime);
-            sessionStorage.setItem('holdOptionId', ret.data.holdOptionId);
-            sessionStorage.setItem('commentOptions', JSON.stringify(ret.data.options));
-            sessionStorage.setItem('status', ret.data.status);
-            const nowTime = getNowTimestamp();
-            const endTime = ret.data.endTime;
-            let time = endTime - nowTime;
-            if (time > 0) {
-              setInterval(() => {
-                time--;
-                if (time < 1) {
-                  this.setState({ banBuy: true });
-                }
-              }, 1000);
-            } else {
-              this.setState({ banBuy: true });
-            }
 
-            sessionStorage.setItem('invested', ret.data.invested ? '1' : '0');
-            sessionStorage.setItem('marketStatus', ret.data.status);
-          }
-        }
-      }),
-    );
-  };
   fetcSpecialMarket = () => {
     const newParams = {
       page: 1,
@@ -183,18 +129,9 @@ class TopicDetail extends React.Component<Props, TopicDetailState> {
         this.setState({ loadingOracle: false });
       }),
     );
-    this.setState({
-      loading: true,
-    });
-    const params = {
-      winRate: 0,
-    };
     this.props.dispatch(
       //@ts-ignore
-      fetchData.fetchMarketDetail(this.props.marketId, params, ret => {
-        this.setState({
-          loading: false,
-        });
+      fetchData.fetchMarketDetail(this.props.marketId, ret => {
         if (ret.code == 200) {
           if (ret.data) {
             sessionStorage.setItem('invested', ret.data.invested);
@@ -278,112 +215,7 @@ class TopicDetail extends React.Component<Props, TopicDetailState> {
     sessionStorage.setItem('topNum5Bool', '0');
     this.props.history.push('/');
   };
-  // 点击评论
-  comment = () => {
-    if (this.loginAlert1()) {
-      this.setState({
-        showCommentDialog: true,
-      });
-      const marketDetailPage: any = document.getElementById('marketDetailPage');
-      marketDetailPage.scrollTop = 0;
-      marketDetailPage.style.overflow = 'hidden';
-    }
-  };
-  // 隐藏评论弹窗
-  hideComment = () => {
-    this.setState({
-      showCommentDialog: false,
-    });
-  };
-  //分享
-  share = () => {
-    const { marketDetailData } = this.props.serverData;
-    const marketId = this.props.marketId;
-    let squrieImg;
-    if (marketDetailData.image != undefined) {
-      if (marketDetailData.image.indexOf(',') == -1) {
-        squrieImg = `${marketDetailData.image}?imageView2/1/w/100/h/100`;
-      } else {
-        const images = marketDetailData.image.split(',');
-        squrieImg = `${images[0]}?imageView2/1/w/100/h/100`;
-      }
-    }
-    if (window.delphy) {
-      window.delphy.share(
-        marketDetailData.title,
-        marketDetailData.description,
-        `${delphyUrl}find/topicDetail/${marketId}`,
-        squrieImg,
-      );
-    } else if (parent.isPhoneGap) {
-      parent.umShare(
-        marketDetailData.title,
-        marketDetailData.description,
-        `${delphyUrl}find/topicDetail/${marketId}`,
-        squrieImg,
-      );
-    } else if (this.state.isImtoken) {
-      webViewApi.share('', `邀请您参加预测话题："${marketDetailData.title}",链接：`, null);
-    } else {
-      Copy(`邀请您参加预测话题："${marketDetailData.title}",链接：${window.location.href}`);
-      this.setState({ showCopyDialog: 1 });
-    }
-  };
-  //隐藏复制弹窗
-  hideCopyDialog = () => {
-    this.setState({ showCopyDialog: 0 });
-  };
-  //收藏
-  collect = marketId => {
-    if (this.loginAlert1()) {
-      this.props.dispatch(
-        //@ts-ignore
-        fetchData.collect(marketId, result => {
-          if (result.code == 200) {
-            showToast('收藏成功', 2);
-            this.setState({ isCollect: true });
-            this.props.dispatch({
-              type: fetchTypes.UPDATE_FIND_COLLECT,
-              data: true,
-              id: marketId,
-            });
-          } else {
-            showToast(result.msg, 2);
-          }
-        }),
-      );
-    }
-  };
-  //取消收藏
-  unCollect = marketId => {
-    if (this.loginAlert1()) {
-      this.props.dispatch(
-        //@ts-ignore
-        fetchData.unCollect(marketId, result => {
-          if (result.code == 200) {
-            showToast('取消收藏', 2);
-            this.setState({ isCollect: false });
-            this.props.dispatch({
-              type: fetchTypes.UPDATE_FIND_COLLECT,
-              data: false,
-              id: marketId,
-            });
-          } else {
-            showToast(result.msg, 2);
-          }
-        }),
-      );
-    }
-  };
-  //收藏点击事件
-  collectMethod = () => {
-    const marketId = this.props.marketId;
-    if (this.state.isCollect) {
-      this.unCollect(marketId);
-    } else {
-      this.collect(marketId);
-    }
-  };
+
   topicDetailScroll = () => {
     if (marketDetailPage) {
       const { scrollTop } = marketDetailPage;
@@ -401,7 +233,7 @@ class TopicDetail extends React.Component<Props, TopicDetailState> {
       marketDetailData,
       newestList,
       oracleInfo,
-      // isLoading,
+      isLoading,
       serverError,
     } = this.props.serverData;
 
@@ -430,32 +262,28 @@ class TopicDetail extends React.Component<Props, TopicDetailState> {
           totalRate = totalRate - 0 + (rate - 0);
         }
         return (
-          <div className="optionBox" key={index}>
-            <OptionItem
-              index={index}
-              appeal={marketDetailData.appeal}
-              marketType={marketDetailData.marketType}
-              apiData={marketDetailData}
-              totalPerson={marketDetailData.numInvestor}
-              holdOptionId={marketDetailData.holdOptionId}
-              data={val}
-              rate={rate}
-              marketTagType={marketDetailData.marketTagType}
-              buyMethod={this.buyMethod}
-              banBuy={this.state.banBuy}
-              loginAlert1={this.loginAlert1}
-            />
-            <div className="dividerLine" />
-          </div>
+          <OptionItem
+            appeal={marketDetailData.appeal}
+            marketType={marketDetailData.marketType}
+            apiData={marketDetailData}
+            totalPerson={marketDetailData.numInvestor}
+            holdOptionId={marketDetailData.holdOptionId}
+            key={index}
+            data={val}
+            rate={rate}
+            buyMethod={this.buyMethod}
+            banBuy={this.state.banBuy}
+            loginAlert1={this.loginAlert1}
+          />
         );
       });
     };
-    // marketDetailData.subscribed;
+
     return serverError ? (
       <NotNetwork />
     ) : (
       <div>
-        {this.state.loading ? (
+        {isLoading ? (
           <div className="loadingBox">
             <Loading />
           </div>
@@ -467,10 +295,8 @@ class TopicDetail extends React.Component<Props, TopicDetailState> {
               invested={marketDetailData.invested}
               options={marketDetailData.options}
               status={1}
-              show={this.state.showCommentDialog}
               loginAlert1={this.loginAlert1}
               goHome={this.goHome}
-              hideCommentDialog={this.hideComment}
             />
             <div className="topicDetail" id="marketDetailPage" onScroll={this.topicDetailScroll}>
               <Helmet>
@@ -496,11 +322,8 @@ class TopicDetail extends React.Component<Props, TopicDetailState> {
                     marketId={this.props.marketId}
                     data={marketDetailData}
                     oracleInfo={oracleInfo}
-                    // isCollect={marketDetailData.subscribed}
-                    showCopyDialog={this.state.showCopyDialog}
-                    hideCopyDialog={this.hideCopyDialog}
+                    isCollect={marketDetailData.subscribed}
                     loginAlert1={this.loginAlert1}
-                    onSelectChange={this.onGetMarketDetailInfo}
                   />
                   <div className="selectBox">{_view()}</div>
                   {this.renderAd()}
@@ -562,25 +385,6 @@ class TopicDetail extends React.Component<Props, TopicDetailState> {
                         </div>
                       )}
                     </div>
-                  </div>
-                  {/**详情底部 */}
-                  <div className="detailBottom">
-                    <Flex className="comment">
-                      <div className="icon icon-ic_comments iconfontMarket" />
-                      <p onClick={this.comment}>写评论</p>
-                    </Flex>
-                    <Flex>
-                      <div className="home icon-ic_home iconfontMarket" onClick={this.goHome} />
-                      <div
-                        className={
-                          this.state.isCollect
-                            ? 'iconfont icon-shoucang font-orange-gradient collect'
-                            : 'iconfontMarket icon-me_icon_collect1 collect'
-                        }
-                        onClick={this.collectMethod}
-                      />
-                      <div className="share icon-ic_share iconfontMarket" onClick={this.share} />
-                    </Flex>
                   </div>
                 </div>
               }

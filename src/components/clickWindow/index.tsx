@@ -1,6 +1,3 @@
-/**
- * 旧的买卖页里用到，暂时不删
- */
 import React from 'react';
 import './clickWindow.less';
 import { withRouter, RouteComponentProps } from 'react-router-dom';

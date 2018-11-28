@@ -44,102 +44,11 @@
       width: 0.3rem;
       height: 0.3rem;
     }
-    .futureBackground {
-      background-color: #f5f5f5;
-    }
-    .normalBackground {
-      background-color: #ffffff;
-    }
-    .selectRateView {
-      box-sizing: border-box;
-      width: 100%;
-      height: 0.45rem;
-      background: #fff;
-      margin-top: 0.1rem;
-      padding: 0 0.16rem;
-      p{
-        font-size:0.14rem;
-        font-family:PingFangSC-Regular;
-        font-weight:400;
-        color:rgba(102,102,102,1);
-        line-height:0.2rem;
-      }
-      .rate{
-        position: relative;
-        width:150px;
-        height: 0.36rem;
-        margin: 0 0.1rem;
-        background:rgba(245,245,245,1);
-        border-radius:4px;
-        box-sizing: border-box;
-        border:1px solid RGBA(231, 233, 237, 1);
-        select {
-          z-index: 1;
-          width: 1.8rem;
-          height: 0.36rem;
-          padding: 0 0.1rem;
-          box-sizing: border-box;
-        //  /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
-          border: none;
-        //   /*很关键：将默认的select选择框样式清除*/
-          appearance:none;
-          background: none;
-        //   -moz-appearance:none;
-        //   -webkit-appearance:none;
-        //   /*在选择框的最右侧中间显示小箭头图片*/
-          // background: url(../../../../img/future/eth.png) no-repeat 220px center transparent;
-        //   /*为下拉小箭头留出一点位置，避免被文字覆盖*/
-        //   padding-right: 14px;
-        }
-         /*清除IE的默认选择框样式清除，隐藏下拉箭头*/
-        select::-ms-expand {display: none;}
-        p{
-          font-size:0.14rem;
-          padding: 0 0.1rem;
-          font-family:PingFangSC-Regular;
-          font-weight:400;
-          color:rgba(51,51,51,1);
-        }
-        .triangle{
-          z-index: 0;
-          right: 0;
-          top: 0.1rem;
-          position: absolute;
-          font-size: 0.1rem;
-        }
-      }
-      .trend {
-        margin-left: 0.2rem;
-        img{
-          width: 0.16rem;
-          height: 0.08rem;
-        }
-        p{
-          margin-left: 0.05rem;
-          height:16px;
-          font-size:0.11rem;
-          font-family:PingFangSC-Medium;
-          font-weight:500;
-          // color:rgba(0,189,154,1);
-          line-height:0.16rem;
-        }
-      }
-    }
-    .joinNumView{
-      height: 0.4rem;
-      margin: 0 0.16rem;
-      p{
-        font-size:0.14rem;
-        font-family:PingFangSC-Regular;
-        font-weight:400;
-        color:rgba(153,153,153,1);
-        line-height:0.3rem;
-      }
-    }
     .topicItem {
-      // margin-bottom: 0.15rem;
+      margin-bottom: 0.15rem;
+      background-color: #fff;
       .itemTop {
-        // margin-bottom: 0.15rem;
+        margin-bottom: 0.15rem;
         position: relative;
         .itemTopBox {
           width: 100%;
@@ -162,9 +71,6 @@
               rgba(0, 0, 0, 0.04) 70%
             );
             .topicImgMidTitle {
-              display: flex;
-              flex-direction: row;
-              justify-content: center;
               //font-family: PingFangSC-Semibold;
               font-size: 0.18rem;
               color: #ffffff;
@@ -293,7 +199,6 @@
     position: relative;
   }
   .itemTopMid {
-    padding-top: 0.15rem;
     align-items: center;
     position: relative;
     button {
@@ -406,32 +311,30 @@
     justify-content: center;
     align-items: center;
   }
-  .moreText {
-    margin-right: 0.05rem;
+  .text1 {
+    margin-right: 0.1rem;
     // font-family: PingFangSC-Regular;
     font-size: 0.14rem;
-    color: #39A3FE;
+    color: #141517;
     letter-spacing: 0;
     text-align: right;
   }
   .downArrow {
-    font-size: 0.1rem;
-    color: #39A3FE;
+    font-size: 0.27rem;
+    color: #6e7a9f;
   }
   .upArrow {
-    font-size: 0.1rem;
-    color: #39A3FE;
+    font-size: 0.27rem;
+    color: #6e7a9f;
     transform: rotate(180deg);
   }
 }
 .hideArea {
   .desText {
-    padding: 0.1rem 0.1rem 0 0.1rem;
-    font-family: 'PingFangSC-Regular';
-    font-size: 0.15rem;
-    font-weight:400;
-    color:rgba(20,21,23,1);
-    line-height:24px;
+    padding: 0.1rem;
+    // font-family: 'PingFangSC-Regular';
+    font-size: 0.14rem;
+    color: #111111;
   }
   .itemBox {
     display: flex;

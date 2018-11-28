@@ -1,0 +1,46 @@
+@import '../../../../style/delphyConstStyle.less';
+.outBoxRecord{
+   background-color: @white;
+   margin: @margin24 @margin12 @margin24 @margin12;
+    border-radius: 0.09rem;
+    h5{
+       color:@title_black;
+       font-weight: @font_weight;
+       padding: 0 @margin20 @margin20 @margin20;
+    }
+    .itemCardBox{
+        .lineCard{
+            display: flex;
+            flex: 1;
+            justify-content: flex-start;
+            align-items: center;
+            padding-top: @padding12;
+            padding-left: @padding20;
+            // margin-bottom: @margin12;
+            .itemCard{
+            
+                width:1.56rem;
+                .p1{
+                    .textTitle{
+                        font-weight: 500;
+                    }
+                    span{
+                        color:@title_black;
+                    }
+                }
+                .p2{
+                 margin-bottom: @margin4;
+                }
+            }
+           
+        }
+        .lineStyle{
+            height: 0.01rem;
+            background-color: @pale_grey;
+            margin:@padding12 @padding20 0 @padding20;
+        }
+
+       
+    }
+
+}

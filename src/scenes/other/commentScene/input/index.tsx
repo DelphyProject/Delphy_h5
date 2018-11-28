@@ -19,6 +19,7 @@ class Input extends React.Component<InputProps> {
     super(props);
     this.state = {};
   }
+
   render() {
     let commentInput;
     if (this.props.type == 1) {

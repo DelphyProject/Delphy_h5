@@ -11,9 +11,10 @@ interface InputProps {
   invested: boolean;
   id: number;
   holdOptionId: number;
+  goHome: any;
+  loginAlert1: any;
   toUser: any;
   status: any;
-  hideCommentDialog: any;
 }
 interface InputState {
   InputExpand: boolean;
@@ -38,11 +39,7 @@ class Input extends React.Component<Props, InputState> {
       options: this.props.options,
     };
   }
-  componentWillReceiveProps(nextProps) {
-    this.setState({
-      InputExpand: nextProps.show,
-    });
-  }
+
   sendComment() {
     if (this.state.content.length <= 0) {
       showToast('内容不能为空', 2);
@@ -74,11 +71,10 @@ class Input extends React.Component<Props, InputState> {
         this.clearStyle();
         this.setState({
           // statusCode: !this.state.statusCode,
-          // InputExpand: false,
+          InputExpand: false,
           content: '',
           optionId: null,
         });
-        this.props.hideCommentDialog();
         const marketDetailPage: any = document.getElementById('marketDetailPage');
         marketDetailPage.style.overflow = 'auto';
       }),
@@ -136,10 +132,10 @@ class Input extends React.Component<Props, InputState> {
   };
 
   render() {
-    const { toUser } = this.props;
+    const { toUser, status } = this.props;
     return (
       <div>
-        {/* <div
+        <div
           // tslint:disable-next-line:jsx-no-lambda
           onClick={() => {
             this.props.goHome();
@@ -170,7 +166,7 @@ class Input extends React.Component<Props, InputState> {
             // document.getElementById('marketDetailPage').scrollTop = 0;
           }}>
           <i className="icon-CombinedShapex iconfont" />
-        </div> */}
+        </div>
         {this.state.InputExpand == true ? (
           <div className="InputExpand" id="InputExpand">
             <div
@@ -179,11 +175,10 @@ class Input extends React.Component<Props, InputState> {
               onClick={() => {
                 this.clearStyle();
                 this.setState({
-                  // InputExpand: false,
+                  InputExpand: false,
                   content: '',
                   optionId: null,
                 });
-                this.props.hideCommentDialog();
                 const marketDetailPage: any = document.getElementById('marketDetailPage');
                 marketDetailPage.style.overflow = 'auto';
                 // document.getElementById('marketDetailPage').style.overflow = "auto";
@@ -197,11 +192,10 @@ class Input extends React.Component<Props, InputState> {
                   onClick={() => {
                     this.clearStyle();
                     this.setState({
-                      // InputExpand: false,
+                      InputExpand: false,
                       content: '',
                       optionId: null,
                     });
-                    this.props.hideCommentDialog();
                     const marketDetailPage: any = document.getElementById('marketDetailPage');
                     marketDetailPage.style.overflow = 'auto';
                   }}>

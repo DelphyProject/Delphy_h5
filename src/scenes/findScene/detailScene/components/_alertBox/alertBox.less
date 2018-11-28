@@ -1,0 +1,88 @@
+@import "../../../../../style/delphyConstStyle";
+.alertBoxOut{
+    position: fixed;
+    width:100%;
+    top:0;
+    left: 0;
+    background-color: rgba(0,0,0,0.3);
+    height: 100%;
+    z-index:100;
+    pre{
+        width:10%;
+        transform:rotate(180deg);
+        color: #c3c9d1;
+        line-height:@line_height50;
+        font-size:@font_size16;
+      }
+    .alertBox{
+        position: absolute;
+        bottom:0;
+        left: 0;
+        width: 100%;
+        background-color: @white;
+        .alertBoxTop{
+            .closeBox{
+             
+            }
+            padding-left: @padding12;
+            padding-right: @padding12;
+            height: 0.53rem;
+            align-items: center;
+            background-color: @white;
+            box-shadow:0 0 0.5rem rgba(0,0,0,0.08);
+            display: flex;
+            justify-content: space-between;
+            flex: 1;
+            .close_icon{
+    
+            }
+            .close_text{
+    
+            }
+        }
+        .alertBoxBom{
+            width: 100%;
+            height: 100%;
+            padding:@padding12 0.16rem 0;
+            box-sizing: border-box;
+            .selectItem{
+                background-color: #fff;
+                height: 0.58rem;
+                display: flex;
+                flex: 1;
+                justify-content: space-between;
+                align-items: center;
+                font-weight: @font_weight;
+                margin-bottom: @margin12;
+                line-height: 0.58rem;
+                border-radius: 0.09rem;
+                padding-left: @padding20;
+                padding-right: 0.2rem;
+                box-shadow:0 0 0.5rem rgba(0,0,0,0.08);
+                color:@title_black;
+                width:100%;
+                box-sizing: border-box;
+            }
+            .unselectItem{
+                background-color: #e8e8e8;
+                height: 0.58rem;
+                width:100%;
+                box-sizing: border-box;
+                display: flex;
+                flex: 1;
+                justify-content: space-between;
+                align-items: center;
+                font-weight: @font_weight;
+                margin-bottom: @margin12;
+                line-height: 0.58rem;
+                border-radius: 0.09rem;
+                padding-left: @padding20;
+                padding-right: 0.2rem;
+                box-shadow:0 0 0.5rem rgba(0,0,0,0.08);
+                color:@bluey_grey;
+            }
+        }
+       
+    }
+    
+}

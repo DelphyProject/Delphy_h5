@@ -5,11 +5,8 @@
   .topicItem {
     margin-bottom: 0.15rem;
     background-color: #fff;
-    border-radius: 0.06rem;
-    margin: 0.1rem;
     .itemTop {
-      border-top-left-radius:0.06rem;
-      border-top-right-radius:0.06rem;
+      padding: 0.15rem 0.12rem;
       position: relative;
       .itemTopBox {
         width: 100%;
@@ -21,8 +18,6 @@
           position: absolute;
           width: 100%;
           height: 100%;
-          border-top-left-radius:0.06rem;
-          border-top-right-radius:0.06rem;
           background-image: linear-gradient(
             0deg,
             #151412 0%,
@@ -60,14 +55,9 @@
         .topicBgImg {
           width: 100%;
           height: 2.2rem;
-          border-top-left-radius:0.06rem;
-          border-top-right-radius:0.06rem;
         }
         .topicImgMidTitle {
           //font-family: PingFangSC-Semibold;
-          display: flex;
-          flex-direction: row;
-          align-items: center;
           font-size: 0.18rem;
           color: #ffffff;
           letter-spacing: 0;
@@ -133,15 +123,14 @@
             }
             .img2 {
               width: 0.14rem;
+              height: 0.14rem;
               color: rgba(255, 255, 255, 0.6);
               margin-right: 0.04rem;
             }
             span {
-              font-family: PingFangSC-Regular;
+              // font-family: PingFangSC-Regular;
               font-size: 0.13rem;
-              font-weight:400;
-              color:rgba(255,255,255,0.6);
-              line-height:18px;
+              color: rgba(255, 255, 255, 0.6);
               letter-spacing: 0;
             }
           }
@@ -169,12 +158,11 @@
     width: 0.2rem !important;
   }
   .itemTopMid {
-    margin-top: 0.18rem;
-    padding-left: 0.1rem;
+    padding-left: 0.18rem;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    margin-bottom: 0.18rem;
+    margin-bottom: 0.17rem;
     img {
       height: 0.53rem;
       width: 0.18rem;
@@ -201,65 +189,7 @@
       height: 0.5rem !important;
     }
   }
-  .bgSingle{
-    background:rgba(255,250,248,1);
-  }
-  .bgDouble{
-    background:rgba(255,255,255,1);
-  }
-  .lastItemBorder{
-    border-bottom-left-radius:0.06rem;
-    border-bottom-right-radius:0.06rem;
-  }
   .itemBomBox {
-    border-radius: 0.06rem;
-    .listContentItemBox{
-      display: flex;
-      flex-direction: column;
-      .am-progress-outer{
-        background-color: #00000000;
-      }
-      .am-progress-bar{
-        border-left: none;
-        border-right: none;
-        float: right;
-      }
-      .listContentItem{
-        padding-right: 10px;
-        padding-left: 10px;
-        height: 40px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        .listContentItemLeft{
-          height: 40px;
-          display: flex;
-          align-items: center;
-          flex-direction: row;
-          .num{
-            margin-right: 15px;
-            font-size:13px;
-            text-align: center;
-            font-family:PingFangSC-Medium;
-            font-weight:500;
-            color:rgba(255,255,255,1);
-            line-height:18px;
-            border-radius: 9px;
-            width:18px;
-            height:18px;
-            background:linear-gradient(135deg,rgba(255,148,76,1) 0%,rgba(255,110,74,1) 100%);
-          }
-          .title{
-            font-size:15px;
-            font-family:PingFangSC-Regular;
-            font-weight:400;
-            color:rgba(20,21,23,1);
-            line-height:21px;
-          }
-        }
-      }
-    }
     .bomItemBg1 {
       background: #fffaf8;
     }

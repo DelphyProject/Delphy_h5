@@ -16,6 +16,7 @@ interface DetailTopState {
   expand: boolean;
   loadingOracle: boolean;
   isCollect: boolean;
+  ClickWindowState: number;
   isImtoken: boolean;
 }
 type Props = DetailTopProps & DispatchProp;
@@ -27,6 +28,7 @@ class DetailTop extends React.Component<Props, DetailTopState> {
       expand: false,
       loadingOracle: false,
       isCollect: this.props.isCollect,
+      ClickWindowState: 0,
       isImtoken: !!window.imToken,
     };
 
@@ -120,6 +122,12 @@ class DetailTop extends React.Component<Props, DetailTopState> {
     }
   };
 
+  ClickWindowCancel = () => {
+    this.setState({
+      ClickWindowState: 0,
+    });
+  };
+
   render() {
     const { marketDetailData, oracleInfo, oracleMarketId } = this.props.serverData;
     let imgBg;
@@ -138,7 +146,7 @@ class DetailTop extends React.Component<Props, DetailTopState> {
     }
     const marketId = this.props.marketId;
     return (
-      <div className="escapeTopicBoxDetail">
+      <div className="topicBoxDetail">
         <div className="detailTop">
           {this.props.data != '' ? (
             <div>
@@ -155,13 +163,11 @@ class DetailTop extends React.Component<Props, DetailTopState> {
                         <div className="topicImgMidTitle">{this.props.data.title}</div>
                         <div className="topicImgBom">
                           <div className="left">
-                            <span>
-                              截止：
-                              {formatTime(this.props.data.endTime)}
-                            </span>
+                            <i className="img1 iconfontMarket icon-Group4" />
+                            <span>{formatTime(this.props.data.endTime)}</span>
                           </div>
                           <div className="right">
-                            <i className="img2 iconfontMarket icon-ic_people" />
+                            <i className="img2 iconfontMarket icon-Adeltails_amoun" />
                             <span>{this.props.data.numInvestor}</span>
                           </div>
                         </div>
@@ -176,7 +182,6 @@ class DetailTop extends React.Component<Props, DetailTopState> {
                         data={oracleMarketId == marketId ? oracleInfo : false}
                         // news="sflsfks"
                         type={marketDetailData.status}
-                        marketType={0}
                       />
                       <div className="desText">{this.props.data.description}</div>
                     </div>

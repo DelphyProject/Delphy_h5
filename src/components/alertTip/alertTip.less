@@ -1,0 +1,48 @@
+.alertTip{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999999;
+    background-color:rgba(0,0,0,0.7);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .content{
+        border-radius: 0.06rem;
+        position: relative;
+       width: 2.6rem;
+       height: 3.4rem;
+       color: #141517;
+       background-color: #fff;
+       .head{
+           padding-top: 0.3rem;
+           text-align: center;
+        font-size: 0.17rem;
+        font-weight: 700;
+       }
+       .explain{
+           padding: 0 0.2rem;
+           height: 2.32rem;
+           margin-top: 0.16rem;
+           overflow: auto;
+           p{
+               line-height: 0.18rem;
+            font-size: 0.13rem;
+           }
+       }
+      
+       .bom{
+        font-size: 0.17rem;
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 0.45rem;
+        line-height: 0.45rem;
+       }
+        
+    }
+}

@@ -8,22 +8,20 @@ import {
 } from 'react-router-dom';
 
 import './router.less';
-import Temp from './temp';
-import testAPI from './testapi';
 import PhonegapBar from './phonegapBar';
-import { isStandalone } from '@/utils/device';
-import Mymarket from '@/scenes/myMarketScene';
-import Find from '@/scenes/findScene';
-import me from '@/scenes/meScene';
-import detail from '@/scenes/findScene/detailScene';
-import comment from '@/scenes/other/commentScene';
-import search from '@/scenes/other/search';
-import login from '@/scenes/other/login';
-import Future from '@/scenes/futureScene';
-import Rank from '@/scenes/rankScene';
-import Download from '@/scenes/download';
-import Escape from '@/scenes/escapeActive';
-import CommentApeal from '@/scenes/other/appeal/appeal';
+import Temp from './temp';
+import Mymarket from '../../scenes/myMarketScene';
+import Find from '../../scenes/findScene';
+import me from '../../scenes/meScene';
+import detail from '../../scenes/findScene/detailScene';
+import comment from '../../scenes/other/commentScene';
+import search from '../../scenes/other/search';
+import login from '../../scenes/other/login';
+import testAPI from './testapi';
+import Rank from '../../scenes/rank';
+import Download from '../../scenes/download';
+import Escape from '../../scenes/escapeActive';
+import CommentApeal from '../../scenes/other/appeal/appeal';
 
 interface MyRouterState {
   isTemp: boolean;
@@ -91,7 +89,7 @@ class MyRouter extends Component<RouteComponentProps, MyRouterState> {
     return (
       <Router>
         <div className="routerBox">
-          {parent.isPhoneGap || isStandalone ? (
+          {parent.isPhoneGap ? (
             <PhonegapBar
               title={this.state.title}
               onBack={this.onBack}
@@ -107,7 +105,6 @@ class MyRouter extends Component<RouteComponentProps, MyRouterState> {
             {/* <Route exact path="/:id" render={() => ()} /> */}
             <Route path="/mymarket" component={Mymarket} />
             <Route path="/find" component={Find} />
-            <Route path="/future" component={Future} />
             <Route path="/me" component={me} />
             <Route path="/market" component={detail} />
             <Route path="/comment" component={comment} />

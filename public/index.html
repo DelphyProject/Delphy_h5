@@ -4,26 +4,20 @@
 <head>
   <meta charset="utf-8">
   <!-- <meta name="viewport" content="initial-scale=1, width=device-width,  maximum-scale=1,  user-scalable=no, viewport-fit=cover"> -->
-  <meta content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no, width=device-width" name="viewport">
+   <meta content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no, width=device-width" name="viewport">
   <meta name="theme-color" content="#000000">
   <style>
-    body {
-        box-sizing: border-box;
-        padding-top: constant(safe-area-inset-top);
-        padding-top: env(safe-area-inset-top);
-        padding-left: constant(safe-area-inset-left);
-        padding-left: env(safe-area-inset-left);
-        padding-right: constant(safe-area-inset-right);
-        padding-right: env(safe-area-inset-right);
-        padding-bottom: constant(safe-area-inset-bottom);
-        padding-bottom: env(safe-area-inset-bottom);
-    }
-    .am-picker-popup-body{
-      z-index: 99999;
-    }
-    .am-picker-popup-item{
-      color: #ff6d1a !important;
-    }
+      body {
+              box-sizing: border-box;
+              padding-top: constant(safe-area-inset-top);
+              padding-top: env(safe-area-inset-top);
+              padding-left: constant(safe-area-inset-left);
+              padding-left: env(safe-area-inset-left);
+              padding-right: constant(safe-area-inset-right);
+              padding-right: env(safe-area-inset-right);
+              padding-bottom: constant(safe-area-inset-bottom);
+              padding-bottom: env(safe-area-inset-bottom);
+          }
     </style>
   <!--
       manifest.json provides metadata used when your web app is added to the
@@ -47,10 +41,10 @@
 </head>
 
 <body className="no-scroll">
-  <% if (htmlWebpackPlugin.options.isCordovaApp){ %>
-  <script src="cordova.js"></script>
-  <script src="boot.js"></script>
-  <% } %>
+    <% if (htmlWebpackPlugin.options.isCordovaApp){ %>
+        <script src="cordova.js"></script>
+        <script src="boot.js"></script>
+    <% } %>
   <noscript>
     You need to enable JavaScript to run this app.
   </noscript>

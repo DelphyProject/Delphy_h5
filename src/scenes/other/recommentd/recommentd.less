@@ -1,0 +1,82 @@
+@import "../../../style/delphyConstStyle.less";
+.recommendPack{
+  margin-bottom: 0.24rem;
+  padding-top:0.12rem;
+  .recommendTitle{
+    font-weight:@font_weight;
+    font-size:@font_size16;
+  }
+  .Recommentd {
+    padding:0.05rem 0 0 0 ;
+    background: #fff;
+    border-radius:0.1rem 0.1rem 0 0;
+    margin-top:12px;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.08);
+    .Comments{
+      padding-top:@padding15;
+      padding-left:0.2rem;
+      dl{
+        display: flex;
+        justify-content: flex-start;
+        dd{
+          width:13.5%;
+          img{
+            width: 0.42rem;
+            height: 0.42rem;
+            border-radius:50%;
+          }
+        }
+        dt{
+          padding-top:0.14rem;
+          width:85%;
+          margin-left:1.5%;
+          hr{
+            background: @pale_grey;
+            height: 1px;
+            border:none;
+          }
+          h4{
+            font-weight: 500;
+            font-size:@font_size12;
+            span {
+              color: @bluey_grey;
+              margin-left:0.08rem;
+            }
+          }
+          i{
+            color: @bluey_grey;
+            font-size:@font_size12;
+            line-height: @line_height20;
+          }
+          p{
+            margin-top:@margin8;
+            font-size:@font_size14 ;
+            font-weight: @font_weight;
+            padding-right:0.2rem;
+          }
+          pre{
+            font-size: @font_size10;
+            color: @bluey_grey;
+            margin-bottom:@margin8;
+          }
+        }
+      }
+    }
+
+  }
+}
+.allcomments{
+  height:44px;
+  line-height: 44px;
+  text-align: center;
+  background: #fff;
+  border-radius:0 0 10px 10px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.08);
+  font-size:@font_size13;
+  font-weight:500;
+  a{
+    color: #000;
+    font-size:0.13rem;
+  }
+ 
+}

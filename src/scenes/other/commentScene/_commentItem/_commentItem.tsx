@@ -1,125 +1,49 @@
 import React from 'react';
 import { showToast } from '@/utils/common';
-import { Flex } from 'antd-mobile';
 import { connect, DispatchProp } from 'react-redux';
+
 import { withRouter, RouteComponentProps } from 'react-router-dom';
-import { isLogin } from '@/utils/tool';
-import * as fetchData from '@/redux/actions/actions_fetchServerData';
-import * as fetchTypes from '@/redux/actions/fetchTypes';
+import * as fetchData from '../../../../redux/actions/actions_fetchServerData';
 import './_commentItem.less';
-import ShowTime from '@/components/showTime';
+import ShowTime from '../../../../components/showTime';
+import { isLogin } from '../../../../utils/tool';
 interface CommentItemProps {
-  banBuy: boolean;
   data: any;
-  typeId: number;
-  holdOptionId: any;
   onChoose: any;
-  status: number;
-  loginAlert1: any;
 }
 interface CommentItemState {
-  commentId: number;
   isZaning: boolean;
-  banBuy: boolean;
-  zaned: boolean;
-  buyAble: any;
+  commentId: number;
+  isLike: boolean;
   numZans: number;
-  isSupport: boolean;
 }
-type Props = CommentItemProps & DispatchProp & RouteComponentProps;
+type Props = CommentItemProps & RouteComponentProps & DispatchProp;
 class CommentItem extends React.Component<Props, CommentItemState> {
   constructor(props) {
     super(props);
     this.state = {
+      isLike: this.props.data.zaned,
       commentId: 12,
-      isZaning: false,
-      banBuy: this.props.banBuy,
-      zaned: this.props.data.zaned,
-      buyAble: null,
       numZans: this.props.data.numZans,
-      isSupport: true,
+      isZaning: false,
     };
   }
 
-  componentWillMount() {
-    const url = window.location.search;
-    const theRequest = {};
-    if (url.indexOf('?') != -1) {
-      const str = url.substr(1);
-      const strs = str.split('&');
-      for (let i = 0; i < strs.length; i++) {
-        theRequest[strs[i].split('=')[0]] = unescape(strs[i].split('=')[1]);
-      }
-      //@ts-ignore
-      if (theRequest.escape != undefined && theRequest.escape != '') {
-        //@ts-ignore
-        if (theRequest.escape == 'q') {
-          this.setState({ isSupport: false });
-        }
-      }
-    }
-    if (this.props.data != '') {
-      if (this.props.typeId == 1) {
-        if (this.props.holdOptionId == null) {
-          this.setState({
-            buyAble: true,
-          });
-        } else if (this.props.holdOptionId == this.props.data.marketInfo.holdOption.id) {
-          this.setState({
-            buyAble: true,
-          });
-        } else {
-          this.setState({
-            buyAble: false,
-          });
-        }
-      }
-      if (this.props.typeId == 2) {
-        if (this.props.holdOptionId == 'null') {
-          this.setState({
-            buyAble: true,
-          });
-        } else if (this.props.holdOptionId == this.props.data.marketInfo.holdOption.id) {
-          this.setState({
-            buyAble: true,
-          });
-        } else {
-          this.setState({
-            buyAble: false,
-          });
-        }
-      }
-    }
-  }
-
-  componentWillReceiveProps(nextProps) {
+  like() {
+    if (this.state.isZaning) return;
     this.setState({
-      banBuy: nextProps.banBuy,
-      zaned: nextProps.data.zaned,
-      numZans: nextProps.data.numZans,
+      isZaning: true,
     });
-  }
-
-  like = e => {
-    e.stopPropagation();
-    e.nativeEvent.stopImmediatePropagation();
     if (isLogin(true)) {
       this.props.dispatch(
         //@ts-ignore
         fetchData.likeComment(this.props.data.id, result => {
-          this.setState({
-            isZaning: false,
-          });
+          this.setState({ isZaning: false });
           if (result.code == 200) {
-            this.setState({
-              zaned: true,
-              numZans: this.state.numZans + 1,
-            });
             showToast('点赞成功', 2);
-            this.props.dispatch({
-              type: fetchTypes.UPDATE_NEWESTCOMMENT,
-              id: this.props.data.id,
-              data: true,
+            this.setState({
+              isLike: !this.state.isLike,
+              numZans: this.state.numZans + 1,
             });
           } else {
             showToast('请求失败', 2);
@@ -127,11 +51,13 @@ class CommentItem extends React.Component<Props, CommentItemState> {
         }),
       );
     }
-  };
+  }
 
-  unlike = e => {
-    e.stopPropagation();
-    e.nativeEvent.stopImmediatePropagation();
+  unlike() {
+    if (this.state.isZaning) return;
+    this.setState({
+      isZaning: true,
+    });
     if (isLogin(true)) {
       this.props.dispatch(
         //@ts-ignore
@@ -140,15 +66,10 @@ class CommentItem extends React.Component<Props, CommentItemState> {
             isZaning: false,
           });
           if (result.code == 200) {
-            this.setState({
-              zaned: false,
-              numZans: this.state.numZans - 1,
-            });
             showToast('取消点赞', 2);
-            this.props.dispatch({
-              type: fetchTypes.UPDATE_NEWESTCOMMENT,
-              id: this.props.data.id,
-              data: false,
+            this.setState({
+              isLike: !this.state.isLike,
+              numZans: this.state.numZans - 1,
             });
           } else {
             showToast('请求失败', 2);
@@ -156,29 +77,9 @@ class CommentItem extends React.Component<Props, CommentItemState> {
         }),
       );
     }
-  };
+  }
 
-  zanedMethod = e => {
-    e.stopPropagation();
-    e.nativeEvent.stopImmediatePropagation();
-    if (this.state.isZaning) return;
-    this.setState({
-      isZaning: true,
-    });
-    if (this.state.zaned) {
-      this.unlike(e);
-    } else {
-      this.like(e);
-    }
-  };
-
-  ownBuyMethod = e => {
-    e.stopPropagation();
-    e.nativeEvent.stopImmediatePropagation();
-    const marketInfo = this.props.data.marketInfo;
-    this.props.history.push(`/find/buy/${marketInfo.holdOption.id}`);
-  };
-
+  // 头像处胜率渲染函数
   render() {
     const comment = this.props.data;
     let supportItem;
@@ -189,68 +90,42 @@ class CommentItem extends React.Component<Props, CommentItemState> {
     } else {
       supportItem = '';
     }
-    // 头像处胜率渲染函数
     const winRateRender = () => {
-      let imgSrc;
-      let content;
       if (this.props.data.statisticsVO) {
         switch (this.props.data.statisticsVO.grade) {
           case 'newbie':
-            imgSrc = require('@/img/future/ic_copper.png');
-            content = '新手';
-            break;
+            return <span className="level1">新手</span>;
           case 'white':
-            imgSrc = require('@/img/future/ic_copper.png');
-            content = this.props.data.statisticsVO.winRate;
-            break;
+            return <span className="level1">胜率 {this.props.data.statisticsVO.winRate}</span>;
           case 'yellow':
-            imgSrc = require('@/img/future/ic_silver.png');
-            content = this.props.data.statisticsVO.winRate;
-            break;
+            return <span className="level2">胜率 {this.props.data.statisticsVO.winRate}</span>;
           case 'red':
-            imgSrc = require('@/img/future/ic_gold.png');
-            content = this.props.data.statisticsVO.winRate;
-            break;
+            return <span className="level3">胜率 {this.props.data.statisticsVO.winRate}</span>;
           default:
-            imgSrc = require('@/img/future/ic_copper.png');
-            content = '0%';
-            break;
+            return <span className="level1">胜率0%</span>;
         }
-        return (
-          <Flex direction="row" className="winningRate">
-            <img src={imgSrc} alt="胜率" />
-            <span>{content}</span>
-          </Flex>
-        );
       } else {
-        return null;
+        return <span className="level1">胜率0%</span>;
       }
     };
-    const triangleColor = 'RGBA(255, 153, 135, 1)';
     return (
-      <div
-        className="commentItemTop paddingBom"
-        // tslint:disable-next-line:jsx-no-lambda
-        onClick={() => {
-          sessionStorage.setItem('comment', JSON.stringify(comment));
-          this.props.history.push(`/comment/reply/${comment.id}`);
-        }}>
+      <div className="_commentItem noPaddingBom">
         <div className="itemLeft">
           <img
             src={comment.creatorAvatar}
             // tslint:disable-next-line:jsx-no-lambda
-            onClick={e => {
-              e.stopPropagation();
-              e.nativeEvent.stopImmediatePropagation();
+            onClick={() => {
               this.props.history.push(`/me/otherProfile/${comment.creatorId}`);
             }}
           />
+          {winRateRender()}
         </div>
         <div className="itemRight">
-          <div className="commentRightTop">
+          <div className="top">
             <div className="left">
               <div className="nameBox">
                 <p
+                  className="p1"
                   // tslint:disable-next-line:jsx-no-lambda
                   onClick={() => {
                     if (this.props.onChoose) {
@@ -259,42 +134,34 @@ class CommentItem extends React.Component<Props, CommentItemState> {
                   }}>
                   {comment.creatorName}
                 </p>
-                {winRateRender()}
-                <p className="support" style={{ background: triangleColor }}>
-                  <span className="triangle" style={{ borderRightColor: triangleColor }} />
-                  {supportItem}
-                </p>
+                <div className="imgBox">{supportItem}</div>
               </div>
-              {/* <div className="p2">
+              <div className="p2">
                 <ShowTime time={comment.time} />
-              </div> */}
+              </div>
             </div>
             <div className="right">
               <span
                 className={
-                  this.state.zaned
-                    ? 'iconfont icon-ic_good_press zaned'
-                    : 'iconfont icon-ic_good font-unlike'
+                  this.state.isLike
+                    ? 'iconfont icon-Byizan zaned'
+                    : 'iconfont icon-Bweizan font-unlike'
                 }
                 // tslint:disable-next-line:jsx-no-lambda
-                onClick={e => {
-                  this.zanedMethod(e);
+                onClick={() => {
+                  this.state.isLike ? this.unlike() : this.like();
                 }}
               />
               <span className="p3">{this.state.numZans}</span>
             </div>
           </div>
           <div className="mid">{comment.content}</div>
-          <div className="bom">
-            <Flex>
-              <ShowTime time={comment.time} />
-            </Flex>
-          </div>
         </div>
       </div>
     );
   }
 }
+
 const comment = withRouter(CommentItem);
 const mapStateToProps = store => ({
   serverData: store.otherInfoState,

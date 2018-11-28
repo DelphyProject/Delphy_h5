@@ -15,7 +15,6 @@ interface ReplyInputState {
   InputExpand: boolean;
   tid: string;
   content: string;
-  toUser: any;
 }
 type Props = ReplyInputProps & DispatchProp;
 class ReplyInput extends React.Component<Props, ReplyInputState> {
@@ -25,24 +24,17 @@ class ReplyInput extends React.Component<Props, ReplyInputState> {
       InputExpand: false,
       tid: '',
       content: '',
-      toUser: this.props.toUser,
     };
   }
-  componentWillReceiveProps(nextProps) {
-    this.setState({
-      toUser: nextProps.toUser,
-    });
-  }
+
   sendReply() {
-    const uid = localStorage.getItem('userId');
     if (this.state.content.length <= 0) {
       showToast('内容不能为空', 2);
       return;
     }
     const params = {
       cid: this.props.id,
-      tid:
-        this.state.toUser && this.state.toUser.creatorId != uid ? this.state.toUser.creatorId : '',
+      tid: this.props.toUser ? this.props.toUser.creatorId : '',
       content: this.state.content,
     };
     this.props.dispatch(
@@ -95,7 +87,7 @@ class ReplyInput extends React.Component<Props, ReplyInputState> {
   };
 
   render() {
-    const { toUser } = this.state;
+    const { toUser } = this.props;
     const uid = localStorage.getItem('userId');
     return (
       <div id="replyInputOut">
