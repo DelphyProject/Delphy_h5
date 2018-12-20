@@ -44,8 +44,6 @@ class ActiveMarketList extends React.Component<Props, ActiveMarketListState> {
 
   componentWillMount() {
     window.socket.on(this.props.id, data => {
-      // console.log(data);
-      // console.log('-----2222');
       this.setState({ currentPrizePool: data.reward, numInvestor: data.numInvestor });
     });
 

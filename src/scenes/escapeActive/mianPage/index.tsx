@@ -72,8 +72,6 @@ class MainPage extends React.Component<Props, State> {
 
   componentWillMount() {
     window.socket.on(this.props.id, data => {
-      // console.log(data);
-      // console.log('-----111');
       this.setState({ currentPrizePool: data.reward, numInvestor: data.numInvestor });
     });
     this.setState({

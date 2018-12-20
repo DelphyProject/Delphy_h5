@@ -4,8 +4,6 @@ import { Route } from 'react-router-dom';
 import Find from '@/scenes/findScene/findPageNew';
 import SpecialDetail from '@/scenes/findScene/specialDetail';
 import TopicDetail from '@/scenes/findScene/topicDetail';
-import PopularTagPage from '@/scenes/findScene/popularTagPage';
-import AllRecommended from '@/scenes/findScene/findPage/_allRecommended';
 import NewMarketList from '@/scenes/findScene/newMarketList/newMarketList';
 import InnerAssets from '@/scenes/findScene/innerAssets';
 import Buy from '@/scenes/findScene/buy';
@@ -17,8 +15,6 @@ const NewMarketListPage = ({ match }) => <NewMarketList id={match.params.id} />;
 const TopicDetailPage = ({ match }) => <TopicDetail marketId={match.params.id} />;
 const BuyPage = ({ match }) => <Buy optionId={match.params.id} />;
 
-const popularTag = ({ match }) => <PopularTagPage tagId={match.params.id} />;
-const allRecommended = () => <AllRecommended />;
 const innerAssets = () => <InnerAssets />;
 
 const FindRouter = ({ match }) => (
@@ -30,8 +26,6 @@ const FindRouter = ({ match }) => (
     <Route path={`${match.url}/topicDetail/:id`} component={TopicDetailPage} />
     <Route path={`${match.url}/buy/:id`} component={BuyPage} />
     <Route path={`${match.url}/success`} component={Success} />
-    <Route path={`${match.url}/popularTag/:id`} component={popularTag} />
-    <Route path={`${match.url}/allRecommended`} component={allRecommended} />
     <Route path={`${match.url}/innerAssets`} component={innerAssets} />
     <Route path={`${match.url}/teachPage`} component={TeachPage} />
   </div>

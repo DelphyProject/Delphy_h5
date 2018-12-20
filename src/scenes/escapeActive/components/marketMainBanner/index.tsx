@@ -113,7 +113,7 @@ export default class MarketMainBanner extends React.Component<
                       <span>{timestampToTime(this.state.mainData.endTime)}</span>
                     </div>
                     <div className="right">
-                      <i className="img2 iconfontMarket icon-Adeltails_amoun" />
+                      <i className="img2 iconfontMarket icon-ic_people" />
                       <span>{this.state.mainData.survivor}</span>
                     </div>
                   </div>

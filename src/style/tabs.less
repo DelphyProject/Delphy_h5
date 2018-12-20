@@ -6,8 +6,8 @@
   height:50px;
   width:100%;
   bottom:0;
-  left:0;
-  z-index: 99999;
+  max-width: 600px;
+  z-index: 1000;
   box-shadow: 0 -4px 8px 0 rgba(67, 77, 255, 0.05);
 }
 .am-tab-bar-tab{
@@ -42,6 +42,9 @@
 }
 .am-tab-bar-bar::before{
   display: none !important;
+}
+.unSelected{
+  background-image: #BBBBBB;
 }
 .bgChange{
   -webkit-background-clip: text;

@@ -15,7 +15,8 @@ import Loading from '../../../components/loading';
 import LoginAlert from '../../../components/loginAlert/loginAlert';
 import { blockedAllAddsImtoken, blockedAdsImtoken } from '../../../config';
 import { getNowTimestamp } from '@/utils/time';
-
+import { Flex } from 'antd-mobile';
+import { showToast } from '@/utils/common';
 let loginState;
 let effectiveTime;
 let nowTime;
@@ -33,6 +34,9 @@ interface TopicDetailState {
   isShowInput: boolean;
   isPhoenGap: boolean;
   optionId: any;
+  showCommentDialog: boolean;
+  isCollect: boolean;
+  showCopyDialog: number;
 }
 type Props = TopicDetailProps & RouteComponentProps & DispatchProp;
 class TopicDetail extends React.Component<Props, TopicDetailState> {
@@ -51,6 +55,9 @@ class TopicDetail extends React.Component<Props, TopicDetailState> {
       isImtoken: !!window.imToken,
       isPhoenGap: !!parent.isPhoneGap,
       optionId: null,
+      showCommentDialog: false,
+      isCollect: false,
+      showCopyDialog: 0,
     };
 
     window.addEventListener('sdkReady', () => {
@@ -112,7 +119,7 @@ class TopicDetail extends React.Component<Props, TopicDetailState> {
     );
     this.props.dispatch(
       //@ts-ignore
-      fetchData.fetchMarketDetail(this.props.marketId, ret => {
+      fetchData.fetchMarketDetail(this.props.marketId, null, ret => {
         if (ret.code == 200) {
           if (ret.data) {
             sessionStorage.setItem('invested', ret.data.invested);
@@ -211,6 +218,79 @@ class TopicDetail extends React.Component<Props, TopicDetailState> {
   goHome = () => {
     this.props.history.push('/');
   };
+  // 点击评论
+  comment = () => {
+    if (this.loginAlert1()) {
+      this.setState({
+        showCommentDialog: true,
+      });
+      const marketDetailPage: any = document.getElementById('marketDetailPage');
+      marketDetailPage.scrollTop = 0;
+      marketDetailPage.style.overflow = 'hidden';
+    }
+  };
+  // 隐藏评论弹窗
+  hideComment = () => {
+    this.setState({
+      showCommentDialog: false,
+    });
+  };
+  //没有分享
+  //隐藏复制弹窗
+  hideCopyDialog = () => {
+    this.setState({ showCopyDialog: 0 });
+  };
+  //收藏
+  collect = marketId => {
+    if (this.loginAlert1()) {
+      this.props.dispatch(
+        //@ts-ignore
+        fetchData.collect(marketId, result => {
+          if (result.code == 200) {
+            showToast('收藏成功', 2);
+            this.setState({ isCollect: true });
+            this.props.dispatch({
+              type: fetchTypes.UPDATE_FIND_COLLECT,
+              data: true,
+              id: marketId,
+            });
+          } else {
+            showToast(result.msg, 2);
+          }
+        }),
+      );
+    }
+  };
+  //取消收藏
+  unCollect = marketId => {
+    if (this.loginAlert1()) {
+      this.props.dispatch(
+        //@ts-ignore
+        fetchData.unCollect(marketId, result => {
+          if (result.code == 200) {
+            showToast('取消收藏', 2);
+            this.setState({ isCollect: false });
+            this.props.dispatch({
+              type: fetchTypes.UPDATE_FIND_COLLECT,
+              data: false,
+              id: marketId,
+            });
+          } else {
+            showToast(result.msg, 2);
+          }
+        }),
+      );
+    }
+  };
+  //收藏点击事件
+  collectMethod = () => {
+    const marketId = this.props.marketId;
+    if (this.state.isCollect) {
+      this.unCollect(marketId);
+    } else {
+      this.collect(marketId);
+    }
+  };
 
   clickOption = parm => {
     if (parm.data.optionId) {
@@ -295,8 +375,8 @@ class TopicDetail extends React.Component<Props, TopicDetailState> {
                 <DetailTop
                   marketId={this.props.marketId}
                   oracleInfo={oracleInfo}
-                  judgeHide={this.judgeHide}
                   data={marketDetailData}
+                  judgeHide={this.judgeHide}
                   isCollect={marketDetailData.subscribed}
                   loginAlert1={this.loginAlert1}
                 />
@@ -308,8 +388,8 @@ class TopicDetail extends React.Component<Props, TopicDetailState> {
                   invested={marketDetailData.invested}
                   options={marketDetailData.options}
                   status={1}
-                  loginAlert1={this.loginAlert1}
-                  goHome={this.goHome}
+                  show={this.state.showCommentDialog}
+                  hideCommentDialog={this.hideComment}
                 />
                 <div
                   className="commentBox"
@@ -363,6 +443,28 @@ class TopicDetail extends React.Component<Props, TopicDetailState> {
                         <NotForecast title="暂无评论！" titleTwo="" />
                       </div>
                     )}
+                  </div>
+                  {/**详情底部 */}
+                  <div className="detailBottom">
+                    <Flex className="comment">
+                      <div className="icon icon-ic_comments iconfontMarket" />
+                      <p onClick={this.comment}>写评论</p>
+                    </Flex>
+                    <Flex>
+                      <div
+                        className="activeHome icon-ic_home iconfontMarket"
+                        onClick={this.goHome}
+                      />
+                      {/* <div
+                        className={
+                          this.state.isCollect
+                            ? 'iconfont icon-shoucang font-orange-gradient activeCollect'
+                            : 'iconfontMarket icon-me_icon_collect1 activeCollect'
+                        }
+                        onClick={this.collectMethod}
+                      /> */}
+                      {/* <div className="share icon-ic_share iconfontMarket" onClick={this.share} /> */}
+                    </Flex>
                   </div>
                 </div>
               </div>

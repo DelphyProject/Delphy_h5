@@ -93,7 +93,7 @@ class Sell extends React.Component<Props, SellState> {
   componentWillMount() {
     this.props.dispatch(
       //@ts-ignore
-      fetchData.fetchMarketDetail(this.props.marketId, ret => {
+      fetchData.fetchMarketDetail(this.props.marketId, null, ret => {
         // var marketData=this.props.location.state
         const arr: Array<any> = [];
         const newarr: Array<any> = [];
@@ -144,7 +144,7 @@ class Sell extends React.Component<Props, SellState> {
     this.dataTimer = setInterval(() => {
       this.props.dispatch(
         //@ts-ignore
-        fetchData.fetchMarketDetail(this.props.marketId, ret => {
+        fetchData.fetchMarketDetail(this.props.marketId, null, ret => {
           // var marketData=this.props.location.state
           const arr: Array<any> = [];
           const newarr: Array<any> = [];

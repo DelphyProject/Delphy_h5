@@ -296,7 +296,7 @@ class LoginUserPage extends React.Component<Props, LoginState> {
         )}
         {sessionStorage.getItem('isLoginStatus') == '2' ? <RegisterPage /> : false}
         {this.state.numberVer ? (
-          <div className="numberVerPages">
+          <div id="loginPageNumberVer" className="numberVerPages">
             <div
               className="numberVerCover"
               // tslint:disable-next-line:jsx-no-lambda

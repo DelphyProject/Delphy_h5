@@ -36,7 +36,6 @@ class UseBag extends React.Component<Props, UseBagState> {
     this.props.dispatch(
       //@ts-ignore
       fetchAction.fetchMyByPhone(this.username, null, res => {
-        console.log(res);
         if (res.code == 200 && res.data.invitationCode) {
           window.sessionStorage.setItem('invitationCode', res.data.invitationCode);
         }

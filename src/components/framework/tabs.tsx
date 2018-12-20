@@ -34,6 +34,12 @@ class MyTabBar extends React.Component<Props, TabBarState> {
       case '/mymarket':
         selectedTab = 'mymarketTab';
         break;
+      case '/future':
+        selectedTab = 'futureTab';
+        break;
+      case '/rank':
+        selectedTab = 'rankTab';
+        break;
       case '/me':
         selectedTab = 'meTab';
         break;
@@ -87,6 +93,16 @@ class MyTabBar extends React.Component<Props, TabBarState> {
     this.props.history.push('/me');
   };
 
+  handleFutureTabPress = () => {
+    this.setState({ selectedTab: 'futureTab' });
+    this.setTopNum();
+    this.props.history.push('/future');
+  };
+  handleRankTabPress = () => {
+    this.setState({ selectedTab: 'rankTab' });
+    this.setTopNum();
+    this.props.history.push('/rank');
+  };
   render() {
     const { newsCount } = this.props.newsData;
     return (
@@ -99,8 +115,8 @@ class MyTabBar extends React.Component<Props, TabBarState> {
           <TabBar.Item
             key="my"
             title="资产"
-            icon={<div className="icon-icon iconfont" />}
-            selectedIcon={<div className="iconfont icon-icon1 bgChange" />}
+            icon={<div className="icon-ic_mypredicte iconfont unSelected" />}
+            selectedIcon={<div className="iconfont icon-ic_mypredicte bgChange" />}
             selected={this.state.selectedTab == 'mymarketTab'}
             onPress={this.handleMyMarketTabPress}
             data-seed="logId"
@@ -108,22 +124,54 @@ class MyTabBar extends React.Component<Props, TabBarState> {
           <TabBar.Item
             key="find"
             title="发现"
-            icon={<div className="iconfont icon-icon5" />}
-            selectedIcon={<div className="iconfont icon-icon3 bgChange" />}
+            icon={<div className="iconfont icon-ic_discover unSelected" />}
+            selectedIcon={<div className="iconfont icon-ic_discover bgChange" />}
             selected={this.state.selectedTab == 'findTab'}
             onPress={this.handleFindTabPress}
             data-seed="logId1"
           />
           <TabBar.Item
-            key="me"
-            title="我的"
+            key="future"
+            title="未来行情"
             icon={
-              <div className="iconfont icon-icon4 icon-nav_icon_me">
+              <div className="iconfont icon-ic_quotation icon-nav_icon_me">
                 {newsCount > 0 ? <span className="tabsRed" /> : false}
               </div>
             }
             selectedIcon={
-              <div className="iconfont icon-icon6 bgChange icon-nav_icon_me">
+              <div className="iconfont icon-ic_quotation bgChange icon-nav_icon_me">
+                {newsCount > 0 ? <span className="tabsRed" /> : false}
+              </div>
+            }
+            selected={this.state.selectedTab == 'futureTab'}
+            onPress={this.handleFutureTabPress}
+          />
+          <TabBar.Item
+            key="rank"
+            title="达人榜"
+            icon={
+              <div className="iconfont icon-ic_leaderboard">
+                {newsCount > 0 ? <span className="tabsRed" /> : false}
+              </div>
+            }
+            selectedIcon={
+              <div className="iconfont icon-ic_leaderboard bgChange">
+                {newsCount > 0 ? <span className="tabsRed" /> : false}
+              </div>
+            }
+            selected={this.state.selectedTab == 'rankTab'}
+            onPress={this.handleRankTabPress}
+          />
+          <TabBar.Item
+            key="me"
+            title="个人中心"
+            icon={
+              <div className="iconfont icon-ic_me">
+                {newsCount > 0 ? <span className="tabsRed" /> : false}
+              </div>
+            }
+            selectedIcon={
+              <div className="iconfont icon-ic_me bgChange">
                 {newsCount > 0 ? <span className="tabsRed" /> : false}
               </div>
             }

@@ -12,4 +12,6 @@ interface Window {
   openLinkInbBrowser: Function;
   getPhonegapAppVersion: Function;
 }
+
+declare module "*.scss";
 declare module "antd-mobile";

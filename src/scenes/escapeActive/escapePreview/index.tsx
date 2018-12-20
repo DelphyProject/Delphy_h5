@@ -41,7 +41,6 @@ class EscapePreview extends React.Component<Props, TopicDetailState> {
 
   render() {
     const { previewInfo, winnerList } = this.props.serverData;
-    console.log(winnerList);
     const nextDate = previewInfo.nextDate
       ? formatTime(previewInfo.nextDate, 'MM月DD日')
       : '--月--日';
@@ -75,7 +74,7 @@ class EscapePreview extends React.Component<Props, TopicDetailState> {
                 </div>
                 <div className="listTitleRight">
                   <div
-                    className="listTitleRightImg iconfont icon-ic_history"
+                    className="icHistory icon-ic_history iconfont"
                     onClick={this.toHistoryRecord}
                   />
                 </div>

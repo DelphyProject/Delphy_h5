@@ -52,7 +52,6 @@ class CoinHeroRegister extends Component<Props, CoinHeroRegisterState> {
   }
 
   componentWillMount() {
-    // console.log(this.props.channelName);
     sessionStorage.setItem('channelId', this.props.channelName);
     inviteCode = this.props.channelName;
     const statisticId = localStorage.getItem('statisticId');

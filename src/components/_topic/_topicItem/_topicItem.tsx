@@ -1,4 +1,5 @@
 import React, { Component, MouseEvent } from 'react';
+import { Progress } from 'antd-mobile';
 import { showToast } from '@/utils/common';
 import './_topicItem.less';
 import { connect, DispatchProp } from 'react-redux';
@@ -48,6 +49,8 @@ class Topic extends Component<Props, TopicItemState> {
             this.setState({
               isCollect: true,
             });
+            this.props.data.subscribed = true;
+            // this.props.
           } else {
             showToast(result.msg, 2);
           }
@@ -68,6 +71,7 @@ class Topic extends Component<Props, TopicItemState> {
             this.setState({
               isCollect: false,
             });
+            this.props.data.subscribed = false;
           } else {
             showToast(result.msg, 2);
           }
@@ -164,7 +168,7 @@ class Topic extends Component<Props, TopicItemState> {
       );
     }
     if (this.props.data.image != '') {
-      if (this.props.data.image.indexOf(',') == -1) {
+      if (this.props.data.image.indexOf(',') === -1) {
         imgBg = this.props.data.image;
         imgBgPartner = imgBg; // No choice. Only one image
       } else {
@@ -172,6 +176,78 @@ class Topic extends Component<Props, TopicItemState> {
         [imgBg, imgBgPartner] = images;
       }
     }
+    const bottomView = () => {
+      let rate = 0;
+      let totalRate = 0;
+      return this.props.data.options.map((option, index) => {
+        let pBorderColor;
+        const str = 'A';
+        const word = String.fromCharCode(str.charCodeAt(0) + index);
+        if (index === this.props.data.options.length - 1) {
+          if (
+            parseInt(option.numInvestor, 10) === 0 ||
+            parseInt(this.props.data.numInvestor, 10) === 0
+          ) {
+            rate = 0;
+          } else {
+            rate = 100 - totalRate;
+          }
+        } else {
+          if (
+            parseInt(option.numInvestor, 10) === 0 ||
+            parseInt(this.props.data.numInvestor, 10) === 0
+          ) {
+            rate = 0;
+          } else {
+            rate = parseInt(
+              (
+                (parseInt(option.numInvestor, 10) / parseInt(this.props.data.numInvestor, 10)) *
+                100
+              ).toFixed(0),
+              10,
+            );
+            totalRate = totalRate + rate;
+          }
+        }
+        if (rate <= 25) {
+          pBorderColor = '#FF4465';
+        } else if (rate > 25 && option.rate <= 50) {
+          pBorderColor = '#FDD338';
+        } else if (rate > 50 && option.rate <= 75) {
+          pBorderColor = '#91DEE5';
+        } else if (rate > 75) {
+          pBorderColor = '#70C7E9';
+        }
+        let styleName;
+        if (index % 2 === 0) {
+          styleName = 'listContentItemBox bgSingle';
+        } else {
+          styleName = 'listContentItemBox bgDouble';
+        }
+        if (index === this.props.data.options.length - 1) {
+          styleName += ' lastItemBorder';
+        }
+        return (
+          <div
+            key={index}
+            className={
+              styleName
+              // index % 2 === 0 ? 'listContentItemBox bgSingle' : 'listContentItemBox bgDouble'
+            }>
+            <div className="listContentItem">
+              <div className="listContentItemLeft">
+                <p className="num">{word}</p>
+                <p className="title">{option.title}</p>
+              </div>
+              <p className="percent">{rate}%</p>
+            </div>
+            {rate !== 0 ? (
+              <Progress percent={rate} position="normal" barStyle={{ borderColor: pBorderColor }} />
+            ) : null}
+          </div>
+        );
+      });
+    };
     return (
       <div className="topicBox">
         {this.props.data ? (
@@ -195,11 +271,14 @@ class Topic extends Component<Props, TopicItemState> {
                   </div>
                   <div className="topicImgBom">
                     <div className="left">
-                      <i className="img1 iconfontMarket icon-Group4" />
-                      <span>{formatTime(this.props.data.endTime)}</span>
+                      {/* <i className="img1 iconfontMarket icon-Group4" /> */}
+                      <span>
+                        截止：
+                        {formatTime(this.props.data.endTime)}
+                      </span>
                     </div>
                     <div className="right">
-                      <i className="img2 iconfontMarket icon-Adeltails_amoun" />
+                      <i className="img2 iconfontMarket icon-ic_people" />
                       <span> {this.props.data.numInvestor}</span>
                     </div>
                   </div>
@@ -207,36 +286,7 @@ class Topic extends Component<Props, TopicItemState> {
               </div>
             </div>
             {thisMarketDes}
-            <div className="itemBomBox">
-              {this.props.data.options.map((item, j) => {
-                const bg = j % 2 == 0 ? 'bomItemBg1' : 'bomItemBg2';
-                let select;
-                if (j == 0) {
-                  select = 'A';
-                } else if (j == 1) {
-                  select = 'B';
-                } else if (j == 2) {
-                  select = 'C';
-                } else if (j == 3) {
-                  select = 'D';
-                } else if (j == 4) {
-                  select = 'E';
-                }
-                return (
-                  <div key={j} className={`bomItem ${bg}`}>
-                    <div className="left">
-                      <span className="img4Font">{select}</span>
-                      {/* <img className="img4" src={require('../../../../img/find/right1.png')} /> */}
-                      <span className="black15"> {item.title}</span>
-                    </div>
-                    <div className="right">
-                      <i className="img5 iconfontMarket icon-Adeltails_amoun" />
-                      <span className="gray13"> {item.numInvestor}</span>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
+            <div className="itemBomBox">{bottomView()}</div>
           </div>
         ) : (
           false

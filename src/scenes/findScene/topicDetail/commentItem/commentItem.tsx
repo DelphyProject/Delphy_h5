@@ -1,5 +1,6 @@
 import React from 'react';
 import { showToast } from '@/utils/common';
+import { Flex } from 'antd-mobile';
 import { connect, DispatchProp } from 'react-redux';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { isLogin } from '@/utils/tool';
@@ -190,41 +191,45 @@ class CommentItem extends React.Component<Props, CommentItemState> {
     }
     // 头像处胜率渲染函数
     const winRateRender = () => {
+      let imgSrc;
+      let content;
       if (this.props.data.statisticsVO) {
         switch (this.props.data.statisticsVO.grade) {
           case 'newbie':
-            return <span className="level1">新手</span>;
+            imgSrc = require('@/img/future/ic_copper.png');
+            content = '新手';
+            break;
           case 'white':
-            return (
-              <span className="level1">
-                胜率
-                {this.props.data.statisticsVO.winRate}
-              </span>
-            );
+            imgSrc = require('@/img/future/ic_copper.png');
+            content = this.props.data.statisticsVO.winRate;
+            break;
           case 'yellow':
-            return (
-              <span className="level2">
-                胜率
-                {this.props.data.statisticsVO.winRate}
-              </span>
-            );
+            imgSrc = require('@/img/future/ic_silver.png');
+            content = this.props.data.statisticsVO.winRate;
+            break;
           case 'red':
-            return (
-              <span className="level3">
-                胜率
-                {this.props.data.statisticsVO.winRate}
-              </span>
-            );
+            imgSrc = require('@/img/future/ic_gold.png');
+            content = this.props.data.statisticsVO.winRate;
+            break;
           default:
-            return <span className="level1">胜率0%</span>;
+            imgSrc = require('@/img/future/ic_copper.png');
+            content = '0%';
+            break;
         }
+        return (
+          <Flex direction="row" className="winningRate">
+            <img src={imgSrc} alt="胜率" />
+            <span>{content}</span>
+          </Flex>
+        );
       } else {
-        return <span className="level1">胜率0%</span>;
+        return null;
       }
     };
+    const triangleColor = 'RGBA(255, 153, 135, 1)';
     return (
       <div
-        className="commentItem paddingBom"
+        className="detailCommentItem paddingBom"
         // tslint:disable-next-line:jsx-no-lambda
         onClick={() => {
           sessionStorage.setItem('comment', JSON.stringify(comment));
@@ -240,13 +245,9 @@ class CommentItem extends React.Component<Props, CommentItemState> {
               this.props.history.push(`/me/otherProfile/${comment.creatorId}`);
             }}
           />
-          {winRateRender()}
-          {/* <span className="level1">胜率99%</span>
-                                <span className="level2">胜率99%</span> */}
-          {/* <span className="level3">胜率90%</span> */}
         </div>
         <div className="itemRight">
-          <div className="top">
+          <div className="commentRightTop">
             <div className="left">
               <div className="nameBox">
                 <p
@@ -258,18 +259,22 @@ class CommentItem extends React.Component<Props, CommentItemState> {
                   }}>
                   {comment.creatorName}
                 </p>
-                <p>{supportItem}</p>
+                {winRateRender()}
+                <p className="support" style={{ background: triangleColor }}>
+                  <span className="triangle" style={{ borderRightColor: triangleColor }} />
+                  {supportItem}
+                </p>
               </div>
-              <div className="p2">
+              {/* <div className="p2">
                 <ShowTime time={comment.time} />
-              </div>
+              </div> */}
             </div>
-            <div className="right">
+            <div className="detailCommentItemRight">
               <span
                 className={
                   this.state.zaned
-                    ? 'iconfont icon-Byizan zaned'
-                    : 'iconfont icon-Bweizan font-unlike'
+                    ? 'iconfont icon-ic_good_press zaned'
+                    : 'iconfont icon-ic_good font-unlike'
                 }
                 // tslint:disable-next-line:jsx-no-lambda
                 onClick={e => {
@@ -281,34 +286,38 @@ class CommentItem extends React.Component<Props, CommentItemState> {
           </div>
           <div className="mid">{comment.content}</div>
           <div className="bom">
-            <div className="reply">回复 ({comment.numReply})</div>
-            {this.props.status == 100 ? (
-              <div>
-                {this.state.isSupport && (
-                  <button
-                    type="button"
-                    className={this.state.banBuy || !this.state.buyAble ? 'notLight' : 'light'}
-                    // tslint:disable-next-line:jsx-no-lambda
-                    onClick={e => {
-                      e.stopPropagation();
-                      e.nativeEvent.stopImmediatePropagation();
-                      if (this.props.loginAlert1()) {
-                        if (this.state.banBuy) {
-                          showToast('市场已结束', 2);
-                        } else if (!this.state.buyAble) {
-                          showToast('无法同时购买多个选项', 2);
-                        } else {
-                          this.ownBuyMethod(e);
-                        }
-                      }
-                    }}>
-                    支持TA
-                  </button>
-                )}
+            <Flex>
+              <ShowTime time={comment.time} />
+              <div className="mReply">回复TA</div>
+            </Flex>
+            {comment.replies.length === 0 ? null : (
+              <div className="replys">
+                {comment.replies.map((item, index) => {
+                  //
+                  if (index >= 2) {
+                    return;
+                  }
+                  return (
+                    <Flex key={index} align="start" style={{ marginBottom: '0.1rem' }}>
+                      <div>
+                        <span className="replyContent">
+                          <span className="replyUser">{item.creatorName}:</span>
+                          {item.content}
+                        </span>
+                      </div>
+                    </Flex>
+                  );
+                })}
+                {comment.replies.length > 2 ? (
+                  <div className="lookUp">
+                    查看全部
+                    {comment.numReply}
+                    条回复
+                  </div>
+                ) : null}
               </div>
-            ) : (
-              false
             )}
+            {}
           </div>
           <div className="line" />
         </div>

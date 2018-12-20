@@ -51,7 +51,7 @@ export default class MainBanner extends React.Component<MainBannerProps, MainBan
                     <span>{timestampToTime(this.state.bannerData.endTime)}</span>
                   </div>
                   <div className="right">
-                    <i className="img2 iconfontMarket icon-Adeltails_amoun" />
+                    <i className="img2 iconfontMarket icon-ic_people" />
                     <span>{this.state.bannerData.numInvestor}</span>
                   </div>
                 </div>

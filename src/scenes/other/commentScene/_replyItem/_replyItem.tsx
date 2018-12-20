@@ -1,4 +1,5 @@
 import React from 'react';
+import { Flex } from 'antd-mobile';
 import { showToast } from '@/utils/common';
 import { connect, DispatchProp } from 'react-redux';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
@@ -103,26 +104,45 @@ class ReplyItem extends React.Component<Props, ReplyItemState> {
     const reply = this.props.data;
     const replyLength = this.props.length;
     const { dataS } = this.props;
+    // 头像处胜率渲染函数
     const winRateRender = () => {
+      let imgSrc;
+      let content;
       if (this.props.data.statisticsVO) {
         switch (this.props.data.statisticsVO.grade) {
           case 'newbie':
-            return <span className="level1">新手</span>;
+            imgSrc = require('@/img/future/ic_copper.png');
+            content = '新手';
+            break;
           case 'white':
-            return <span className="level1">胜率 {this.props.data.statisticsVO.winRate}</span>;
+            imgSrc = require('@/img/future/ic_copper.png');
+            content = this.props.data.statisticsVO.winRate;
+            break;
           case 'yellow':
-            return <span className="level2">胜率 {this.props.data.statisticsVO.winRate}</span>;
+            imgSrc = require('@/img/future/ic_silver.png');
+            content = this.props.data.statisticsVO.winRate;
+            break;
           case 'red':
-            return <span className="level3">胜率 {this.props.data.statisticsVO.winRate}</span>;
+            imgSrc = require('@/img/future/ic_gold.png');
+            content = this.props.data.statisticsVO.winRate;
+            break;
           default:
-            return <span className="level1">胜率0%</span>;
+            imgSrc = require('@/img/future/ic_copper.png');
+            content = '0%';
+            break;
         }
+        return (
+          <Flex direction="row" className="winningRate">
+            <img src={imgSrc} alt="胜率" />
+            <span>{content}</span>
+          </Flex>
+        );
       } else {
-        return <span className="level1">胜率0%</span>;
+        return null;
       }
     };
     return (
-      <div className="commentItem">
+      <div className="replyItem">
         <div className="itemLeft">
           <img
             src={reply.creatorAvatar}
@@ -131,11 +151,9 @@ class ReplyItem extends React.Component<Props, ReplyItemState> {
               this.props.history.push(`/me/otherProfile/${reply.creatorId}`);
             }}
           />
-          {winRateRender()}
-          {/* <span className="level3">胜率10%</span> */}
         </div>
         <div className="itemRight">
-          <div className="top">
+          <div className="itemRTop">
             <div className="left">
               <div className="nameBox">
                 <p
@@ -148,10 +166,22 @@ class ReplyItem extends React.Component<Props, ReplyItemState> {
                   }}>
                   {reply.creatorName}
                 </p>
+                {winRateRender()}
               </div>
-              <div className="p2">
-                <ShowTime time={reply.time} />
-              </div>
+            </div>
+            <div className="right">
+              <span
+                className={
+                  this.state.zaned
+                    ? 'iconfont icon-ic_good_press font-like'
+                    : 'iconfont icon-ic_good font-unlike'
+                }
+                // tslint:disable-next-line:jsx-no-lambda
+                onClick={e => {
+                  this.zanedMethod(e);
+                }}
+              />
+              <span className="p3">{this.state.numZans}</span>
             </div>
           </div>
           <div className="mid">
@@ -166,26 +196,14 @@ class ReplyItem extends React.Component<Props, ReplyItemState> {
             <span className="content">{reply.content}</span>
           </div>
           <div className="itemRightBottom zanBox">
-            <span
-              className="report iconfont Group 1012 icon-Group3"
+            <ShowTime time={reply.time} />
+            <div
+              className="report iconfont icon-Group3"
               // tslint:disable-next-line:jsx-no-lambda
               onClick={() => {
                 this.props.history.push(`/comment/1/${this.props.data.id}/impeach/`);
-              }}
-            />
-            <div>
-              <span
-                className={
-                  this.state.zaned
-                    ? 'zanIcon iconfont icon-Byizan zaned'
-                    : 'zanNo iconfont icon-Bweizan font-unlike'
-                }
-                // tslint:disable-next-line:jsx-no-lambda
-                onClick={e => {
-                  this.zanedMethod(e);
-                }}
-              />
-              <span className="p3">{this.state.numZans}</span>
+              }}>
+              <span>举报</span>
             </div>
           </div>
           {replyLength + 1 != dataS.length ? <div className="line" /> : false}
